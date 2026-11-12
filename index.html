@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="CYBERNEX Solutions: presentación corporativa de una empresa de ciberseguridad y soluciones tecnológicas.">
-<title>CYBERNEX Solutions | Tu información, nuestra prioridad</title>
+<title>CYBERNEX 5.0 | Future Interface</title>
 <style>
 :root{--bg:#05070d;--panel:#0b1020;--panel2:#0e1729;--blue:#347cff;--cyan:#54d9ef;--text:#f4f7ff;--muted:#a5b1c5;--line:rgba(142,170,215,.17);--glow:0 0 65px rgba(39,116,255,.17);--shadow:0 18px 55px rgba(0,0,0,.35)}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 42px));margin:auto}
@@ -70,6 +70,23 @@ body.presenting #presentationBar{display:flex}
 }
 @media(prefers-reduced-motion:reduce){body.presenting main>section.active-slide{animation:none}}
 
+
+/* CYBERNEX 5.0 — radar, motion and sound controls */
+.radar-sweep{position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 72%,rgba(76,225,255,.02) 78%,rgba(76,225,255,.30) 98%,transparent 100%);animation:radarSpin 7s linear infinite;mask:radial-gradient(circle,transparent 0 34%,#000 35% 100%);pointer-events:none}
+.scan-ring{position:absolute;inset:18px;border:1px solid rgba(92,222,255,.18);border-radius:50%;box-shadow:inset 0 0 25px rgba(41,164,255,.08);animation:scanPulse 3.8s ease-in-out infinite}
+.orb:after{animation:orbitSpin 30s linear infinite}
+@keyframes radarSpin{to{transform:rotate(360deg)}}
+@keyframes scanPulse{0%,100%{transform:scale(.94);opacity:.35}50%{transform:scale(1.05);opacity:.9}}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+.quick-sound{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid rgba(101,231,244,.35);border-radius:999px;background:rgba(7,16,31,.88);backdrop-filter:blur(16px);color:#dffaff;font:800 10px/1 Inter,system-ui,sans-serif;letter-spacing:1.2px;cursor:pointer;box-shadow:0 8px 30px #0007,0 0 22px rgba(45,144,255,.12);transition:.2s}
+.quick-sound:hover{transform:translateY(-2px);border-color:#65e7f4}
+.quick-sound .sound-dot{background:#64748b}
+.quick-sound.sound-on .sound-dot{background:#59e6bd;box-shadow:0 0 10px #59e6bd}
+body.presenting .quick-sound{display:none}
+.btn:focus-visible,.pres-btn:focus-visible,.quick-sound:focus-visible{outline:2px solid #65e7f4;outline-offset:3px}
+@media(max-width:560px){.quick-sound{right:12px;bottom:12px;padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){.radar-sweep,.scan-ring,.orb:after{animation:none}}
+
 </style>
 </head>
 <body>
@@ -82,7 +99,7 @@ body.presenting #presentationBar{display:flex}
 <section class="hero" id="inicio"><div class="wrap hero-grid">
 <div><div class="eyebrow"><i class="dot"></i> Tecnología · Seguridad · Confianza</div><h1>Protegemos tu mundo <em>digital.</em></h1><p class="lead">Soluciones informáticas para personas y empresas que quieren trabajar, crecer y conectarse con mayor seguridad.</p><div class="actions"><button class="btn primary" id="startPresentation" type="button">▶ Iniciar exposición</button><a class="btn" href="#empresa">Explorar la empresa ↓</a></div>
 <div class="hero-stats"><div class="stat"><b>01</b><span>Seguridad</span></div><div class="stat"><b>02</b><span>Innovación</span></div><div class="stat"><b>03</b><span>Confianza</span></div></div></div>
-<div class="hero-visual"><div class="orb"><svg class="shield" viewBox="0 0 180 200" fill="none"><path d="M90 8 158 34v54c0 47-28 79-68 101C50 167 22 135 22 88V34L90 8Z" fill="#168bd0" fill-opacity=".17" stroke="#55d7f5" stroke-width="4"/><path d="M90 29 139 48v39c0 35-19 59-49 77-30-18-49-42-49-77V48l49-19Z" stroke="#2ca8ee" stroke-width="2"/><path d="m63 96 18 18 37-41" stroke="#8ef3ee" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="float f1"><strong>Protección digital</strong>Seguridad y prevención</div><div class="float f2"><strong>Soporte confiable</strong>Tecnología que funciona</div></div>
+<div class="hero-visual"><div class="orb"><div class="radar-sweep" aria-hidden="true"></div><div class="scan-ring" aria-hidden="true"></div><svg class="shield" viewBox="0 0 180 200" fill="none"><path d="M90 8 158 34v54c0 47-28 79-68 101C50 167 22 135 22 88V34L90 8Z" fill="#168bd0" fill-opacity=".17" stroke="#55d7f5" stroke-width="4"/><path d="M90 29 139 48v39c0 35-19 59-49 77-30-18-49-42-49-77V48l49-19Z" stroke="#2ca8ee" stroke-width="2"/><path d="m63 96 18 18 37-41" stroke="#8ef3ee" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="float f1"><strong>Protección digital</strong>Seguridad y prevención</div><div class="float f2"><strong>Soporte confiable</strong>Tecnología que funciona</div></div>
 </div></section>
 <section class="section" id="empresa"><div class="wrap"><div class="section-head"><div class="section-number">01 / Presentación de la empresa</div><h2>Tecnología con propósito.<br><span style="color:var(--blue)">Seguridad con confianza.</span></h2><p>CYBERNEX Solutions es una empresa privada del sector terciario dedicada a ofrecer servicios tecnológicos especializados. Su objetivo es ayudar a clientes y organizaciones a proteger su información, mantener sus equipos y aprovechar la tecnología de forma segura y eficiente.</p></div><div class="grid grid-3">
 <div class="card"><div class="icon">⌘</div><h3>Giro empresarial</h3><p>Prestación de servicios tecnológicos, soporte técnico y seguridad informática.</p></div>
@@ -134,7 +151,7 @@ body.presenting #presentationBar{display:flex}
 <div class="card"><div class="icon">02</div><h3 class="team-name">Gael Vidal Rojas</h3><p><strong style="color:var(--cyan)">Matrícula:</strong> 26050009</p></div>
 </div></div></section>
 </main>
-<footer><div class="wrap footer-row"><div><strong style="color:var(--text)">CYBERNEX Solutions</strong><br>Tu información, nuestra prioridad.</div><div>Presentación corporativa · Proyecto académico</div><div>© <span id="year"></span> CYBERNEX Solutions</div></div></footer>
+<footer><div class="wrap footer-row"><div><strong style="color:var(--text)">CYBERNEX Solutions</strong><br>Tu información, nuestra prioridad.</div><div>CYBERNEX 5.0 · Future Interface · Presentación corporativa</div><div>© <span id="year"></span> CYBERNEX Solutions</div></div></footer>
 
 <div id="presentationBar" aria-label="Controles de exposición">
   <div id="slideProgress"></div>
@@ -146,6 +163,7 @@ body.presenting #presentationBar{display:flex}
   <button class="pres-btn" id="soundToggle" type="button" aria-pressed="false"><i class="sound-dot"></i><span class="sound-text">Ambiente: apagado</span></button>
   <button class="pres-btn" id="exitPresentation" type="button">Salir ✕</button>
 </div>
+<button class="quick-sound" id="quickSound" type="button" aria-pressed="false"><span class="sound-dot"></span><span id="quickSoundText">SONIDO OFF</span></button>
 
 <script>
 const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
@@ -195,6 +213,18 @@ document.addEventListener('keydown',e=>{
 /* Ambiente sonoro procedural, discreto y opcional. No requiere archivos externos. */
 let audioContext=null,masterGain=null,ambienceNodes=[],audioOn=false;
 const soundButton=document.getElementById('soundToggle');
+const quickSound=document.getElementById('quickSound');
+const quickSoundText=document.getElementById('quickSoundText');
+function syncSoundUI(){[soundButton,quickSound].forEach(b=>{b.classList.toggle('sound-on',audioOn);b.setAttribute('aria-pressed',audioOn?'true':'false')});soundButton.querySelector('.sound-text').textContent=audioOn?'Ambiente: activo':'Ambiente: apagado';quickSoundText.textContent=audioOn?'SONIDO ON':'SONIDO OFF';}
+function playInterfaceTone(kind='click'){
+ if(!audioContext||!audioOn)return;
+ const t=audioContext.currentTime,osc=audioContext.createOscillator(),gain=audioContext.createGain();
+ osc.type='sine';osc.frequency.setValueAtTime(kind==='hover'?720:kind==='nav'?540:kind==='start'?880:640,t);
+ osc.frequency.exponentialRampToValueAtTime(kind==='start'?1320:kind==='hover'?980:kind==='nav'?760:420,t+.11);
+ gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(kind==='hover'?.012:.035,t+.012);gain.gain.exponentialRampToValueAtTime(.0001,t+.16);
+ osc.connect(gain);gain.connect(audioContext.destination);osc.start(t);osc.stop(t+.17);
+}
+
 function startAmbient(){
   const AC=window.AudioContext||window.webkitAudioContext;
   if(!AC){soundButton.querySelector('.sound-text').textContent='Audio no disponible';return}
@@ -212,16 +242,20 @@ function startAmbient(){
   });
   masterGain.gain.setTargetAtTime(.045,audioContext.currentTime,2.2);
   audioOn=true;soundButton.classList.add('sound-on');soundButton.setAttribute('aria-pressed','true');
-  soundButton.querySelector('.sound-text').textContent='Ambiente: activo';
+  soundButton.querySelector('.sound-text').textContent='Ambiente: activo';syncSoundUI();playInterfaceTone('start');
 }
 function stopAmbient(){
   if(!audioContext||!audioOn)return;
   masterGain.gain.setTargetAtTime(.0001,audioContext.currentTime,.45);
   setTimeout(()=>{ambienceNodes.forEach(n=>{try{if(n.stop)n.stop()}catch(e){}});ambienceNodes=[];},1800);
   audioOn=false;soundButton.classList.remove('sound-on');soundButton.setAttribute('aria-pressed','false');
-  soundButton.querySelector('.sound-text').textContent='Ambiente: apagado';
+  soundButton.querySelector('.sound-text').textContent='Ambiente: apagado';syncSoundUI();
 }
 soundButton.addEventListener('click',()=>audioOn?stopAmbient():startAmbient());
+quickSound.addEventListener('click',()=>audioOn?stopAmbient():startAmbient());
+// Efectos cortos y discretos al interactuar; el audio solo funciona tras activación voluntaria.
+document.addEventListener('click',e=>{if(e.target.closest('button,.btn,.nav-cta'))playInterfaceTone(e.target.closest('#startPresentation')?'start':e.target.closest('.links a')?'nav':'click')});
+document.querySelectorAll('.card,.value').forEach(el=>el.addEventListener('pointerenter',()=>playInterfaceTone('hover'),{passive:true}));
 
 if('IntersectionObserver' in window){
  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}}),{threshold:.08});
