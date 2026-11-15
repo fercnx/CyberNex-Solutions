@@ -6,106 +6,190 @@
 <meta name="description" content="CYBERNEX Solutions: presentación corporativa de una empresa de ciberseguridad y soluciones tecnológicas.">
 <title>CYBERNEX 5.0 | Future Interface</title>
 <style>
-:root{--bg:#05070d;--panel:#0b1020;--panel2:#0e1729;--blue:#347cff;--cyan:#54d9ef;--text:#f4f7ff;--muted:#a5b1c5;--line:rgba(142,170,215,.17);--glow:0 0 65px rgba(39,116,255,.17);--shadow:0 18px 55px rgba(0,0,0,.35)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 42px));margin:auto}
-.topbar{position:sticky;top:0;z-index:30;background:rgba(5,7,13,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.8px}.brand-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--blue),#1749a9);display:grid;place-items:center;box-shadow:0 8px 28px #1769ed55}.brand-mark svg{width:23px}.brand small{display:block;color:#8e9bb2;font-size:9px;letter-spacing:2.5px}.links{display:flex;align-items:center;gap:19px;color:#aab5c9;font-size:12px}.links a:hover{color:var(--cyan)}.nav-cta{padding:9px 14px;border-radius:8px;background:var(--blue);color:white!important;font-weight:800}.menu{display:none;background:#0e1729;border:1px solid var(--line);color:white;border-radius:9px;padding:8px 11px;font-size:18px}
-.hero{position:relative;overflow:hidden;padding:100px 0 76px;background:radial-gradient(ellipse at 78% 38%,rgba(27,93,210,.22),transparent 42%),linear-gradient(180deg,#070b15,#05070d)}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(83,144,240,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(83,144,240,.045) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(90deg,transparent,#000)}.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center}.eyebrow,.kicker{color:var(--cyan);font-size:10px;text-transform:uppercase;letter-spacing:2px;font-weight:850}.eyebrow{display:inline-flex;gap:9px;align-items:center;border:1px solid #347cff55;background:#0c1b36;padding:7px 12px;border-radius:100px}.dot{width:7px;height:7px;border-radius:50%;background:#58e4b2;box-shadow:0 0 12px #58e4b2}h1{font-size:clamp(43px,6vw,72px);line-height:1.02;letter-spacing:-3px;margin:23px 0 18px}h1 em{font-style:normal;color:var(--blue)}.lead{font-size:17px;color:var(--muted);max-width:610px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:9px;font-weight:800;font-size:12px;border:1px solid var(--line);transition:.2s}.btn.primary{background:linear-gradient(120deg,#347cff,#2361d4);border:0;box-shadow:0 9px 26px #1d65e944}.btn:hover{transform:translateY(-2px)}.hero-visual{min-height:330px;display:grid;place-items:center;position:relative}.orb{width:min(310px,75vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#2469c84a,#0b1930 58%,#05070d 72%);border:1px solid #3987f766;box-shadow:0 0 90px #1768df33,inset 0 0 45px #168bd022;position:relative}.orb:before,.orb:after{content:"";position:absolute;border:1px solid #3c8cf455;border-radius:50%;inset:-22px}.orb:after{inset:-44px;border-style:dashed;opacity:.5}.shield{width:145px;filter:drop-shadow(0 0 25px #26a9f5aa)}.float{position:absolute;background:#0d1a30;border:1px solid #4ab9ed44;border-radius:11px;padding:10px 13px;font-size:10px;color:#c9e8fb;box-shadow:var(--shadow)}.float strong{display:block;color:white;font-size:12px}.f1{top:28px;right:0}.f2{bottom:25px;left:0}
-.hero-stats{display:flex;gap:32px;margin-top:35px;padding-top:22px;border-top:1px solid var(--line)}.stat b{display:block;font-size:21px}.stat span{display:block;color:#8592a8;font-size:9px;text-transform:uppercase;letter-spacing:1px}
-.section{padding:76px 0}.section.alt{background:#080d18}.section-head{max-width:760px;margin-bottom:32px}.section-head h2{font-size:clamp(29px,4vw,43px);line-height:1.13;letter-spacing:-1.2px;margin:9px 0 13px}.section-head p,.muted{color:var(--muted)}.section-number{display:inline-flex;align-items:center;gap:9px;color:#71819c;font-size:10px;letter-spacing:1.7px;text-transform:uppercase}.section-number:before{content:"";width:25px;height:1px;background:var(--blue)}.grid{display:grid;gap:16px}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}.card{background:linear-gradient(145deg,#101a2d,#0a111f);border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}.card h3{margin:11px 0 7px;font-size:17px}.card p{color:var(--muted);font-size:13px;margin:0}.icon{width:42px;height:42px;border-radius:11px;background:#347cff1c;border:1px solid #347cff55;display:grid;place-items:center;color:var(--cyan);font-size:20px}.split{display:grid;grid-template-columns:1fr 1fr;gap:17px}.statement{padding:27px;border-radius:16px;background:linear-gradient(145deg,#102442,#0a1322);border:1px solid var(--line)}.statement h3{color:var(--cyan);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;margin:0}.statement p{font-size:14px;color:#d5e2f5;margin-bottom:0}.tagline{font-size:clamp(24px,3vw,34px);font-weight:900;line-height:1.2;letter-spacing:-.7px}.values{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.value{padding:15px;border:1px solid var(--line);border-radius:12px;background:#0b1424}.value b{display:block;margin-bottom:4px;font-size:13px}.value span{font-size:11px;color:var(--muted)}.rules{counter-reset:r;display:grid;grid-template-columns:1fr 1fr;gap:10px}.rule{counter-increment:r;padding:13px 15px;background:#0b1424;border:1px solid var(--line);border-radius:10px;color:#d5e2f5;font-size:12px}.rule:before{content:counter(r,decimal-leading-zero);color:var(--cyan);font-weight:900;margin-right:11px}.service .price{display:inline-block;margin-top:12px;color:var(--cyan);font-weight:850;font-size:12px}.foda{display:grid;grid-template-columns:1fr 1fr;gap:13px}.foda h3{margin:0 0 9px;color:var(--cyan)}.foda ul{padding-left:18px;margin:0;color:var(--muted);font-size:12px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{border-left:2px solid #347cff;padding:5px 14px 13px}.step b{color:var(--cyan);font-size:10px;letter-spacing:1px}.step h3{font-size:15px;margin:5px 0}.step p{font-size:12px;color:var(--muted);margin:0}.cta{padding:37px;border-radius:19px;background:radial-gradient(circle at 90% 10%,#147fc644,transparent 38%),linear-gradient(120deg,#102442,#0a1322);border:1px solid #2b9ed044;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{margin:0 0 8px}.cta p{margin:0;color:var(--muted);font-size:13px}.note{font-size:11px;color:var(--muted);margin-top:13px}.team-name{font-size:16px!important}footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.reveal{opacity:0;transform:translateY(14px);transition:.55s}.reveal.show{opacity:1;transform:none}
-@media(max-width:900px){.links{gap:11px;font-size:11px}.hero-grid{gap:20px}.grid-3{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:760px){.links{display:none;position:absolute;top:72px;left:0;right:0;padding:18px 22px;background:#080d18;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:7px 0}.nav-cta{text-align:center}.menu{display:block}.hero{padding:66px 0 55px}.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:280px}.hero-stats{gap:20px}.section{padding:58px 0}}
-@media(max-width:560px){.wrap{width:calc(100% - 30px)}h1{letter-spacing:-2px}.grid-3,.grid-2,.split,.rules,.foda{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.cta{padding:25px;display:block}.cta .btn{margin-top:18px}.hero-stats{gap:15px}.stat b{font-size:18px}.orb{width:230px}.shield{width:115px}.f1{right:-3px;top:5px}.f2{left:-3px;bottom:0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+:root{--bg:#03050b;--blue:#438cff;--cyan:#65e7f4;--violet:#8276ff;--green:#59e6bd;--text:#f4f7ff;--muted:#a9b6cc;--line:rgba(120,165,235,.18);--shadow:0 18px 55px rgba(0,0,0,.4)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,calc(100% - 42px));margin:auto}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+radial-gradient(ellipse 50% 40% at 10% 8%,rgba(50,110,255,.16),transparent 70%),
+radial-gradient(ellipse 45% 40% at 92% 55%,rgba(0,210,230,.09),transparent 70%),
+radial-gradient(ellipse 40% 35% at 55% 105%,rgba(130,118,255,.12),transparent 70%)}
+main,.topbar,footer{position:relative;z-index:2}
+.progress-top{position:fixed;top:0;left:0;height:3px;width:0;z-index:70;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--violet));box-shadow:0 0 14px var(--cyan)}
 
-/* CYBERNEX FUTURE CORPORATE LAYER */
-:root{--blue:#438cff;--cyan:#65e7f4;--violet:#8276ff}
-body{background-color:#03050b;background-image:radial-gradient(ellipse at 12% 12%,rgba(25,83,175,.10),transparent 34%),radial-gradient(ellipse at 88% 70%,rgba(0,198,220,.055),transparent 30%)}
-.topbar{background:rgba(3,5,11,.91);border-bottom-color:rgba(87,157,255,.22)}
-.brand-mark{box-shadow:0 0 24px rgba(50,132,255,.28),inset 0 0 16px rgba(105,218,255,.22)}
-.hero{background:radial-gradient(ellipse at 76% 42%,rgba(30,105,235,.25),transparent 42%),radial-gradient(ellipse at 14% 80%,rgba(0,206,220,.07),transparent 30%),linear-gradient(180deg,#060b17,#03050b)}
-.hero:before{opacity:.8;background-size:42px 42px}
-.eyebrow{box-shadow:0 0 24px rgba(51,131,255,.12)}
-h1 em{background:linear-gradient(100deg,#438cff,#65e7f4 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.card,.statement,.value{backdrop-filter:blur(12px);box-shadow:0 18px 55px rgba(0,0,0,.32),inset 0 1px rgba(255,255,255,.025)}
-.card{border-color:rgba(103,160,240,.20);transition:border-color .25s,transform .25s,box-shadow .25s}
-.card:hover{border-color:rgba(91,206,255,.52);transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 28px rgba(48,131,255,.10)}
-.icon{box-shadow:inset 0 0 18px rgba(60,151,255,.12);text-shadow:0 0 12px rgba(88,220,255,.4)}
-.section-number{color:#9aa9c3}
-.btn.primary{background:linear-gradient(115deg,#397dff,#1d64d6 60%,#168cba);box-shadow:0 0 25px rgba(49,124,255,.2)}
-.orb{background:radial-gradient(circle at 50% 45%,#2469c85c,#0b1930 58%,#05070d 72%);box-shadow:0 0 100px rgba(23,104,223,.28),inset 0 0 45px rgba(22,139,208,.12)}
-/* Presentation mode */
-#presentationBar{display:none}
+/* NAV */
+.topbar{position:sticky;top:0;z-index:30;background:rgba(3,5,11,.78);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.8px}
+.brand-mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--blue),#1749a9);display:grid;place-items:center;box-shadow:0 0 24px rgba(50,132,255,.4),inset 0 0 16px rgba(105,218,255,.25)}
+.brand-mark svg{width:23px}
+.brand small{display:block;color:#8e9bb2;font-size:9px;letter-spacing:2.5px}
+.links{display:flex;align-items:center;gap:19px;color:#aab5c9;font-size:12px}
+.links a{position:relative;transition:.2s}
+.links a:not(.nav-cta):after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--cyan);transition:.25s}
+.links a:hover{color:var(--cyan)}.links a:not(.nav-cta):hover:after{width:100%}
+.nav-cta{padding:9px 14px;border-radius:8px;background:var(--blue);color:#fff!important;font-weight:800}
+.menu{display:none;background:#0e1729;border:1px solid var(--line);color:#fff;border-radius:9px;padding:8px 11px;font-size:18px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:96px 0 80px}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(83,144,240,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(83,144,240,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 70% 40%,#000 10%,transparent 70%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center}
+.eyebrow,.kicker{color:var(--cyan);font-size:10px;text-transform:uppercase;letter-spacing:2px;font-weight:850}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;border:1px solid #438cff55;background:rgba(12,27,54,.7);padding:7px 12px;border-radius:100px;box-shadow:0 0 24px rgba(51,131,255,.14)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.35}}
+h1{font-size:clamp(43px,6vw,76px);line-height:1.01;letter-spacing:-3px;margin:23px 0 18px}
+h1 em{font-style:normal;background:linear-gradient(100deg,#438cff,#65e7f4 55%,#8276ff);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.lead{font-size:17px;color:var(--muted);max-width:610px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:13px 20px;border-radius:10px;font-weight:800;font-size:12px;border:1px solid var(--line);background:rgba(13,26,45,.6);color:#fff;cursor:pointer;font-family:inherit;transition:.2s}
+.btn.primary{background:linear-gradient(115deg,#397dff,#1d64d6 60%,#168cba);border:0;box-shadow:0 0 28px rgba(49,124,255,.35)}
+.btn.voice{background:linear-gradient(115deg,#8276ff,#438cff);border:0;box-shadow:0 0 28px rgba(130,118,255,.35)}
+.btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
+.hero-visual{min-height:340px;display:grid;place-items:center;position:relative}
+.orb{width:min(320px,75vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#2469c85c,#0b1930 58%,#05070d 72%);border:1px solid #3987f766;box-shadow:0 0 100px rgba(23,104,223,.3),inset 0 0 45px rgba(22,139,208,.14);position:relative;animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-10px)}}
+.orb:before,.orb:after{content:"";position:absolute;border:1px solid #3c8cf455;border-radius:50%;inset:-22px}
+.orb:after{inset:-44px;border-style:dashed;opacity:.5;animation:spin 30s linear infinite}
+.radar-sweep{position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 72%,rgba(76,225,255,.02) 78%,rgba(76,225,255,.32) 98%,transparent 100%);animation:spin 7s linear infinite;mask:radial-gradient(circle,transparent 0 34%,#000 35% 100%);-webkit-mask:radial-gradient(circle,transparent 0 34%,#000 35% 100%);pointer-events:none}
+.scan-ring{position:absolute;inset:18px;border:1px solid rgba(92,222,255,.2);border-radius:50%;animation:pulse 3.8s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{transform:scale(.94);opacity:.35}50%{transform:scale(1.05);opacity:.9}}
+.shield{width:145px;filter:drop-shadow(0 0 25px #26a9f5aa)}
+.float{position:absolute;background:rgba(13,26,48,.85);backdrop-filter:blur(10px);border:1px solid #4ab9ed44;border-radius:11px;padding:10px 13px;font-size:10px;color:#c9e8fb;box-shadow:var(--shadow);animation:floaty 5s ease-in-out infinite}
+.float strong{display:block;color:#fff;font-size:12px}
+.f1{top:28px;right:0}.f2{bottom:25px;left:0;animation-delay:-2.5s}
+.hero-stats{display:flex;gap:32px;margin-top:35px;padding-top:22px;border-top:1px solid var(--line)}
+.stat b{display:block;font-size:24px;background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;color:#8592a8;font-size:9px;text-transform:uppercase;letter-spacing:1px}
+
+/* SECTIONS */
+.section{padding:80px 0;position:relative}
+.section.alt{background:linear-gradient(180deg,rgba(8,13,24,.75),rgba(8,13,24,.55))}
+.section-head{max-width:780px;margin-bottom:34px}
+.section-head h2{font-size:clamp(29px,4vw,45px);line-height:1.12;letter-spacing:-1.3px;margin:10px 0 13px}
+.section-head p,.muted{color:var(--muted)}
+.section-number{display:inline-flex;align-items:center;gap:9px;color:#9aa9c3;font-size:10px;letter-spacing:1.7px;text-transform:uppercase}
+.section-number:before{content:"";width:25px;height:1px;background:var(--blue)}
+.grad{background:linear-gradient(100deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.grid{display:grid;gap:16px}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(16,26,45,.85),rgba(10,17,31,.85));border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow),inset 0 1px rgba(255,255,255,.03);backdrop-filter:blur(12px);transition:border-color .25s,transform .25s,box-shadow .25s}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(101,231,244,.13),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
+.card:hover{border-color:rgba(91,206,255,.55);transform:translateY(-4px);box-shadow:0 22px 60px rgba(0,0,0,.45),0 0 30px rgba(48,131,255,.14)}
+.card:hover:before{opacity:1}
+.card h3{margin:11px 0 7px;font-size:17px}
+.card p{color:var(--muted);font-size:13px;margin:0}
+.icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#438cff2a,#65e7f414);border:1px solid #438cff66;display:grid;place-items:center;color:var(--cyan);font-size:20px;box-shadow:inset 0 0 18px rgba(60,151,255,.14);text-shadow:0 0 12px rgba(88,220,255,.5)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.statement{padding:27px;border-radius:16px;background:linear-gradient(145deg,rgba(16,36,66,.9),rgba(10,19,34,.9));border:1px solid var(--line);box-shadow:var(--shadow)}
+.statement h3{color:var(--cyan);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;margin:0}
+.statement p{font-size:14px;color:#d5e2f5;margin-bottom:0}
+.tagline{font-size:clamp(24px,3.2vw,38px);font-weight:900;line-height:1.2;letter-spacing:-.7px}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.value{padding:15px;border:1px solid var(--line);border-radius:12px;background:rgba(11,20,36,.8);transition:.25s}
+.value:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 0 22px rgba(101,231,244,.12)}
+.value b{display:block;margin-bottom:4px;font-size:13px}.value span{font-size:11px;color:var(--muted)}
+.rules{counter-reset:r;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rule{counter-increment:r;padding:13px 15px;background:rgba(11,20,36,.8);border:1px solid var(--line);border-radius:10px;color:#d5e2f5;font-size:12px;transition:.25s}
+.rule:hover{border-color:#438cff88;background:rgba(16,30,54,.9)}
+.rule:before{content:counter(r,decimal-leading-zero);color:var(--cyan);font-weight:900;margin-right:11px}
+.service .price{display:inline-block;margin-top:12px;padding:4px 10px;border-radius:99px;background:#65e7f414;border:1px solid #65e7f433;color:var(--cyan);font-weight:850;font-size:11px}
+.foda{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.foda h3{margin:0 0 9px;color:var(--cyan)}
+.foda ul{padding-left:18px;margin:0;color:var(--muted);font-size:12px}
+.foda .card:nth-child(1){border-top:2px solid var(--green)}.foda .card:nth-child(2){border-top:2px solid var(--blue)}
+.foda .card:nth-child(3){border-top:2px solid #f5b84a}.foda .card:nth-child(4){border-top:2px solid #ff6b81}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{border-left:2px solid var(--blue);padding:5px 14px 13px;background:linear-gradient(90deg,rgba(67,140,255,.07),transparent);border-radius:0 10px 10px 0}
+.step b{color:var(--cyan);font-size:10px;letter-spacing:1px}.step h3{font-size:15px;margin:5px 0}.step p{font-size:12px;color:var(--muted);margin:0}
+.cta{padding:40px;border-radius:20px;background:radial-gradient(circle at 90% 10%,#147fc655,transparent 40%),linear-gradient(120deg,#102442,#0a1322);border:1px solid #2b9ed055;display:flex;align-items:center;justify-content:space-between;gap:25px;box-shadow:0 0 60px rgba(39,116,255,.15)}
+.cta h2{margin:0 0 8px;font-size:clamp(24px,3.4vw,36px)}.cta p{margin:0;color:var(--muted);font-size:13px}
+.note{font-size:11px;color:var(--muted);margin-top:13px}
+.team-name{font-size:16px!important}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px;background:rgba(3,5,11,.8)}
+.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.show{opacity:1;transform:none}
+
+/* BOTÓN SONIDO */
+.quick-sound{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid rgba(101,231,244,.35);border-radius:999px;background:rgba(7,16,31,.88);backdrop-filter:blur(16px);color:#dffaff;font:800 10px/1 Inter,system-ui,sans-serif;letter-spacing:1.2px;cursor:pointer;box-shadow:0 8px 30px #0007;transition:.2s}
+.quick-sound:hover{transform:translateY(-2px);border-color:#65e7f4}
+.sound-dot{width:7px;height:7px;border-radius:50%;background:#64748b}
+.sound-on .sound-dot{background:var(--green);box-shadow:0 0 10px var(--green)}
+body.presenting .quick-sound{display:none}
+
+/* MODO EXPOSICIÓN */
+#presentationBar,#caption{display:none}
 body.presenting{overflow:hidden}
 body.presenting .topbar,body.presenting footer{display:none}
-body.presenting main>section{display:none;min-height:100svh;height:100svh;padding:64px 0 100px;overflow-y:auto;overscroll-behavior:contain}
-body.presenting main>section.active-slide{display:block;animation:slideIn .42s ease both}
-body.presenting main>section.active-slide .wrap{max-width:1080px}
-body.presenting main>section.active-slide .section-head h2{font-size:clamp(34px,5vw,58px)}
-body.presenting .hero.active-slide{display:grid;align-items:center;padding-top:60px}
-body.presenting .hero.active-slide .hero-grid{width:min(1080px,calc(100% - 42px));margin:auto}
-body.presenting .reveal{opacity:1;transform:none}
-@keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-#presentationBar{position:fixed;z-index:60;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:rgba(4,8,17,.94);backdrop-filter:blur(18px);border-top:1px solid rgba(92,163,255,.25);align-items:center;gap:12px}
+body.presenting main>section{display:none;height:100svh;padding:56px 0 150px;overflow-y:auto;overscroll-behavior:contain;background:transparent}
+body.presenting main>section.active-slide{display:block}
+body.presenting main>section.active-slide .wrap{max-width:1100px}
+body.presenting main>section.active-slide .section-head h2{font-size:clamp(34px,5vw,60px)}
+body.presenting .hero.active-slide{display:grid;align-items:center}
+body.presenting .hero.active-slide .hero-grid{width:min(1100px,calc(100% - 42px));margin:auto}
+body.presenting .reveal{opacity:0;transform:translateY(22px);transition:none}
+body.presenting .active-slide .reveal{animation:rise .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*90ms + 120ms)}
+@keyframes rise{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+body.presenting .active-slide .section-head{animation:rise .6s both}
 body.presenting #presentationBar{display:flex}
+body.presenting #caption.on{display:block}
+#presentationBar{position:fixed;z-index:60;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:rgba(4,8,17,.95);backdrop-filter:blur(18px);border-top:1px solid rgba(92,163,255,.25);align-items:center;gap:10px;flex-wrap:wrap}
 #slideProgress{position:absolute;left:0;top:-2px;height:2px;width:0;background:linear-gradient(90deg,#438cff,#65e7f4);box-shadow:0 0 12px #65e7f4;transition:width .35s}
 .pres-label{font-size:10px;color:#aabbd5;letter-spacing:1.3px;text-transform:uppercase;white-space:nowrap}
-.pres-count{font-size:11px;color:#dbeaff;min-width:45px;text-align:center;font-variant-numeric:tabular-nums}
+.pres-count{font-size:11px;color:#dbeaff;min-width:50px;text-align:center;font-variant-numeric:tabular-nums}
 .pres-spacer{flex:1}
-.pres-btn{border:1px solid rgba(115,163,230,.25);background:#0d1a2d;color:#eaf4ff;border-radius:9px;padding:9px 13px;font-size:11px;font-weight:750;cursor:pointer}
+.pres-btn{border:1px solid rgba(115,163,230,.25);background:#0d1a2d;color:#eaf4ff;border-radius:9px;padding:9px 13px;font-size:11px;font-weight:750;cursor:pointer;font-family:inherit}
 .pres-btn:hover{border-color:#65dff1;background:#102541}
 .pres-btn.primary-pres{background:#2469dc;border-color:#438cff}
+.pres-btn.on{border-color:var(--green);color:var(--green)}
 .pres-btn:disabled{opacity:.3;cursor:not-allowed}
-#soundToggle{display:inline-flex;align-items:center;gap:7px}
-.sound-dot{width:7px;height:7px;border-radius:50%;background:#64748b}
-#soundToggle.sound-on .sound-dot{background:#59e6bd;box-shadow:0 0 10px #59e6bd}
-#startPresentation{cursor:pointer;font-family:inherit}
-@media(max-width:560px){
- body.presenting main>section{padding:38px 0 100px}
- body.presenting .hero.active-slide .hero-grid{width:calc(100% - 30px)}
- #presentationBar{gap:6px;padding-left:9px;padding-right:9px}
- .pres-label{display:none}
- .pres-btn{padding:9px 10px;font-size:10px}
- .pres-count{min-width:38px}
- #soundToggle .sound-text{display:none}
-}
-@media(prefers-reduced-motion:reduce){body.presenting main>section.active-slide{animation:none}}
-
-
-/* CYBERNEX 5.0 — radar, motion and sound controls */
-.radar-sweep{position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 72%,rgba(76,225,255,.02) 78%,rgba(76,225,255,.30) 98%,transparent 100%);animation:radarSpin 7s linear infinite;mask:radial-gradient(circle,transparent 0 34%,#000 35% 100%);pointer-events:none}
-.scan-ring{position:absolute;inset:18px;border:1px solid rgba(92,222,255,.18);border-radius:50%;box-shadow:inset 0 0 25px rgba(41,164,255,.08);animation:scanPulse 3.8s ease-in-out infinite}
-.orb:after{animation:orbitSpin 30s linear infinite}
-@keyframes radarSpin{to{transform:rotate(360deg)}}
-@keyframes scanPulse{0%,100%{transform:scale(.94);opacity:.35}50%{transform:scale(1.05);opacity:.9}}
-@keyframes orbitSpin{to{transform:rotate(360deg)}}
-.quick-sound{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid rgba(101,231,244,.35);border-radius:999px;background:rgba(7,16,31,.88);backdrop-filter:blur(16px);color:#dffaff;font:800 10px/1 Inter,system-ui,sans-serif;letter-spacing:1.2px;cursor:pointer;box-shadow:0 8px 30px #0007,0 0 22px rgba(45,144,255,.12);transition:.2s}
-.quick-sound:hover{transform:translateY(-2px);border-color:#65e7f4}
-.quick-sound .sound-dot{background:#64748b}
-.quick-sound.sound-on .sound-dot{background:#59e6bd;box-shadow:0 0 10px #59e6bd}
-body.presenting .quick-sound{display:none}
+.pres-btn.sound-on .sound-dot{background:var(--green)}
+#soundToggle,#autoBtn{display:inline-flex;align-items:center;gap:7px}
+select.pres-btn{max-width:150px}
+#caption{position:fixed;z-index:59;left:50%;transform:translateX(-50%);bottom:78px;width:min(900px,calc(100% - 30px));text-align:center;padding:12px 18px;border-radius:12px;background:rgba(3,8,18,.88);border:1px solid rgba(101,231,244,.25);backdrop-filter:blur(14px);color:#e8f4ff;font-size:clamp(13px,1.6vw,17px);line-height:1.45;box-shadow:0 10px 40px #000a}
+.speaking-wave{display:inline-flex;gap:2px;align-items:center;height:12px;margin-right:6px;vertical-align:middle}
+.speaking-wave i{width:2px;height:4px;background:var(--cyan);border-radius:2px}
+.talking .speaking-wave i{animation:wave .8s ease-in-out infinite}
+.speaking-wave i:nth-child(2){animation-delay:.15s!important}.speaking-wave i:nth-child(3){animation-delay:.3s!important}.speaking-wave i:nth-child(4){animation-delay:.45s!important}
+@keyframes wave{50%{height:12px}}
 .btn:focus-visible,.pres-btn:focus-visible,.quick-sound:focus-visible{outline:2px solid #65e7f4;outline-offset:3px}
-@media(max-width:560px){.quick-sound{right:12px;bottom:12px;padding:10px 12px}}
-@media(prefers-reduced-motion:reduce){.radar-sweep,.scan-ring,.orb:after{animation:none}}
 
+@media(max-width:900px){.links{gap:11px;font-size:11px}.hero-grid{gap:20px}.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.links{display:none;position:absolute;top:72px;left:0;right:0;padding:18px 22px;background:#080d18;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:7px 0}.nav-cta{text-align:center}.menu{display:block}.hero{padding:66px 0 55px}.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:290px}.section{padding:58px 0}}
+@media(max-width:560px){.wrap{width:calc(100% - 30px)}h1{letter-spacing:-2px}.grid-3,.grid-2,.split,.rules,.foda{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.cta{padding:25px;display:block}.cta .btn{margin-top:18px}.hero-stats{gap:15px}.orb{width:230px}.shield{width:115px}.quick-sound{right:12px;bottom:12px}
+ body.presenting main>section{padding:38px 0 170px}.pres-label{display:none}.pres-btn{padding:9px 10px;font-size:10px}#caption{bottom:116px}.sound-text{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
 </style>
 </head>
 <body>
+<canvas id="bg" aria-hidden="true"></canvas><div class="aurora" aria-hidden="true"></div><div class="progress-top" id="scrollBar"></div>
+
 <header class="topbar"><div class="wrap nav">
 <a class="brand" href="#inicio"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 2 20 5v6c0 5-3.4 8.8-8 11-4.6-2.2-8-6-8-11V5l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></div><span>CYBERNEX<small>SOLUTIONS</small></span></a>
 <nav class="links" id="navlinks"><a href="#empresa">Empresa</a><a href="#servicios">Servicios</a><a href="#identidad">Identidad</a><a href="#organizacion">Organización</a><a href="#marketing">Mercadotecnia</a><a href="#foda">FODA</a><a class="nav-cta" href="#equipo">Equipo</a></nav>
 <button class="menu" id="menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
 </div></header>
+
 <main>
 <section class="hero" id="inicio"><div class="wrap hero-grid">
-<div><div class="eyebrow"><i class="dot"></i> Tecnología · Seguridad · Confianza</div><h1>Protegemos tu mundo <em>digital.</em></h1><p class="lead">Soluciones informáticas para personas y empresas que quieren trabajar, crecer y conectarse con mayor seguridad.</p><div class="actions"><button class="btn primary" id="startPresentation" type="button">▶ Iniciar exposición</button><a class="btn" href="#empresa">Explorar la empresa ↓</a></div>
+<div><div class="eyebrow"><i class="dot"></i> Tecnología · Seguridad · Confianza</div><h1>Protegemos tu mundo <em>digital.</em></h1><p class="lead">Soluciones informáticas para personas y empresas que quieren trabajar, crecer y conectarse con mayor seguridad.</p>
+<div class="actions"><button class="btn voice" id="startVoice" type="button">🎙 Exposición con voz</button><button class="btn primary" id="startPresentation" type="button">▶ Iniciar exposición</button><a class="btn" href="#empresa">Explorar la empresa ↓</a></div>
 <div class="hero-stats"><div class="stat"><b>01</b><span>Seguridad</span></div><div class="stat"><b>02</b><span>Innovación</span></div><div class="stat"><b>03</b><span>Confianza</span></div></div></div>
 <div class="hero-visual"><div class="orb"><div class="radar-sweep" aria-hidden="true"></div><div class="scan-ring" aria-hidden="true"></div><svg class="shield" viewBox="0 0 180 200" fill="none"><path d="M90 8 158 34v54c0 47-28 79-68 101C50 167 22 135 22 88V34L90 8Z" fill="#168bd0" fill-opacity=".17" stroke="#55d7f5" stroke-width="4"/><path d="M90 29 139 48v39c0 35-19 59-49 77-30-18-49-42-49-77V48l49-19Z" stroke="#2ca8ee" stroke-width="2"/><path d="m63 96 18 18 37-41" stroke="#8ef3ee" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="float f1"><strong>Protección digital</strong>Seguridad y prevención</div><div class="float f2"><strong>Soporte confiable</strong>Tecnología que funciona</div></div>
 </div></section>
-<section class="section" id="empresa"><div class="wrap"><div class="section-head"><div class="section-number">01 / Presentación de la empresa</div><h2>Tecnología con propósito.<br><span style="color:var(--blue)">Seguridad con confianza.</span></h2><p>CYBERNEX Solutions es una empresa privada del sector terciario dedicada a ofrecer servicios tecnológicos especializados. Su objetivo es ayudar a clientes y organizaciones a proteger su información, mantener sus equipos y aprovechar la tecnología de forma segura y eficiente.</p></div><div class="grid grid-3">
+
+<section class="section" id="empresa"><div class="wrap"><div class="section-head"><div class="section-number">01 / Presentación de la empresa</div><h2>Tecnología con propósito.<br><span class="grad">Seguridad con confianza.</span></h2><p>CYBERNEX Solutions es una empresa privada del sector terciario dedicada a ofrecer servicios tecnológicos especializados. Su objetivo es ayudar a clientes y organizaciones a proteger su información, mantener sus equipos y aprovechar la tecnología de forma segura y eficiente.</p></div><div class="grid grid-3">
 <div class="card"><div class="icon">⌘</div><h3>Giro empresarial</h3><p>Prestación de servicios tecnológicos, soporte técnico y seguridad informática.</p></div>
 <div class="card"><div class="icon">◎</div><h3>Mercado objetivo</h3><p>Personas, estudiantes, emprendedores y pequeñas y medianas empresas.</p></div>
 <div class="card"><div class="icon">⌖</div><h3>Cobertura inicial</h3><p>Atención local y regional, complementada con asesoría y servicios digitales a distancia.</p></div>
 </div></div></section>
+
 <section class="section alt" id="servicios"><div class="wrap"><div class="section-head"><div class="section-number">02 / Portafolio de servicios</div><h2>Soluciones para cada necesidad digital.</h2><p>Un portafolio pensado para prevenir problemas, resolver incidencias y fortalecer la seguridad tecnológica.</p></div><div class="grid grid-3">
 <div class="card service"><div class="icon">⌁</div><h3>Seguridad informática</h3><p>Revisión de configuraciones, identificación de riesgos y recomendaciones para reducir vulnerabilidades.</p><span class="price">Desde $800 MXN</span></div>
 <div class="card service"><div class="icon">⚙</div><h3>Mantenimiento técnico</h3><p>Diagnóstico, limpieza, mantenimiento preventivo y correctivo de equipos de cómputo.</p><span class="price">Desde $450 MXN</span></div>
@@ -114,18 +198,21 @@ body.presenting .quick-sound{display:none}
 <div class="card service"><div class="icon">▤</div><h3>Asesoría tecnológica</h3><p>Orientación para elegir, configurar y utilizar herramientas y soluciones digitales.</p><span class="price">Cotización según servicio</span></div>
 <div class="card service"><div class="icon">◉</div><h3>Capacitación digital</h3><p>Talleres básicos sobre contraseñas, phishing, privacidad, copias de seguridad y navegación segura.</p><span class="price">Cotización por grupo</span></div>
 </div><p class="note">Los precios son ejemplos académicos. Las pruebas de seguridad y evaluaciones técnicas se realizan únicamente con autorización expresa y alcance acordado.</p></div></section>
+
 <section class="section" id="identidad"><div class="wrap"><div class="section-head"><div class="section-number">03 / Identidad corporativa</div><h2>Una marca construida sobre la confianza.</h2><p>El nombre y la identidad visual comunican conexión, tecnología, prevención e innovación.</p></div>
-<div class="card" style="margin-bottom:17px"><div class="kicker">Nuestro eslogan</div><div class="tagline" style="margin-top:11px">“Tu información, nuestra prioridad”.</div><p class="muted">Una promesa de responsabilidad y confidencialidad en cada servicio.</p></div>
+<div class="card" style="margin-bottom:17px"><div class="kicker">Nuestro eslogan</div><div class="tagline grad" style="margin-top:11px">“Tu información, nuestra prioridad”.</div><p class="muted">Una promesa de responsabilidad y confidencialidad en cada servicio.</p></div>
 <div class="split"><div class="statement"><h3>Misión</h3><p>Proporcionar soluciones tecnológicas y servicios de ciberseguridad que permitan a nuestros clientes proteger su información, optimizar sus recursos tecnológicos y desarrollar sus actividades digitales de manera segura y eficiente, mediante la innovación, la responsabilidad y la atención de calidad.</p></div>
 <div class="statement"><h3>Visión</h3><p>Ser una empresa tecnológica reconocida a nivel regional por la calidad de sus servicios, su compromiso con la seguridad informática y su capacidad de innovación, convirtiéndonos en un aliado estratégico para personas y organizaciones.</p></div></div>
 <h3 style="margin:30px 0 14px">Nuestros valores</h3><div class="values">
 <div class="value"><b>Responsabilidad</b><span>Cumplir compromisos y cuidar los recursos del cliente.</span></div><div class="value"><b>Honestidad</b><span>Comunicar con claridad, transparencia y verdad.</span></div><div class="value"><b>Confidencialidad</b><span>Resguardar la información privada.</span></div><div class="value"><b>Innovación</b><span>Buscar mejores soluciones tecnológicas.</span></div><div class="value"><b>Respeto</b><span>Tratar dignamente a clientes y colaboradores.</span></div><div class="value"><b>Compromiso</b><span>Trabajar para alcanzar los objetivos.</span></div><div class="value"><b>Profesionalismo</b><span>Actuar con preparación y calidad.</span></div><div class="value"><b>Colaboración</b><span>Compartir conocimientos y trabajar en equipo.</span></div>
 </div></div></section>
+
 <section class="section alt" id="cultura"><div class="wrap"><div class="section-head"><div class="section-number">04 / Cultura organizacional</div><h2>Reglas claras. Principios firmes.</h2><p>La confianza de los clientes se construye con conductas consistentes y prácticas responsables.</p></div><h3>Reglas internas</h3><div class="rules">
 <div class="rule">Respetar los horarios y jornadas laborales establecidos.</div><div class="rule">Mantener la confidencialidad de los datos de los clientes.</div><div class="rule">Usar los recursos de la empresa de manera responsable.</div><div class="rule">Tratar con respeto a compañeros, proveedores y clientes.</div><div class="rule">Cumplir las responsabilidades asignadas.</div><div class="rule">Actualizar los conocimientos técnicos continuamente.</div><div class="rule">No acceder a dispositivos, redes o información sin autorización.</div><div class="rule">Reportar incidentes o posibles vulneraciones de seguridad.</div><div class="rule">Mantener ordenadas las instalaciones y herramientas.</div><div class="rule">Evitar conflictos de interés y declarar situaciones que puedan afectar al cliente.</div>
 </div><h3 style="margin:30px 0 14px">Principios éticos</h3><div class="grid grid-3">
 <div class="card"><h3>Privacidad</h3><p>Proteger los datos personales y empresariales tratados durante cada servicio.</p></div><div class="card"><h3>Integridad</h3><p>Actuar con honestidad y no alterar resultados, registros ni diagnósticos.</p></div><div class="card"><h3>Legalidad</h3><p>Respetar las leyes, licencias y normas aplicables a la actividad.</p></div><div class="card"><h3>Consentimiento</h3><p>Obtener autorización antes de intervenir o probar cualquier sistema.</p></div><div class="card"><h3>Transparencia</h3><p>Explicar costos, alcance, riesgos y limitaciones del servicio.</p></div><div class="card"><h3>Uso responsable</h3><p>No utilizar herramientas tecnológicas para dañar, espiar o perjudicar a terceros.</p></div>
 </div></div></section>
+
 <section class="section" id="organizacion"><div class="wrap"><div class="section-head"><div class="section-number">05 / Organización empresarial</div><h2>Una estructura para trabajar mejor.</h2><p>La organización funcional distribuye responsabilidades y facilita la coordinación entre las áreas.</p></div>
 <div class="card" style="text-align:center;max-width:430px;margin:0 auto 17px;border-color:#278fc5"><div class="kicker">Dirección general</div><h3 style="margin:5px">Planeación y toma de decisiones</h3></div>
 <div class="grid grid-3"><div class="card"><div class="icon">⌘</div><h3>Área tecnológica</h3><p>Soporte técnico, mantenimiento y prestación de servicios de ciberseguridad.</p></div><div class="card"><div class="icon">↗</div><h3>Marketing y ventas</h3><p>Publicidad, promoción, captación de clientes y comercialización de servicios.</p></div><div class="card"><div class="icon">◎</div><h3>Atención al cliente</h3><p>Recepción de solicitudes, asesoría, comunicación y seguimiento.</p></div></div>
@@ -133,134 +220,212 @@ body.presenting .quick-sound{display:none}
 <h3 style="margin:30px 0 16px">Proceso de atención al cliente</h3><div class="steps">
 <div class="step"><b>PASO 01</b><h3>Solicitud</h3><p>El cliente comunica su necesidad o problema.</p></div><div class="step"><b>PASO 02</b><h3>Diagnóstico</h3><p>Se analiza el equipo o situación y se identifica el alcance.</p></div><div class="step"><b>PASO 03</b><h3>Cotización</h3><p>Se informa el costo, tiempo y condiciones del servicio.</p></div><div class="step"><b>PASO 04</b><h3>Autorización</h3><p>El cliente aprueba el trabajo antes de comenzar.</p></div><div class="step"><b>PASO 05</b><h3>Ejecución</h3><p>Se realiza el trabajo de forma segura y documentada.</p></div><div class="step"><b>PASO 06</b><h3>Entrega</h3><p>Se explican los resultados y se ofrece seguimiento.</p></div>
 </div></div></section>
+
 <section class="section alt" id="marketing"><div class="wrap"><div class="section-head"><div class="section-number">06 / Estrategia de mercadotecnia</div><h2>Las 4 P aplicadas al negocio.</h2><p>Una estrategia comercial permite presentar los servicios, definir precios y llegar al público adecuado.</p></div><div class="grid grid-2">
 <div class="card"><div class="icon">01</div><h3>Producto</h3><p>Servicios de ciberseguridad, mantenimiento, respaldo de información, asesoría y capacitación.</p></div><div class="card"><div class="icon">02</div><h3>Precio</h3><p>Tarifas competitivas, cotizaciones transparentes y precios ajustados a la complejidad del servicio.</p></div><div class="card"><div class="icon">03</div><h3>Plaza</h3><p>Atención presencial local y regional, además de servicios y asesorías a distancia.</p></div><div class="card"><div class="icon">04</div><h3>Promoción</h3><p>Redes sociales, publicidad digital, recomendaciones, alianzas y promociones de lanzamiento.</p></div>
 </div><h3 style="margin:28px 0 13px">Público objetivo</h3><div class="values"><div class="value"><b>Negocios y PYMES</b><span>Protección y soporte para sus operaciones.</span></div><div class="value"><b>Emprendedores</b><span>Herramientas digitales para crecer.</span></div><div class="value"><b>Estudiantes</b><span>Asesoría y mantenimiento de equipos.</span></div><div class="value"><b>Usuarios particulares</b><span>Ayuda tecnológica confiable.</span></div></div></div></section>
+
 <section class="section" id="foda"><div class="wrap"><div class="section-head"><div class="section-number">07 / Diagnóstico estratégico</div><h2>Conocer el entorno para crecer.</h2><p>El análisis FODA identifica factores internos y externos que pueden influir en el desempeño de CYBERNEX Solutions.</p></div><div class="foda">
 <div class="card"><h3>Fortalezas</h3><ul><li>Variedad de servicios tecnológicos.</li><li>Atención personalizada.</li><li>Enfoque en seguridad y confianza.</li><li>Capacidad de adaptación.</li></ul></div>
 <div class="card"><h3>Oportunidades</h3><ul><li>Mayor digitalización de negocios.</li><li>Demanda creciente de protección de datos.</li><li>Capacitación en seguridad digital.</li><li>Alianzas con comercios locales.</li></ul></div>
 <div class="card"><h3>Debilidades</h3><ul><li>Capital inicial limitado.</li><li>Marca nueva en el mercado.</li><li>Equipo de trabajo reducido al inicio.</li><li>Necesidad de capacitación continua.</li></ul></div>
 <div class="card"><h3>Amenazas</h3><ul><li>Competidores establecidos.</li><li>Cambios tecnológicos constantes.</li><li>Variación en costos de equipos y licencias.</li><li>Riesgos de incidentes de seguridad.</li></ul></div>
 </div></div></section>
+
 <section class="section alt" id="responsabilidad"><div class="wrap"><div class="section-head"><div class="section-number">08 / Responsabilidad social y ambiental</div><h2>La tecnología también debe generar bienestar.</h2><p>CYBERNEX busca contribuir positivamente a las personas, la comunidad y el entorno.</p></div><div class="grid grid-3">
 <div class="card"><div class="icon">♻</div><h3>Responsabilidad ambiental</h3><p>Promover la reparación de equipos, el reciclaje electrónico y el consumo eficiente de energía.</p></div><div class="card"><div class="icon">▣</div><h3>Educación digital</h3><p>Compartir recomendaciones para reconocer fraudes, proteger cuentas y navegar con seguridad.</p></div><div class="card"><div class="icon">✦</div><h3>Acceso responsable</h3><p>Impulsar el uso ético e inclusivo de la tecnología y el respeto a la privacidad.</p></div>
 </div></div></section>
+
 <section class="section" id="equipo"><div class="wrap"><div class="cta"><div><div class="kicker">CYBERNEX Solutions</div><h2>Tu información, nuestra prioridad.</h2><p>Protegemos, conectamos e impulsamos tu mundo digital.</p></div><a class="btn primary" href="#integrantes">Conoce al equipo ↗</a></div>
 <div class="section-head" id="integrantes" style="margin:48px 0 22px"><div class="section-number">09 / Equipo del proyecto</div><h2>Las personas detrás de CYBERNEX.</h2><p>Integrantes responsables de la elaboración del proyecto académico.</p></div><div class="grid grid-2">
 <div class="card"><div class="icon">01</div><h3 class="team-name">María Fernanda Merino Canela</h3><p><strong style="color:var(--cyan)">Matrícula:</strong> 26050004</p></div>
 <div class="card"><div class="icon">02</div><h3 class="team-name">Gael Vidal Rojas</h3><p><strong style="color:var(--cyan)">Matrícula:</strong> 26050009</p></div>
 </div></div></section>
 </main>
+
 <footer><div class="wrap footer-row"><div><strong style="color:var(--text)">CYBERNEX Solutions</strong><br>Tu información, nuestra prioridad.</div><div>CYBERNEX 5.0 · Future Interface · Presentación corporativa</div><div>© <span id="year"></span> CYBERNEX Solutions</div></div></footer>
 
+<div id="caption" aria-live="polite"><span class="speaking-wave"><i></i><i></i><i></i><i></i></span><span id="captionText"></span></div>
 <div id="presentationBar" aria-label="Controles de exposición">
   <div id="slideProgress"></div>
   <span class="pres-label">CYBERNEX · EXPOSICIÓN</span>
   <button class="pres-btn" id="prevSlide" type="button" aria-label="Diapositiva anterior">←</button>
   <span class="pres-count" id="slideCount">01 / 10</span>
   <button class="pres-btn primary-pres" id="nextSlide" type="button" aria-label="Siguiente diapositiva">Siguiente →</button>
+  <button class="pres-btn" id="playBtn" type="button" title="Reproducir / pausar la voz">🎙 Voz: apagada</button>
+  <button class="pres-btn" id="autoBtn" type="button" title="Avanzar solo al terminar de hablar">⏭ Auto: no</button>
+  <button class="pres-btn on" id="capBtn" type="button">CC</button>
+  <select class="pres-btn" id="voiceSel" aria-label="Voz"></select>
+  <select class="pres-btn" id="rateSel" aria-label="Velocidad"><option value="0.9">0.9×</option><option value="1" selected>1×</option><option value="1.1">1.1×</option></select>
   <span class="pres-spacer"></span>
   <button class="pres-btn" id="soundToggle" type="button" aria-pressed="false"><i class="sound-dot"></i><span class="sound-text">Ambiente: apagado</span></button>
   <button class="pres-btn" id="exitPresentation" type="button">Salir ✕</button>
 </div>
-<button class="quick-sound" id="quickSound" type="button" aria-pressed="false"><span class="sound-dot"></span><span id="quickSoundText">SONIDO OFF</span></button>
+<button class="quick-sound" id="quickSound" type="button" aria-pressed="false"><span class="sound-dot"></span><span id="quickSoundText">AMBIENTE OFF</span></button>
 
 <script>
+/* ============================================================
+   GUION DE LA VOZ — una entrada por diapositiva (10 en total).
+   Puedes editar estos textos libremente para que suenen a ustedes.
+   ============================================================ */
+const NARRATION=[
+/* 1 Portada */ "Buenos días. Les damos la bienvenida a la presentación de CYBERNEX Solutions. Somos una empresa de soluciones informáticas y ciberseguridad, y nuestro propósito es proteger tu mundo digital. Nuestra marca se apoya en tres ideas: seguridad, innovación y confianza.",
+/* 2 Empresa */ "CYBERNEX Solutions es una empresa privada del sector terciario, dedicada a ofrecer servicios tecnológicos especializados. Su objetivo es ayudar a clientes y organizaciones a proteger su información, mantener sus equipos y aprovechar la tecnología de forma segura y eficiente. Nuestro giro es la prestación de servicios tecnológicos, soporte técnico y seguridad informática. Atendemos a personas, estudiantes, emprendedores y pequeñas y medianas empresas, con cobertura inicial local y regional, complementada con asesoría y servicios digitales a distancia.",
+/* 3 Servicios */ "Nuestro portafolio está pensado para prevenir problemas, resolver incidencias y fortalecer la seguridad tecnológica. Ofrecemos seguridad informática, desde ochocientos pesos. Mantenimiento técnico, desde cuatrocientos cincuenta pesos. Protección de datos, desde quinientos pesos. Y además seguridad de redes, asesoría tecnológica y capacitación digital, con cotización según el alcance. Aclaramos que los precios son ejemplos académicos, y que las pruebas de seguridad se realizan únicamente con autorización expresa y alcance acordado.",
+/* 4 Identidad */ "Nuestra identidad corporativa está construida sobre la confianza. Nuestro eslogan es: Tu información, nuestra prioridad. Nuestra misión es proporcionar soluciones tecnológicas y servicios de ciberseguridad que permitan a nuestros clientes proteger su información, optimizar sus recursos tecnológicos y desarrollar sus actividades digitales de manera segura y eficiente. Nuestra visión es ser una empresa reconocida a nivel regional por la calidad de sus servicios, su compromiso con la seguridad informática y su capacidad de innovación. Nos guían ocho valores: responsabilidad, honestidad, confidencialidad, innovación, respeto, compromiso, profesionalismo y colaboración.",
+/* 5 Cultura */ "La confianza de los clientes se construye con conductas consistentes. Por eso tenemos reglas internas claras, como mantener la confidencialidad de los datos, no acceder a dispositivos, redes o información sin autorización, y reportar cualquier posible vulneración de seguridad. También nos rigen seis principios éticos: privacidad, integridad, legalidad, consentimiento, transparencia y uso responsable de la tecnología.",
+/* 6 Organización */ "Nuestra organización es funcional. La dirección general se encarga de la planeación y la toma de decisiones. De ella dependen el área tecnológica, que ofrece soporte, mantenimiento y ciberseguridad; el área de marketing y ventas; y atención al cliente. En la etapa inicial, una persona puede desempeñar más de una función para reducir costos. Además, cada servicio sigue seis pasos: solicitud, diagnóstico, cotización, autorización, ejecución y entrega con seguimiento. Así, el cliente siempre sabe qué se hará y cuánto costará, antes de comenzar.",
+/* 7 Marketing */ "Para la estrategia de mercadotecnia aplicamos las cuatro P. En producto, ofrecemos servicios de ciberseguridad, mantenimiento, respaldo, asesoría y capacitación. En precio, manejamos tarifas competitivas y cotizaciones transparentes. En plaza, brindamos atención presencial local y regional, además de asesorías a distancia. Y en promoción, usamos redes sociales, publicidad digital, recomendaciones, alianzas y promociones de lanzamiento. Nuestro público objetivo son negocios y pymes, emprendedores, estudiantes y usuarios particulares.",
+/* 8 FODA */ "El análisis FODA nos ayuda a conocer el entorno. Entre nuestras fortalezas están la variedad de servicios, la atención personalizada y el enfoque en seguridad y confianza. Las oportunidades vienen de la digitalización de los negocios y la demanda creciente de protección de datos. Como debilidades reconocemos el capital inicial limitado y que somos una marca nueva. Y entre las amenazas, los competidores establecidos y los cambios tecnológicos constantes.",
+/* 9 Responsabilidad */ "Creemos que la tecnología también debe generar bienestar. Por eso promovemos la reparación de equipos, el reciclaje electrónico y el consumo eficiente de energía. Compartimos educación digital para reconocer fraudes y proteger cuentas. Y impulsamos un uso ético, inclusivo y respetuoso de la privacidad.",
+/* 10 Equipo */ "Para terminar: CYBERNEX, tu información, nuestra prioridad. Protegemos, conectamos e impulsamos tu mundo digital. Este proyecto fue elaborado por María Fernanda Merino Canela y Gael Vidal Rojas. Muchas gracias por su atención."
+];
+
+/* ---------- Menú, año, barra de scroll ---------- */
 const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
-menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open?'true':'false');menu.textContent=open?'×':'☰'});
+menu.addEventListener('click',()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o);menu.textContent=o?'×':'☰'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
+const sBar=document.getElementById('scrollBar');
+addEventListener('scroll',()=>{const h=document.documentElement;sBar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+'%'},{passive:true});
 
-/* Exposición: cada sección principal funciona como una diapositiva. */
-const slides=[...document.querySelectorAll('main>section')];
-let currentSlide=0;
-const count=document.getElementById('slideCount');
-const progress=document.getElementById('slideProgress');
-const prev=document.getElementById('prevSlide');
-const next=document.getElementById('nextSlide');
-const bar=document.getElementById('presentationBar');
-function showSlide(index){
-  currentSlide=Math.max(0,Math.min(slides.length-1,index));
-  slides.forEach((s,i)=>s.classList.toggle('active-slide',i===currentSlide));
-  count.textContent=String(currentSlide+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
-  progress.style.width=((currentSlide+1)/slides.length*100)+'%';
-  prev.disabled=currentSlide===0;
-  next.textContent=currentSlide===slides.length-1?'Finalizar ✓':'Siguiente →';
-  slides[currentSlide].scrollTop=0;
-}
-function startPresentation(){
-  currentSlide=0;document.body.classList.add('presenting');showSlide(0);
-  if(document.documentElement.requestFullscreen && !document.fullscreenElement){
-    document.documentElement.requestFullscreen().catch(()=>{});
+/* ---------- Efecto de luz en tarjetas ---------- */
+document.addEventListener('pointermove',e=>{const c=e.target.closest&&e.target.closest('.card');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+
+/* ---------- Revelado al hacer scroll + orden escalonado ---------- */
+document.querySelectorAll('main>section').forEach(sec=>{sec.querySelectorAll('.card,.statement,.step,.value,.rule,.section-head').forEach((el,i)=>{el.classList.add('reveal');el.style.setProperty('--i',Math.min(i,12))})});
+if('IntersectionObserver' in window){
+ const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}}),{threshold:.08});
+ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
+
+/* ---------- Fondo de red animada ---------- */
+(function(){
+ const cv=document.getElementById('bg'),ctx=cv.getContext('2d');
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches){cv.style.display='none';return}
+ let W,H,P=[],dpr=Math.min(devicePixelRatio||1,2),mouse={x:-999,y:-999};
+ function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);const n=Math.round(Math.min(90,W*H/16000));P=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28}))}
+ addEventListener('resize',size);addEventListener('pointermove',e=>{mouse.x=e.clientX;mouse.y=e.clientY},{passive:true});size();
+ function tick(){
+  if(document.hidden){requestAnimationFrame(tick);return}
+  ctx.clearRect(0,0,W,H);
+  for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+  for(let i=0;i<P.length;i++){const a=P[i];
+   ctx.fillStyle='rgba(101,231,244,.55)';ctx.beginPath();ctx.arc(a.x,a.y,1.3,0,7);ctx.fill();
+   for(let j=i+1;j<P.length;j++){const b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<130){ctx.strokeStyle='rgba(67,140,255,'+(.16*(1-d/130))+')';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}
+   const dm=Math.hypot(a.x-mouse.x,a.y-mouse.y);if(dm<160){ctx.strokeStyle='rgba(101,231,244,'+(.35*(1-dm/160))+')';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(mouse.x,mouse.y);ctx.stroke()}
   }
+  requestAnimationFrame(tick)}
+ tick();
+})();
+
+/* ---------- Diapositivas ---------- */
+const slides=[...document.querySelectorAll('main>section')];
+let cur=0;
+const $=id=>document.getElementById(id);
+const count=$('slideCount'),progress=$('slideProgress'),prev=$('prevSlide'),next=$('nextSlide');
+const isPres=()=>document.body.classList.contains('presenting');
+function showSlide(i,{speakIt=true}={}){
+  cur=Math.max(0,Math.min(slides.length-1,i));
+  slides.forEach((s,k)=>{s.classList.remove('active-slide');if(k===cur){void s.offsetWidth;s.classList.add('active-slide')}});
+  count.textContent=String(cur+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+  progress.style.width=((cur+1)/slides.length*100)+'%';
+  prev.disabled=cur===0;
+  next.textContent=cur===slides.length-1?'Finalizar ✓':'Siguiente →';
+  slides[cur].scrollTop=0;
+  if(voiceOn&&speakIt)speakSlide(); else stopSpeech();
+}
+function startPresentation(withVoice){
+  document.body.classList.add('presenting');
+  if(withVoice){voiceOn=true;autoOn=true;}else{voiceOn=false;autoOn=false;}
+  syncVoiceUI();
+  document.documentElement.requestFullscreen&&!document.fullscreenElement&&document.documentElement.requestFullscreen().catch(()=>{});
+  showSlide(0);
 }
 function exitPresentation(){
-  document.body.classList.remove('presenting');
-  slides.forEach(s=>s.classList.remove('active-slide'));
-  if(document.fullscreenElement && document.exitFullscreen)document.exitFullscreen().catch(()=>{});
+  stopSpeech();voiceOn=false;autoOn=false;syncVoiceUI();
+  document.body.classList.remove('presenting');slides.forEach(s=>s.classList.remove('active-slide'));
+  $('caption').classList.remove('on');
+  document.fullscreenElement&&document.exitFullscreen&&document.exitFullscreen().catch(()=>{});
 }
-document.getElementById('startPresentation').addEventListener('click',startPresentation);
-document.getElementById('exitPresentation').addEventListener('click',exitPresentation);
-prev.addEventListener('click',()=>showSlide(currentSlide-1));
-next.addEventListener('click',()=>{if(currentSlide===slides.length-1)exitPresentation();else showSlide(currentSlide+1)});
+function goNext(){if(cur===slides.length-1)exitPresentation();else showSlide(cur+1)}
+$('startPresentation').onclick=()=>startPresentation(false);
+$('startVoice').onclick=()=>startPresentation(true);
+$('exitPresentation').onclick=exitPresentation;
+prev.onclick=()=>showSlide(cur-1);
+next.onclick=goNext;
 document.addEventListener('keydown',e=>{
-  if(!document.body.classList.contains('presenting'))return;
-  if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();if(currentSlide<slides.length-1)showSlide(currentSlide+1);else exitPresentation()}
-  if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();showSlide(currentSlide-1)}
+  if(!isPres())return;
+  if(['ArrowRight','PageDown'].includes(e.key)){e.preventDefault();goNext()}
+  if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();showSlide(cur-1)}
+  if(e.key===' '&&!/SELECT|BUTTON/.test(document.activeElement.tagName)){e.preventDefault();$('playBtn').click()}
   if(e.key==='Escape')exitPresentation();
 });
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&isPres())exitPresentation()});
 
-/* Ambiente sonoro procedural, discreto y opcional. No requiere archivos externos. */
-let audioContext=null,masterGain=null,ambienceNodes=[],audioOn=false;
-const soundButton=document.getElementById('soundToggle');
-const quickSound=document.getElementById('quickSound');
-const quickSoundText=document.getElementById('quickSoundText');
-function syncSoundUI(){[soundButton,quickSound].forEach(b=>{b.classList.toggle('sound-on',audioOn);b.setAttribute('aria-pressed',audioOn?'true':'false')});soundButton.querySelector('.sound-text').textContent=audioOn?'Ambiente: activo':'Ambiente: apagado';quickSoundText.textContent=audioOn?'SONIDO ON':'SONIDO OFF';}
-function playInterfaceTone(kind='click'){
- if(!audioContext||!audioOn)return;
- const t=audioContext.currentTime,osc=audioContext.createOscillator(),gain=audioContext.createGain();
- osc.type='sine';osc.frequency.setValueAtTime(kind==='hover'?720:kind==='nav'?540:kind==='start'?880:640,t);
- osc.frequency.exponentialRampToValueAtTime(kind==='start'?1320:kind==='hover'?980:kind==='nav'?760:420,t+.11);
- gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(kind==='hover'?.012:.035,t+.012);gain.gain.exponentialRampToValueAtTime(.0001,t+.16);
- osc.connect(gain);gain.connect(audioContext.destination);osc.start(t);osc.stop(t+.17);
+/* ---------- Voz narradora (Web Speech API) ---------- */
+let voiceOn=false,autoOn=false,capOn=true,run=0,voices=[];
+const synth=window.speechSynthesis;
+const capEl=$('caption'),capText=$('captionText');
+function loadVoices(){
+  if(!synth)return;
+  voices=synth.getVoices().filter(v=>/^es/i.test(v.lang));
+  const rank=v=>/es[-_]MX/i.test(v.lang)?0:/es[-_](US|419)/i.test(v.lang)?1:2;
+  voices.sort((a,b)=>rank(a)-rank(b)||(/natural|online|google/i.test(b.name)-/natural|online|google/i.test(a.name)));
+  const sel=$('voiceSel');sel.innerHTML='';
+  if(!voices.length){sel.innerHTML='<option>Voz por defecto</option>';return}
+  voices.forEach((v,i)=>{const o=document.createElement('option');o.value=i;o.textContent=v.name.replace(/Microsoft |Google /,'')+' ('+v.lang+')';sel.appendChild(o)});
 }
+if(synth){loadVoices();synth.onvoiceschanged=loadVoices}
+function chunks(t){return (t.match(/[^.!?:;]+[.!?:;]?/g)||[t]).map(s=>s.trim()).filter(Boolean)}
+function stopSpeech(){run++;synth&&synth.cancel();capEl.classList.remove('talking');capText.textContent=voiceOn?'':capText.textContent}
+function speakSlide(){
+  if(!synth){capEl.classList.toggle('on',capOn);capText.textContent='Tu navegador no admite voz sintetizada. Usa Chrome o Edge.';return}
+  synth.cancel();const id=++run;
+  const parts=chunks(NARRATION[cur]||'');let k=0;
+  capEl.classList.toggle('on',capOn);
+  const rate=parseFloat($('rateSel').value);
+  const v=voices[$('voiceSel').value]||voices[0];
+  (function say(){
+    if(id!==run)return;
+    if(k>=parts.length){
+      capEl.classList.remove('talking');
+      if(autoOn&&voiceOn)setTimeout(()=>{if(id===run)goNext()},1400);
+      return}
+    const u=new SpeechSynthesisUtterance(parts[k++]);
+    u.lang=v?v.lang:'es-MX';if(v)u.voice=v;u.rate=rate;u.pitch=1;
+    u.onstart=()=>{if(id===run){capText.textContent=u.text;capEl.classList.add('talking')}};
+    u.onend=()=>say();
+    u.onerror=e=>{if(id===run&&e.error!=='canceled'&&e.error!=='interrupted')say()};
+    synth.speak(u);
+  })();
+}
+function syncVoiceUI(){
+  $('playBtn').textContent=voiceOn?'⏸ Voz: activa':'🎙 Voz: apagada';
+  $('playBtn').classList.toggle('on',voiceOn);
+  $('autoBtn').textContent=autoOn?'⏭ Auto: sí':'⏭ Auto: no';
+  $('autoBtn').classList.toggle('on',autoOn);
+  $('capBtn').classList.toggle('on',capOn);
+}
+$('playBtn').onclick=()=>{voiceOn=!voiceOn;syncVoiceUI();if(voiceOn)speakSlide();else{stopSpeech();capEl.classList.remove('on')}};
+$('autoBtn').onclick=()=>{autoOn=!autoOn;syncVoiceUI()};
+$('capBtn').onclick=()=>{capOn=!capOn;capEl.classList.toggle('on',capOn&&voiceOn);syncVoiceUI()};
+$('voiceSel').onchange=$('rateSel').onchange=()=>{if(voiceOn)speakSlide()};
+addEventListener('beforeunload',()=>synth&&synth.cancel());
 
-function startAmbient(){
-  const AC=window.AudioContext||window.webkitAudioContext;
-  if(!AC){soundButton.querySelector('.sound-text').textContent='Audio no disponible';return}
-  if(!audioContext)audioContext=new AC();
-  audioContext.resume();
-  if(audioOn)return;
-  masterGain=audioContext.createGain();masterGain.gain.value=0.0001;masterGain.connect(audioContext.destination);
-  const now=audioContext.currentTime;
-  const tones=[55,82.41,110];
-  tones.forEach((freq,i)=>{
-    const osc=audioContext.createOscillator(),gain=audioContext.createGain(),filter=audioContext.createBiquadFilter();
-    osc.type=i===1?'triangle':'sine';osc.frequency.value=freq;gain.gain.value=[.18,.07,.035][i];
-    filter.type='lowpass';filter.frequency.value=240;osc.connect(filter);filter.connect(gain);gain.connect(masterGain);osc.start();
-    ambienceNodes.push(osc,gain,filter);
-  });
-  masterGain.gain.setTargetAtTime(.045,audioContext.currentTime,2.2);
-  audioOn=true;soundButton.classList.add('sound-on');soundButton.setAttribute('aria-pressed','true');
-  soundButton.querySelector('.sound-text').textContent='Ambiente: activo';syncSoundUI();playInterfaceTone('start');
+/* ---------- Ambiente sonoro opcional (muy bajo) ---------- */
+let ac=null,master=null,nodes=[],ambOn=false;
+const sBtn=$('soundToggle'),qBtn=$('quickSound');
+function syncAmb(){[sBtn,qBtn].forEach(b=>{b.classList.toggle('sound-on',ambOn);b.setAttribute('aria-pressed',ambOn)});sBtn.querySelector('.sound-text').textContent=ambOn?'Ambiente: activo':'Ambiente: apagado';$('quickSoundText').textContent=ambOn?'AMBIENTE ON':'AMBIENTE OFF'}
+function startAmb(){
+  const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+  ac=ac||new AC();ac.resume();if(ambOn)return;
+  master=ac.createGain();master.gain.value=.0001;master.connect(ac.destination);
+  [55,82.41,110].forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain(),fl=ac.createBiquadFilter();o.type=i===1?'triangle':'sine';o.frequency.value=f;g.gain.value=[.18,.07,.035][i];fl.type='lowpass';fl.frequency.value=240;o.connect(fl);fl.connect(g);g.connect(master);o.start();nodes.push(o)});
+  master.gain.setTargetAtTime(.03,ac.currentTime,2);ambOn=true;syncAmb();
 }
-function stopAmbient(){
-  if(!audioContext||!audioOn)return;
-  masterGain.gain.setTargetAtTime(.0001,audioContext.currentTime,.45);
-  setTimeout(()=>{ambienceNodes.forEach(n=>{try{if(n.stop)n.stop()}catch(e){}});ambienceNodes=[];},1800);
-  audioOn=false;soundButton.classList.remove('sound-on');soundButton.setAttribute('aria-pressed','false');
-  soundButton.querySelector('.sound-text').textContent='Ambiente: apagado';syncSoundUI();
-}
-soundButton.addEventListener('click',()=>audioOn?stopAmbient():startAmbient());
-quickSound.addEventListener('click',()=>audioOn?stopAmbient():startAmbient());
-// Efectos cortos y discretos al interactuar; el audio solo funciona tras activación voluntaria.
-document.addEventListener('click',e=>{if(e.target.closest('button,.btn,.nav-cta'))playInterfaceTone(e.target.closest('#startPresentation')?'start':e.target.closest('.links a')?'nav':'click')});
-document.querySelectorAll('.card,.value').forEach(el=>el.addEventListener('pointerenter',()=>playInterfaceTone('hover'),{passive:true}));
-
-if('IntersectionObserver' in window){
- const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}}),{threshold:.08});
- document.querySelectorAll('.card,.statement,.step,.value,.rule').forEach(el=>{el.classList.add('reveal');obs.observe(el)});
-}
+function stopAmb(){if(!ac||!ambOn)return;master.gain.setTargetAtTime(.0001,ac.currentTime,.4);const n=nodes;nodes=[];setTimeout(()=>n.forEach(o=>{try{o.stop()}catch(e){}}),1500);ambOn=false;syncAmb()}
+sBtn.onclick=qBtn.onclick=()=>ambOn?stopAmb():startAmb();
 </script>
 </body>
 </html>
