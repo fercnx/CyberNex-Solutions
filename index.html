@@ -125,43 +125,118 @@ footer{padding:28px 0;border-top:1px solid var(--line);font-size:12px;color:#8d9
 /* ---------- Modo presentación ---------- */
 body.presentation{overflow:hidden}
 body.presentation .header,body.presentation footer,body.presentation .progress-top{display:none}
-body.presentation main>.hero,body.presentation main>.section{display:none;height:100svh;min-height:0;overflow-y:auto;padding:44px 0 96px}
+body.presentation main>.hero,body.presentation main>.section{display:none;height:100svh;min-height:0;overflow-y:auto;padding:34px 0 88px}
 body.presentation main>.active{display:flex;flex-direction:column;animation:slideIn .45s ease both}
 body.presentation .reveal{opacity:1;transform:none;transition:none}
 body.presentation .active .container{width:min(1240px,calc(100% - 64px));margin:auto}
-/* Páginas: cada sección se reparte en varias pantallas (data-p) para no tener que desplazarse */
+/* Cada sección es UNA diapositiva compacta que cabe completa en pantalla (sin rueda del ratón) */
+body.presentation .active .container{width:min(1320px,calc(100% - 56px));margin:auto}
+body.presentation .active .grid,body.presentation .active .four,body.presentation .active .foda,body.presentation .active .steps,body.presentation .active .rules,body.presentation .active .values{gap:12px}
+body.presentation .active .section-head{max-width:none;margin-bottom:22px}
+body.presentation .active .section-head h2{font-size:clamp(30px,3.6vw,58px);margin:8px 0 10px}
+body.presentation .active .section-head h2 br{display:none}
+body.presentation .active .section-head h2 .gradient-text{margin-left:.25em}
+body.presentation .active .section-head p{font-size:clamp(14px,1.3vw,21px);line-height:1.5;max-width:1050px}
+body.presentation .active .kicker{font-size:clamp(10px,.85vw,14px)}
+body.presentation .active .container>h3{font-size:clamp(17px,1.6vw,26px);margin:18px 0 10px!important}
+body.presentation .active .card{padding:clamp(14px,1.5vw,24px)}
+body.presentation .active .card p,body.presentation .active .p-card p{font-size:clamp(13px,1.25vw,20px);line-height:1.5}
+body.presentation .active .card h3{font-size:clamp(16px,1.55vw,25px);margin:8px 0 6px}
+body.presentation .active .icon{width:42px;height:42px;font-size:19px}
+body.presentation .active .price{margin-top:10px;font-size:clamp(11px,.95vw,15px)}
+body.presentation .active .note{margin-top:10px;font-size:clamp(11px,.95vw,15px)}
+body.presentation .active .statement{padding:clamp(16px,1.7vw,26px)}
+body.presentation .active .statement p{font-size:clamp(14px,1.35vw,22px);line-height:1.5}
+body.presentation .active .statement h3{font-size:clamp(12px,1vw,16px)}
+body.presentation .active .identity-banner{padding:clamp(18px,2vw,30px)}
+body.presentation .active .identity-banner strong{font-size:clamp(24px,3vw,46px)}
+body.presentation .active .rule{font-size:clamp(12px,1.15vw,18px);padding:9px 14px;line-height:1.4}
+body.presentation .active .step{padding:12px 16px}
+body.presentation .active .step p{font-size:clamp(12px,1.15vw,18px);line-height:1.45}
+body.presentation .active .step h3{font-size:clamp(15px,1.5vw,24px);margin:4px 0}
+body.presentation .active .step small,body.presentation .active .p-card small{font-size:clamp(10px,.85vw,13px)}
+body.presentation .active .p-card{padding:clamp(14px,1.5vw,24px)}
+body.presentation .active .p-card h3{font-size:clamp(18px,1.9vw,30px);margin:6px 0}
+body.presentation .active .foda ul{font-size:clamp(13px,1.25vw,20px);margin-top:6px}
+body.presentation .active .value{padding:12px 14px}
+body.presentation .active .value b{font-size:clamp(14px,1.3vw,21px)}
+body.presentation .active .value span{font-size:clamp(12px,1.1vw,17px)}
+body.presentation .active .pills{margin-top:10px}
+body.presentation .active .pills span{font-size:clamp(12px,1.15vw,18px);padding:8px 15px}
+body.presentation .active .team h3{font-size:clamp(16px,1.6vw,26px)}
+body.presentation .active .team p{font-size:clamp(12px,1.15vw,18px)}
+body.presentation .active .final-panel{padding:clamp(20px,2.6vw,40px)}
+body.presentation .active .final-panel h2{font-size:clamp(28px,3.4vw,52px)}
+body.presentation .active .final-panel p{font-size:clamp(14px,1.35vw,22px)}
+body.presentation .active .org-root{margin-bottom:12px;max-width:520px}
+/* Identidad: encabezado y promesa en la misma fila para ahorrar altura */
+body.presentation #identidad.active .container{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;align-content:center}
+body.presentation #identidad.active .section-head{grid-column:1;margin-bottom:0;align-self:center}
+body.presentation #identidad.active .identity-banner{grid-column:2;margin-bottom:0}
+body.presentation #identidad.active .grid.two{grid-column:1/-1;margin-top:16px}
+body.presentation #identidad.active .container>h3,body.presentation #identidad.active .values{grid-column:1/-1}
+/* Compactación extra para que las diapositivas densas se vean con letra grande */
+body.presentation .active .section-head{margin-bottom:16px}
+body.presentation .active .section-head h2{font-size:clamp(26px,3vw,48px);margin:6px 0 8px}
+body.presentation .active .section-head p{font-size:clamp(13px,1.15vw,19px)}
+body.presentation .active .container>h3{margin:12px 0 8px!important}
+body.presentation .active .card:has(>.icon){display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
+body.presentation .active .card:has(>.icon)>.icon{grid-row:1/span 3}
+body.presentation .active .card:has(>.icon)>h3,body.presentation .active .card:has(>.icon)>p,body.presentation .active .card:has(>.icon)>.price{grid-column:2}
+body.presentation .active .card:has(>.icon)>h3{margin-top:0}
+body.presentation .active .card:has(>.icon)>.price{justify-self:start;margin-top:8px}
+body.presentation .active .card{padding:clamp(12px,1.25vw,20px)}
+body.presentation .active .card h3{margin:2px 0 4px}
+body.presentation .active .card p,body.presentation .active .p-card p{font-size:clamp(13px,1.2vw,19px);line-height:1.45}
+body.presentation .active .rule{padding:7px 12px;font-size:clamp(12px,1.1vw,17px)}
+body.presentation .active .step{padding:8px 14px}
+body.presentation .active .org-root{padding:12px 16px;margin-bottom:10px}
+body.presentation .active .org-root .kicker{margin-bottom:0}
+body.presentation .active .org-root h3{margin:0 0 2px}
+body.presentation .active .statement{padding:clamp(14px,1.4vw,22px)}
+body.presentation .active .statement p{font-size:clamp(13px,1.2vw,19px)}
+body.presentation .active .identity-banner{padding:clamp(14px,1.6vw,24px)}
+body.presentation .active .identity-banner strong{font-size:clamp(22px,2.6vw,40px);margin-top:4px}
+body.presentation .active .value{padding:9px 12px}
+body.presentation .active .value span{font-size:clamp(11px,1vw,16px);line-height:1.4}
+body.presentation .active .foda ul{padding-left:18px;line-height:1.5}
+/* Letra grande para exponer (se mide en pantalla completa y se ajusta sola si no cabe) */
+body.presentation .active .container{width:min(1500px,calc(100% - 90px))}
+body.presentation .active .section-head{margin-bottom:12px}
+body.presentation .active .section-head h2{font-size:clamp(28px,3.4vw,62px);margin:4px 0 6px}
+body.presentation .active .section-head p{font-size:clamp(15px,1.5vw,27px);line-height:1.4}
+body.presentation .active .kicker{font-size:clamp(11px,.95vw,16px)}
+body.presentation .active .container>h3{font-size:clamp(19px,1.9vw,32px);margin:10px 0 6px!important}
+body.presentation .active .card{padding:clamp(11px,1.1vw,20px)}
+body.presentation .active .card h3{font-size:clamp(18px,1.9vw,34px)}
+body.presentation .active .card p,body.presentation .active .p-card p{font-size:clamp(15px,1.5vw,27px);line-height:1.38}
+body.presentation .active .icon{width:46px;height:46px;font-size:21px}
+body.presentation .active .price{font-size:clamp(12px,1.1vw,19px)}
+body.presentation .active .note{font-size:clamp(12px,1.1vw,19px)}
+body.presentation .active .statement p{font-size:clamp(15px,1.5vw,27px);line-height:1.4}
+body.presentation .active .statement h3{font-size:clamp(13px,1.15vw,20px)}
+body.presentation .active .identity-banner strong{font-size:clamp(26px,3vw,52px)}
+body.presentation .active .rule{font-size:clamp(14px,1.4vw,25px);padding:6px 12px;line-height:1.3}
+body.presentation .active .step p{font-size:clamp(14px,1.4vw,25px);line-height:1.35}
+body.presentation .active .step h3{font-size:clamp(17px,1.8vw,31px)}
+body.presentation .active .step small,body.presentation .active .p-card small{font-size:clamp(11px,.95vw,16px)}
+body.presentation .active .p-card h3{font-size:clamp(21px,2.2vw,38px)}
+body.presentation .active .foda ul{font-size:clamp(15px,1.5vw,27px);line-height:1.38}
+body.presentation .active .value b{font-size:clamp(16px,1.6vw,28px)}
+body.presentation .active .value span{font-size:clamp(13px,1.3vw,23px);line-height:1.3}
+body.presentation .active .pills span{font-size:clamp(14px,1.4vw,25px)}
+body.presentation .active .team h3{font-size:clamp(18px,1.9vw,34px)}
+body.presentation .active .team p{font-size:clamp(14px,1.4vw,25px)}
+body.presentation .active .final-panel h2{font-size:clamp(28px,3.4vw,58px)}
+body.presentation .active .final-panel p{font-size:clamp(15px,1.5vw,27px)}
+body.presentation .active .hero-copy{font-size:clamp(16px,1.5vw,26px);max-width:none}
+body.presentation .active .hero-actions{display:none}
+/* Diapositivas con dos pantallas (data-p): Servicios, Identidad, Cultura y ética, Operación */
 body.presentation main>section[data-page="1"] [data-p]:not([data-p="1"]),
-body.presentation main>section[data-page="2"] [data-p]:not([data-p="2"]),
-body.presentation main>section[data-page="3"] [data-p]:not([data-p="3"]),
-body.presentation main>section[data-page="4"] [data-p]:not([data-p="4"]){display:none!important}
+body.presentation main>section[data-page="2"] [data-p]:not([data-p="2"]){display:none!important}
 .pg-kicker{display:none}
-body.presentation .showkick .pg-kicker{display:block;margin-bottom:28px}
-/* Letra más grande en la presentación (escala con el ancho de pantalla) */
-body.presentation .active .section-head{max-width:1000px}
-body.presentation .active .section-head h2{font-size:clamp(40px,5.6vw,86px)}
-body.presentation .active .section-head p{font-size:clamp(17px,1.7vw,27px);max-width:920px}
-body.presentation .active .kicker{font-size:clamp(11px,.95vw,15px)}
-body.presentation .active .container>h3{font-size:clamp(20px,2vw,32px)}
-body.presentation .active .card p,body.presentation .active .p-card p{font-size:clamp(15px,1.4vw,23px)}
-body.presentation .active .card h3{font-size:clamp(18px,1.75vw,29px)}
-body.presentation .active .icon{width:54px;height:54px;font-size:24px}
-body.presentation .active .statement p{font-size:clamp(16px,1.55vw,26px)}
-body.presentation .active .statement h3{font-size:clamp(13px,1.1vw,18px)}
-body.presentation .active .identity-banner strong{font-size:clamp(32px,4.8vw,68px)}
-body.presentation .active .rule{font-size:clamp(15px,1.35vw,22px)}
-body.presentation .active .step p{font-size:clamp(14px,1.3vw,21px)}
-body.presentation .active .step h3{font-size:clamp(17px,1.65vw,27px)}
-body.presentation .active .step small,body.presentation .active .p-card small{font-size:clamp(11px,.95vw,15px)}
-body.presentation .active .p-card h3{font-size:clamp(20px,2.1vw,34px)}
-body.presentation .active .foda ul{font-size:clamp(15px,1.4vw,23px)}
-body.presentation .active .value b{font-size:clamp(15px,1.45vw,23px)}
-body.presentation .active .value span{font-size:clamp(13px,1.2vw,19px)}
-body.presentation .active .pills span{font-size:clamp(13px,1.25vw,20px);padding:9px 16px}
-body.presentation .active .price{font-size:clamp(12px,1.05vw,17px)}
-body.presentation .active .note{font-size:clamp(12px,1.05vw,17px)}
-body.presentation .active .team h3{font-size:clamp(17px,1.7vw,27px)}
-body.presentation .active .team p{font-size:clamp(13px,1.25vw,20px)}
-body.presentation .active .final-panel p{font-size:clamp(15px,1.45vw,23px)}
+body.presentation .showkick .pg-kicker{display:block;margin-bottom:14px}
+body.presentation #identidad.active .pg-kicker{grid-column:1/-1}
 @keyframes slideIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 .presentation-controls{display:none;position:fixed;z-index:130;left:0;right:0;bottom:0;align-items:center;justify-content:space-between;gap:12px;padding:12px 22px;background:rgba(3,5,14,.96);border-top:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
@@ -254,8 +329,8 @@ body.gated{overflow:hidden}
 </section>
 
 <section class="section" id="empresa"><div class="container">
- <div data-p="1" class="section-head reveal"><div class="kicker">01 / SOBRE CYBERNEX</div><h2>La seguridad digital<br><span class="gradient-text">empieza con confianza.</span></h2><p>CYBERNEX Solutions es una empresa privada del sector terciario enfocada en servicios tecnológicos especializados. Ayudamos a personas y organizaciones a proteger su información, mantener sus equipos y utilizar la tecnología de forma segura y eficiente.</p></div>
- <div data-p="2" class="grid three">
+ <div class="section-head reveal"><div class="kicker">01 / SOBRE CYBERNEX</div><h2>La seguridad digital<br><span class="gradient-text">empieza con confianza.</span></h2><p>CYBERNEX Solutions es una empresa privada del sector terciario enfocada en servicios tecnológicos especializados. Ayudamos a personas y organizaciones a proteger su información, mantener sus equipos y utilizar la tecnología de forma segura y eficiente.</p></div>
+ <div class="grid three">
   <article class="card reveal"><div class="icon">⌘</div><h3>Giro empresarial</h3><p>Servicios tecnológicos, soporte técnico y soluciones de seguridad informática.</p></article>
   <article class="card reveal"><div class="icon">◎</div><h3>Mercado objetivo</h3><p>Personas, estudiantes, emprendedores y pequeñas y medianas empresas.</p></article>
   <article class="card reveal"><div class="icon">⌖</div><h3>Cobertura inicial</h3><p>Atención local y regional, complementada con asesoría y servicios digitales a distancia.</p></article>
@@ -265,25 +340,25 @@ body.gated{overflow:hidden}
 <section class="section alt" id="servicios"><div class="container">
  <div data-p="1" class="section-head reveal"><div class="kicker">02 / LO QUE HACEMOS</div><h2>Un ecosistema de<br><span class="gradient-text">soluciones inteligentes.</span></h2><p>Un portafolio pensado para prevenir riesgos, resolver incidencias y fortalecer la seguridad tecnológica de cada cliente.</p></div>
  <div class="grid three">
-  <article data-p="2" class="card reveal"><div class="icon">⌁</div><h3>Seguridad informática</h3><p>Revisión de configuraciones, identificación de riesgos y recomendaciones para reducir vulnerabilidades.</p><span class="price">Desde $800 MXN</span></article>
-  <article data-p="2" class="card reveal"><div class="icon">⚙</div><h3>Mantenimiento técnico</h3><p>Diagnóstico, limpieza y mantenimiento preventivo y correctivo de equipos de cómputo.</p><span class="price">Desde $450 MXN</span></article>
-  <article data-p="2" class="card reveal"><div class="icon">▣</div><h3>Protección de datos</h3><p>Configuración de respaldos, organización de archivos y orientación para recuperar información.</p><span class="price">Desde $500 MXN</span></article>
-  <article data-p="3" class="card reveal"><div class="icon">⌘</div><h3>Seguridad de redes</h3><p>Configuración segura de redes y dispositivos, contraseñas robustas y recomendaciones de acceso.</p><span class="price">Cotización según alcance</span></article>
-  <article data-p="3" class="card reveal"><div class="icon">▤</div><h3>Asesoría tecnológica</h3><p>Orientación para elegir, configurar y utilizar herramientas y soluciones digitales.</p><span class="price">Cotización según servicio</span></article>
-  <article data-p="3" class="card reveal"><div class="icon">◉</div><h3>Capacitación digital</h3><p>Talleres básicos sobre contraseñas, phishing, privacidad, respaldos y navegación segura.</p><span class="price">Cotización por grupo</span></article>
+  <article data-p="1" class="card reveal"><div class="icon">⌁</div><h3>Seguridad informática</h3><p>Revisión de configuraciones, identificación de riesgos y recomendaciones para reducir vulnerabilidades.</p><span class="price">Desde $800 MXN</span></article>
+  <article data-p="1" class="card reveal"><div class="icon">⚙</div><h3>Mantenimiento técnico</h3><p>Diagnóstico, limpieza y mantenimiento preventivo y correctivo de equipos de cómputo.</p><span class="price">Desde $450 MXN</span></article>
+  <article data-p="1" class="card reveal"><div class="icon">▣</div><h3>Protección de datos</h3><p>Configuración de respaldos, organización de archivos y orientación para recuperar información.</p><span class="price">Desde $500 MXN</span></article>
+  <article data-p="2" class="card reveal"><div class="icon">⌘</div><h3>Seguridad de redes</h3><p>Configuración segura de redes y dispositivos, contraseñas robustas y recomendaciones de acceso.</p><span class="price">Cotización según alcance</span></article>
+  <article data-p="2" class="card reveal"><div class="icon">▤</div><h3>Asesoría tecnológica</h3><p>Orientación para elegir, configurar y utilizar herramientas y soluciones digitales.</p><span class="price">Cotización según servicio</span></article>
+  <article data-p="2" class="card reveal"><div class="icon">◉</div><h3>Capacitación digital</h3><p>Talleres básicos sobre contraseñas, phishing, privacidad, respaldos y navegación segura.</p><span class="price">Cotización por grupo</span></article>
  </div>
- <p data-p="3" class="note">Precios ilustrativos para el proyecto académico. Las evaluaciones y pruebas de seguridad se realizan únicamente con autorización expresa y alcance acordado.</p>
+ <p data-p="2" class="note">Precios ilustrativos para el proyecto académico. Las evaluaciones y pruebas de seguridad se realizan únicamente con autorización expresa y alcance acordado.</p>
 </div></section>
 
 <section class="section" id="identidad"><div class="container">
  <div data-p="1" class="section-head reveal"><div class="kicker">03 / IDENTIDAD DE MARCA</div><h2>Una identidad con<br><span class="gradient-text">visión de futuro.</span></h2><p>Nuestra marca representa conexión, tecnología, prevención e innovación, con un compromiso firme hacia la confianza de nuestros clientes.</p></div>
- <div data-p="2" class="identity-banner reveal"><div class="kicker">NUESTRA PROMESA</div><strong>“Tu información,<br>nuestra prioridad”.</strong></div>
- <div data-p="3" class="grid two">
+ <div data-p="1" class="identity-banner reveal"><div class="kicker">NUESTRA PROMESA</div><strong>“Tu información,<br>nuestra prioridad”.</strong></div>
+ <div data-p="1" class="grid two">
   <article class="statement reveal"><h3>Misión</h3><p>Proporcionar soluciones tecnológicas y servicios de ciberseguridad que permitan a nuestros clientes proteger su información, optimizar sus recursos tecnológicos y desarrollar sus actividades digitales de manera segura y eficiente, mediante la innovación, la responsabilidad y la atención de calidad.</p></article>
   <article class="statement reveal"><h3>Visión</h3><p>Ser una empresa tecnológica reconocida a nivel regional por la calidad de sus servicios, su compromiso con la seguridad informática y su capacidad de innovación, convirtiéndonos en un aliado estratégico para personas y organizaciones.</p></article>
  </div>
- <h3 data-p="4" style="margin:34px 0 12px">Valores corporativos</h3>
- <div data-p="4" class="values">
+ <h3 data-p="2" style="margin:34px 0 12px">Valores corporativos</h3>
+ <div data-p="2" class="values">
   <div class="value"><b>Responsabilidad</b><span>Cumplir compromisos y cuidar los recursos.</span></div><div class="value"><b>Honestidad</b><span>Actuar con transparencia y verdad.</span></div><div class="value"><b>Confidencialidad</b><span>Resguardar la información privada.</span></div><div class="value"><b>Innovación</b><span>Buscar mejores soluciones tecnológicas.</span></div>
   <div class="value"><b>Respeto</b><span>Trato digno a clientes y colaboradores.</span></div><div class="value"><b>Compromiso</b><span>Trabajar para alcanzar objetivos.</span></div><div class="value"><b>Profesionalismo</b><span>Actuar con preparación y calidad.</span></div><div class="value"><b>Colaboración</b><span>Compartir conocimientos y trabajar en equipo.</span></div>
  </div>
@@ -291,16 +366,16 @@ body.gated{overflow:hidden}
 
 <section class="section alt" id="cultura"><div class="container">
  <div data-p="1" class="section-head reveal"><div class="kicker">04 / CÓDIGO DE CONDUCTA</div><h2>La confianza no se improvisa.<br><span class="gradient-text">Se demuestra.</span></h2><p>Nuestra cultura organizacional establece reglas y principios para actuar de manera ética, profesional y responsable.</p></div>
- <h3 data-p="2">Reglas internas</h3>
- <div data-p="2" class="rules">
+ <h3 data-p="1">Reglas internas</h3>
+ <div data-p="1" class="rules">
   <div class="rule">Respetar los horarios y jornadas laborales establecidos.</div><div class="rule">Mantener la confidencialidad de los datos de los clientes.</div>
   <div class="rule">Usar los recursos de la empresa de manera responsable.</div><div class="rule">Tratar con respeto a compañeros, proveedores y clientes.</div>
   <div class="rule">Cumplir las responsabilidades asignadas.</div><div class="rule">Actualizar los conocimientos técnicos continuamente.</div>
   <div class="rule">No acceder a dispositivos, redes o información sin autorización.</div><div class="rule">Reportar incidentes o posibles vulneraciones de seguridad.</div>
   <div class="rule">Mantener ordenadas las instalaciones y herramientas.</div><div class="rule">Evitar conflictos de interés que puedan afectar al cliente.</div>
  </div>
- <h3 data-p="3" style="margin:34px 0 14px">Principios éticos</h3>
- <div data-p="3" class="grid three">
+ <h3 data-p="2" style="margin:34px 0 14px">Principios éticos</h3>
+ <div data-p="2" class="grid three">
   <article class="card reveal"><h3>Privacidad</h3><p>Proteger los datos personales y empresariales tratados durante cada servicio.</p></article>
   <article class="card reveal"><h3>Integridad</h3><p>Actuar con honestidad y no alterar resultados, registros ni diagnósticos.</p></article>
   <article class="card reveal"><h3>Legalidad</h3><p>Respetar las leyes, licencias y normas aplicables a la actividad.</p></article>
@@ -312,34 +387,34 @@ body.gated{overflow:hidden}
 
 <section class="section" id="operacion"><div class="container">
  <div data-p="1" class="section-head reveal"><div class="kicker">05 / OPERACIÓN</div><h2>Una estructura que<br><span class="gradient-text">convierte ideas en resultados.</span></h2><p>La organización funcional distribuye responsabilidades y facilita la coordinación entre las áreas de trabajo.</p></div>
- <article data-p="2" class="card org-root reveal"><div class="kicker">LIDERAZGO</div><h3>Dirección general</h3><p>Planeación, coordinación y toma de decisiones.</p></article>
- <div data-p="2" class="grid three">
+ <article data-p="1" class="card org-root reveal"><div class="kicker">LIDERAZGO</div><h3>Dirección general</h3><p>Planeación, coordinación y toma de decisiones.</p></article>
+ <div data-p="1" class="grid three">
   <article class="card reveal"><div class="icon">⌘</div><h3>Área tecnológica</h3><p>Soporte técnico, mantenimiento y prestación de servicios de ciberseguridad.</p></article>
   <article class="card reveal"><div class="icon">↗</div><h3>Marketing y ventas</h3><p>Publicidad, promoción, captación de clientes y comercialización de servicios.</p></article>
   <article class="card reveal"><div class="icon">◎</div><h3>Atención al cliente</h3><p>Recepción de solicitudes, asesoría, comunicación y seguimiento.</p></article>
  </div>
- <p data-p="2" class="note">En la etapa inicial, una persona puede desempeñar más de una función para reducir costos operativos.</p>
- <h3 data-p="3" style="margin:38px 0 12px">Recorrido del cliente · Proceso de atención</h3>
- <div data-p="3" class="steps">
+ <p data-p="1" class="note">En la etapa inicial, una persona puede desempeñar más de una función para reducir costos operativos.</p>
+ <h3 data-p="2" style="margin:38px 0 12px">Recorrido del cliente · Proceso de atención</h3>
+ <div data-p="2" class="steps">
   <div class="step"><small>PASO 01</small><h3>Solicitud</h3><p>El cliente comunica su necesidad o problema.</p></div><div class="step"><small>PASO 02</small><h3>Diagnóstico</h3><p>Se analiza la situación y se identifica el alcance.</p></div><div class="step"><small>PASO 03</small><h3>Cotización</h3><p>Se informa costo, tiempo y condiciones.</p></div>
   <div class="step"><small>PASO 04</small><h3>Autorización</h3><p>El cliente aprueba el trabajo antes de comenzar.</p></div><div class="step"><small>PASO 05</small><h3>Ejecución</h3><p>Se realiza el trabajo de forma segura y documentada.</p></div><div class="step"><small>PASO 06</small><h3>Entrega</h3><p>Se explican resultados y se ofrece seguimiento.</p></div>
  </div>
 </div></section>
 
 <section class="section alt" id="estrategia"><div class="container">
- <div data-p="1" class="section-head reveal"><div class="kicker">06 / ESTRATEGIA DE MERCADO</div><h2>Una estrategia para<br><span class="gradient-text">llegar más lejos.</span></h2><p>Las cuatro P de la mercadotecnia ayudan a definir qué ofrecemos, cuánto cuesta, dónde se ofrece y cómo lo comunicamos.</p></div>
- <div data-p="2" class="four">
+ <div class="section-head reveal"><div class="kicker">06 / ESTRATEGIA DE MERCADO</div><h2>Una estrategia para<br><span class="gradient-text">llegar más lejos.</span></h2><p>Las cuatro P de la mercadotecnia ayudan a definir qué ofrecemos, cuánto cuesta, dónde se ofrece y cómo lo comunicamos.</p></div>
+ <div class="four">
   <article class="p-card reveal"><small>01 / PRODUCTO</small><h3>Servicios</h3><p>Ciberseguridad, mantenimiento, respaldo de información, asesoría y capacitación.</p></article>
   <article class="p-card reveal"><small>02 / PRECIO</small><h3>Transparencia</h3><p>Tarifas competitivas y cotizaciones según la complejidad del servicio.</p></article>
   <article class="p-card reveal"><small>03 / PLAZA</small><h3>Cobertura</h3><p>Atención presencial local y regional, además de asesorías a distancia.</p></article>
   <article class="p-card reveal"><small>04 / PROMOCIÓN</small><h3>Difusión</h3><p>Redes sociales, publicidad digital, recomendaciones, alianzas y promociones.</p></article>
  </div>
- <h3 data-p="2" style="margin:32px 0 10px">Público objetivo</h3><div data-p="2" class="pills"><span>Negocios y PYMES</span><span>Emprendedores</span><span>Estudiantes</span><span>Usuarios particulares</span></div>
+ <h3 style="margin:32px 0 10px">Público objetivo</h3><div class="pills"><span>Negocios y PYMES</span><span>Emprendedores</span><span>Estudiantes</span><span>Usuarios particulares</span></div>
 </div></section>
 
 <section class="section" id="foda"><div class="container">
- <div data-p="1" class="section-head reveal"><div class="kicker">07 / ANÁLISIS ESTRATÉGICO</div><h2>Entender el entorno.<br><span class="gradient-text">Anticipar el futuro.</span></h2><p>El análisis FODA identifica factores internos y externos que pueden influir en el desempeño de CYBERNEX Solutions.</p></div>
- <div data-p="2" class="foda">
+ <div class="section-head reveal"><div class="kicker">07 / ANÁLISIS ESTRATÉGICO</div><h2>Entender el entorno.<br><span class="gradient-text">Anticipar el futuro.</span></h2><p>El análisis FODA identifica factores internos y externos que pueden influir en el desempeño de CYBERNEX Solutions.</p></div>
+ <div class="foda">
   <article class="card reveal"><h3>Fortalezas</h3><ul><li>Variedad de servicios tecnológicos.</li><li>Atención personalizada.</li><li>Enfoque en seguridad y confianza.</li><li>Capacidad de adaptación.</li></ul></article>
   <article class="card reveal"><h3>Oportunidades</h3><ul><li>Mayor digitalización de negocios.</li><li>Demanda de protección de datos.</li><li>Capacitación en seguridad digital.</li><li>Alianzas con comercios locales.</li></ul></article>
   <article class="card reveal"><h3>Debilidades</h3><ul><li>Capital inicial limitado.</li><li>Marca nueva en el mercado.</li><li>Equipo de trabajo reducido al inicio.</li><li>Necesidad de capacitación continua.</li></ul></article>
@@ -348,8 +423,8 @@ body.gated{overflow:hidden}
 </div></section>
 
 <section class="section alt" id="responsabilidad"><div class="container">
- <div data-p="1" class="section-head reveal"><div class="kicker">08 / IMPACTO Y RESPONSABILIDAD</div><h2>Innovar también significa<br><span class="gradient-text">hacerlo responsablemente.</span></h2><p>La tecnología debe generar bienestar para las personas, la comunidad y el entorno.</p></div>
- <div data-p="2" class="grid three">
+ <div class="section-head reveal"><div class="kicker">08 / IMPACTO Y RESPONSABILIDAD</div><h2>Innovar también significa<br><span class="gradient-text">hacerlo responsablemente.</span></h2><p>La tecnología debe generar bienestar para las personas, la comunidad y el entorno.</p></div>
+ <div class="grid three">
   <article class="card reveal"><div class="icon">♻</div><h3>Responsabilidad ambiental</h3><p>Promover la reparación de equipos, el reciclaje electrónico y el consumo eficiente de energía.</p></article>
   <article class="card reveal"><div class="icon">▣</div><h3>Educación digital</h3><p>Compartir recomendaciones para reconocer fraudes, proteger cuentas y navegar con seguridad.</p></article>
   <article class="card reveal"><div class="icon">✦</div><h3>Acceso responsable</h3><p>Impulsar el uso ético e inclusivo de la tecnología y el respeto a la privacidad.</p></article>
@@ -357,9 +432,9 @@ body.gated{overflow:hidden}
 </div></section>
 
 <section class="section" id="equipo"><div class="container">
- <div data-p="1" class="final-panel reveal"><div><div class="kicker">CYBERNEX SOLUTIONS · DEFENSA DIGITAL</div><h2>Más allá de la amenaza.<br><span class="gradient-text">Construidos sobre confianza.</span></h2><p>Protegemos, conectamos e impulsamos tu mundo digital.</p></div><a class="btn primary" href="#integrantes">Conoce al equipo ↗</a></div>
- <div data-p="2" class="section-head reveal" id="integrantes" style="margin:55px 0 22px"><div class="kicker">09 / EL EQUIPO</div><h2>Detrás de la tecnología,<br><span class="gradient-text">está el talento.</span></h2><p>Integrantes responsables de la elaboración del proyecto académico.</p></div>
- <div data-p="2" class="grid two"><article class="card team reveal"><div class="team-no">01</div><div><h3>María Fernanda Merino Canela</h3><p>Matrícula: 26050004</p></div></article><article class="card team reveal"><div class="team-no">02</div><div><h3>Gael Vidal Rojas</h3><p>Matrícula: 26050009</p></div></article></div>
+ <div class="final-panel reveal"><div><div class="kicker">CYBERNEX SOLUTIONS · DEFENSA DIGITAL</div><h2>Más allá de la amenaza.<br><span class="gradient-text">Construidos sobre confianza.</span></h2><p>Protegemos, conectamos e impulsamos tu mundo digital.</p></div><a class="btn primary" href="#integrantes">Conoce al equipo ↗</a></div>
+ <div class="section-head reveal" id="integrantes" style="margin:55px 0 22px"><div class="kicker">09 / EL EQUIPO</div><h2>Detrás de la tecnología,<br><span class="gradient-text">está el talento.</span></h2><p>Integrantes responsables de la elaboración del proyecto académico.</p></div>
+ <div class="grid two"><article class="card team reveal"><div class="team-no">01</div><div><h3>María Fernanda Merino Canela</h3><p>Matrícula: 26050004</p></div></article><article class="card team reveal"><div class="team-no">02</div><div><h3>Gael Vidal Rojas</h3><p>Matrícula: 26050009</p></div></article></div>
 </div></section>
 </main>
 <footer><div class="container footer-row"><div><b>CYBERNEX SOLUTIONS</b><br>Tu información, nuestra prioridad.</div><div>Experiencia corporativa · CYBERNEX 6.1</div><div>© <span id="year"></span> CYBERNEX Solutions</div></div></footer>
@@ -370,7 +445,7 @@ body.gated{overflow:hidden}
   <div class="pres-nav">
     <button class="pres-btn" id="prev" type="button" aria-label="Sección anterior">← Atrás</button>
     <div class="pres-dots" id="dots" role="group" aria-label="Ir a una sección"></div>
-    <span class="pres-count" id="counter" aria-live="polite">01 / 24</span>
+    <span class="pres-count" id="counter" aria-live="polite">01 / 14</span>
     <button class="pres-btn main" id="next" type="button" aria-label="Sección siguiente">Siguiente →</button>
   </div>
   <div class="pres-tools">
@@ -534,7 +609,7 @@ function fit(){
   var cs=getComputedStyle(sec);
   var avail=sec.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-6;
   var need=c.offsetHeight;
-  if(avail>0&&need>avail)c.style.zoom=Math.max(.55,avail/need).toFixed(3);
+  if(avail>0&&need>avail)c.style.zoom=Math.max(.5,avail/need).toFixed(3);
 }
 function show(i){
   index=Math.max(0,Math.min(pages.length-1,i));
