@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#03040b">
+<meta name="description" content="Herramientas de ciberseguridad de CYBERNEX: Password Lab, URL Check, lista de verificación y concientización. Todo se procesa en tu navegador.">
+<title>NEX Security — CYBERNEX Solutions</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='10' y1='4' x2='54' y2='60' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232f7bff'/%3E%3Cstop offset='1' stop-color='%238f6cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='%2303040b'/%3E%3Cpath d='M32 6 51 13.500V29c0 13-8 22.500-19 28C21 51.500 13 42 13 29V13.500L32 6Z' fill='url(%23g)'/%3E%3Cpath d='M32 12 45 17.500V29c0 9.500-5.500 16.500-13 21-7.500-4.500-13-11.500-13-21V17.500L32 12Z' fill='%2303040b' fill-opacity='.35'/%3E%3Cpath d='m23.500 31 6.500 6.500L41.500 24' fill='none' stroke='%2372e6ff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/css/eco.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="../index.html" aria-label="CYBERNEX Solutions, ir a la presentación"><span class="brand-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gL" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#8f6cff"/></linearGradient></defs><path d="M32 6 51 13.5V29c0 13-8 22.5-19 28C21 51.5 13 42 13 29V13.5L32 6Z" fill="url(#gL)"/><path d="M32 12 45 17.5V29c0 9.5-5.5 16.5-13 21-7.5-4.5-13-11.5-13-21V17.5L32 12Z" fill="#03040b" fill-opacity=".35"/><path d="m23.5 31 6.5 6.5L41.5 24" fill="none" stroke="#72e6ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>CYBERNEX<small>S O L U T I O N S</small></span></a>
+    <nav class="navlinks" id="navLinks" aria-label="Navegación principal">
+      <a href="../index.html">Presentación</a><a href="index.html">Ecosistema</a><a href="security.html" aria-current="page">NEX Security</a>
+      <a class="nav-cta" href="../index.html">Ver la presentación ↗</a>
+    </nav>
+    <button class="menu" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
+  </div>
+</header>
+<main id="contenido">
+<section class="hero"><div class="container">
+  <div class="eyebrow">NEX SECURITY · CIBERSEGURIDAD</div>
+  <h1>Centro de <span class="gradient-text">herramientas de seguridad.</span></h1>
+  <p class="lead">Evalúa contraseñas, revisa enlaces sospechosos, comprueba tus buenas prácticas y aprende a reconocer el phishing. Todo se procesa en tu navegador: no enviamos tus datos a ningún servidor.</p>
+</div></section>
+
+<section style="padding-top:10px"><div class="container">
+  <div class="tabs" role="tablist" aria-label="Herramientas de NEX Security">
+    <button class="tab" role="tab" id="t-password" data-tab="password" aria-controls="p-password" aria-selected="true">Password Lab</button>
+    <button class="tab" role="tab" id="t-url" data-tab="url" aria-controls="p-url" aria-selected="false" tabindex="-1">URL Check</button>
+    <button class="tab" role="tab" id="t-checklist" data-tab="checklist" aria-controls="p-checklist" aria-selected="false" tabindex="-1">Security Checklist</button>
+    <button class="tab" role="tab" id="t-conciencia" data-tab="conciencia" aria-controls="p-conciencia" aria-selected="false" tabindex="-1">Security Awareness</button>
+  </div>
+
+  <!-- PASSWORD LAB -->
+  <div class="panel" role="tabpanel" id="p-password" aria-labelledby="t-password">
+    <div class="grid g2">
+      <div class="card">
+        <h2 style="font-size:26px;margin-top:0">Password Lab</h2>
+        <p>Analiza la fortaleza de una contraseña según su longitud, variedad de caracteres y patrones comunes.</p>
+        <p class="notice info" style="margin:14px 0"><b>Privacidad:</b> el análisis ocurre únicamente en este navegador. La contraseña no se envía, no se guarda y no se registra. Aun así, no escribas aquí contraseñas que uses actualmente: prueba con ejemplos parecidos.</p>
+        <label class="lbl" for="pw">Contraseña a evaluar</label>
+        <div class="field">
+          <input class="input" id="pw" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Escribe una contraseña de prueba">
+          <button class="btn small" id="pwToggle" type="button" aria-pressed="false">Mostrar</button>
+          <button class="btn small" id="pwClear" type="button">Borrar</button>
+        </div>
+        <div class="meter" id="pwMeter" role="progressbar" aria-label="Fortaleza de la contraseña" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
+        <div class="level" id="pwLevel" aria-live="polite">Escribe una contraseña para evaluarla</div>
+        <div class="stats" id="pwStats" hidden>
+          <div class="stat"><span>Longitud</span><b id="pwLen">—</b></div>
+          <div class="stat"><span>Entropía estimada</span><b id="pwEnt">—</b></div>
+          <div class="stat"><span>Tiempo de ataque*</span><b id="pwTime">—</b></div>
+        </div>
+        <ul class="checks" id="pwChecks"></ul>
+        <ul class="tips" id="pwIssues" style="color:#ffb3bd"></ul>
+        <p class="muted small" style="margin-top:14px">*Estimación orientativa para un ataque offline muy rápido (10 mil millones de intentos por segundo). Los números reales dependen de cómo el sitio guarde las contraseñas. Una puntuación alta no garantiza seguridad si la contraseña ya fue filtrada o se reutiliza.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Recomendaciones</h3>
+          <ul class="tips" id="pwTips"><li>Escribe una contraseña para ver recomendaciones personalizadas.</li></ul>
+        </div>
+        <div class="card">
+          <h3>Generador de contraseñas</h3>
+          <p>Crea una contraseña aleatoria con la criptografía de tu navegador.</p>
+          <label class="lbl" for="genLen" style="margin-top:14px">Longitud: <span id="genLenVal">18</span></label>
+          <input id="genLen" type="range" min="12" max="40" value="18">
+          <div class="field" style="margin-top:12px">
+            <input class="input" id="genOut" type="text" readonly aria-label="Contraseña generada" placeholder="Pulsa «Generar»" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="field" style="margin-top:10px">
+            <button class="btn primary small" id="genBtn" type="button">Generar</button>
+            <button class="btn small" id="genCopy" type="button">Copiar</button>
+            <button class="btn small" id="genUse" type="button">Evaluarla</button>
+          </div>
+          <p class="muted small" id="genMsg" aria-live="polite" style="margin-top:10px"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- URL CHECK -->
+  <div class="panel" role="tabpanel" id="p-url" aria-labelledby="t-url" hidden>
+    <div class="card">
+      <h2 style="font-size:26px;margin-top:0">URL Check</h2>
+      <p>Revisa cómo está escrita una dirección web y detecta indicadores frecuentes de phishing. <b>No abre el enlace.</b></p>
+      <form id="urlForm" novalidate style="margin-top:16px">
+        <label class="lbl" for="urlIn">Enlace a revisar</label>
+        <div class="field">
+          <input class="input" id="urlIn" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://ejemplo.com/ruta">
+          <button class="btn primary" type="submit">Analizar</button>
+          <button class="btn" id="urlClear" type="button">Limpiar</button>
+        </div>
+      </form>
+      <div class="examples"><span>Probar con un ejemplo ficticio:</span>
+        <button class="btn small" type="button" data-example="http://paypal-verifica.cuenta-segura.example/login">Suplantación</button>
+        <button class="btn small" type="button" data-example="http://192.168.0.1:8080/login">Dirección IP</button>
+        <button class="btn small" type="button" data-example="https://www.google.com/">Sitio conocido</button>
+      </div>
+      <div id="urlOut" aria-live="polite"></div>
+      <div class="notice" style="margin-top:20px"><b>Limitaciones importantes.</b> Este análisis solo revisa el formato y los patrones de la dirección. No visita el sitio, no consulta listas de reputación ni servicios externos, y no puede detectar sitios fraudulentos con una dirección de apariencia normal. «Sin indicadores» no significa «seguro». La comprobación con servicios de reputación (por ejemplo, Google Safe Browsing) requiere una clave de API y un servidor, y está documentada para una fase posterior.</div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="panel" role="tabpanel" id="p-checklist" aria-labelledby="t-checklist" hidden>
+    <div class="card">
+      <h2 style="font-size:26px;margin-top:0">Security Checklist</h2>
+      <p>Marca las buenas prácticas que ya aplicas. Tu avance se guarda solo en este navegador.</p>
+      <div id="checklistRoot" style="margin-top:18px"></div>
+    </div>
+  </div>
+
+  <!-- CONCIENTIZACIÓN -->
+  <div class="panel" role="tabpanel" id="p-conciencia" aria-labelledby="t-conciencia" hidden>
+    <div class="grid g2">
+      <div class="card">
+        <h2 style="font-size:26px;margin-top:0">Cuestionario</h2>
+        <p class="muted" style="margin-bottom:14px">Ocho preguntas rápidas sobre situaciones reales.</p>
+        <div id="quizRoot"></div>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Buenas prácticas de protección digital</h3><div id="practicesRoot"></div></div>
+      </div>
+    </div>
+    <h2 style="font-size:26px;margin:34px 0 6px">Ejemplos de phishing</h2>
+    <p class="muted" style="margin:0 0 14px">Mensajes ficticios para aprender a reconocer las señales de alerta. No pertenecen a ninguna empresa real.</p>
+    <div id="examplesRoot"></div>
+  </div>
+
+  <p class="muted small" style="margin-top:26px">Las herramientas de NEX Security son educativas y orientativas. No sustituyen una auditoría de seguridad profesional ni garantizan la detección de todas las amenazas.</p>
+</div></section>
+</main>
+<footer><div class="container footer-row"><div><b>CYBERNEX SOLUTIONS</b><br>Tu información, nuestra prioridad.</div><div>Ecosistema · CYBERNEX 10.0V</div><div>© <span id="year"></span> CYBERNEX Solutions</div></div></footer>
+<script src="../assets/js/eco.js"></script>
+<script src="../assets/js/password.js"></script>
+<script src="../assets/js/urlcheck.js"></script>
+<script src="../assets/js/checklist.js"></script>
+<script src="../assets/js/awareness.js"></script>
+<script src="../assets/js/security-ui.js"></script>
+</body>
+</html>
