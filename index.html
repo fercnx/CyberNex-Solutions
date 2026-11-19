@@ -3,773 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#03040b">
-<meta name="description" content="CYBERNEX Solutions: ciberseguridad, soporte tecnológico y protección digital. Protegemos tu mundo digital.">
-<title>CYBERNEX SOLUTIONS — Protegemos tu mundo digital</title>
-<!-- Favicon propio (escudo CYBERNEX) integrado como SVG, sin imágenes externas -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='10' y1='4' x2='54' y2='60' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232f7bff'/%3E%3Cstop offset='1' stop-color='%238f6cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='%2303040b'/%3E%3Cpath d='M32 6 51 13.500V29c0 13-8 22.500-19 28C21 51.500 13 42 13 29V13.500L32 6Z' fill='url(%23g)'/%3E%3Cpath d='M32 12 45 17.500V29c0 9.500-5.500 16.500-13 21-7.500-4.500-13-11.500-13-21V17.500L32 12Z' fill='%2303040b' fill-opacity='.35'/%3E%3Cpath d='m23.500 31 6.500 6.500L41.500 24' fill='none' stroke='%2372e6ff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<style>
-/* =====================================================
-   CYBERNEX 6.1 — Paleta: negro profundo, azul marino,
-   azul eléctrico (principal), morado (secundario), cian (detalles)
-   ===================================================== */
-:root{
-  --bg:#03040b;--bg2:#060a1b;--panel:rgba(9,15,40,.74);--panel2:#0b1230;
-  --line:rgba(112,150,255,.18);--text:#f1f4ff;--muted:#aab3d2;
-  --blue:#2f7bff;--blue2:#58a6ff;--cyan:#72e6ff;--purple:#9275ff;--violet:#6e56f5;
-  --glow:0 0 45px rgba(47,123,255,.22);--max:1180px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 14% 12%,rgba(110,86,245,.15),transparent 32%),radial-gradient(ellipse at 86% 40%,rgba(47,123,255,.2),transparent 34%),radial-gradient(ellipse at 40% 100%,rgba(12,38,110,.35),transparent 45%),linear-gradient(145deg,#03040b,#050918 50%,#03040b)}
-body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.15;background-image:linear-gradient(rgba(96,140,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(96,140,255,.08) 1px,transparent 1px);background-size:62px 62px;-webkit-mask-image:linear-gradient(to bottom,black,transparent 85%);mask-image:linear-gradient(to bottom,black,transparent 85%)}
-a{color:inherit;text-decoration:none}button{font:inherit}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-.container{width:min(var(--max),calc(100% - 48px));margin:auto}
-.progress-top{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--purple),var(--blue),var(--cyan));z-index:120;box-shadow:0 0 12px var(--blue)}
-
-/* ---------- Encabezado ---------- */
-.header{position:sticky;top:0;z-index:100;background:rgba(3,4,11,.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(112,150,255,.12)}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.13em;font-size:14px}
-.brand-icon{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(88,150,255,.45);border-radius:13px;background:linear-gradient(145deg,rgba(47,123,255,.22),rgba(146,117,255,.1));box-shadow:inset 0 0 20px rgba(47,123,255,.12),0 0 22px rgba(47,123,255,.16)}
-.brand-icon svg{width:28px;height:28px}
-.brand small{display:block;font-size:8px;letter-spacing:.35em;color:#8f9bc4;font-weight:650}
-.navlinks{display:flex;align-items:center;gap:22px;font-size:12px;color:#c3cbe6}
-.navlinks a{transition:color .2s}.navlinks a:hover{color:var(--cyan)}
-.nav-tools{display:flex;align-items:center;gap:10px}
-.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:12px 19px;font-size:12px;font-weight:800;cursor:pointer;transition:.25s;color:inherit}
-.nav-cta,.btn.primary{background:linear-gradient(100deg,#1f5fff,#3f86ff 55%,#7b66ff);border-color:transparent;color:#fff;box-shadow:0 8px 30px rgba(47,123,255,.28)}
-.btn.secondary{background:rgba(255,255,255,.04);color:var(--text)}
-.btn:hover,.nav-cta:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(114,230,255,.18);border-color:rgba(114,230,255,.55)}
-.menu{display:none;background:var(--panel2);border:1px solid var(--line);color:#fff;border-radius:10px;width:42px;height:40px;cursor:pointer}
-
-
-.eyebrow{display:flex;align-items:center;gap:10px;color:#a9c4ff;text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:900}
-.eyebrow:before{content:"";width:25px;height:1px;background:linear-gradient(90deg,var(--purple),var(--cyan));flex:none}
-
-/* ---------- Bienvenida ---------- */
-.hero{min-height:calc(100svh - 78px);display:grid;align-items:center;position:relative;padding:80px 0 75px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center;position:relative;z-index:2}
-.hero h1{font-size:clamp(40px,5.4vw,74px);letter-spacing:-.06em;line-height:1;margin:24px 0 22px;font-weight:850;text-wrap:balance}
-.hero h1 .gradient{display:block;background:linear-gradient(100deg,#a48dff 0%,#4f8dff 48%,#72e6ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-copy{max-width:570px;color:var(--muted);font-size:16px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:31px}
-.hero-stats{display:flex;gap:28px;margin-top:50px;padding-top:22px;border-top:1px solid var(--line)}
-.stat b{font-size:22px;display:block;letter-spacing:-.05em;color:var(--cyan)}.stat span{font-size:11px;color:#97a3cb;letter-spacing:.15em;text-transform:uppercase}
-.visual-stage{height:520px;position:relative;display:grid;place-items:center;perspective:1000px}
-.stage-glow{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(47,123,255,.3),rgba(110,86,245,.1) 44%,transparent 70%);filter:blur(10px);animation:pulse 5s ease-in-out infinite}
-.ring{position:absolute;border:1px solid rgba(88,150,255,.28);border-radius:50%;transform:rotateX(68deg)}
-.ring.one{width:470px;height:470px;animation:orbit 24s linear infinite}
-.ring.two{width:370px;height:370px;border-color:rgba(114,230,255,.32);transform:rotateX(72deg) rotateZ(52deg);animation:orbitBack 30s linear infinite}
-.ring.three{width:280px;height:280px;border-style:dashed;border-color:rgba(146,117,255,.4);opacity:.75;transform:rotateX(68deg) rotateZ(-24deg);animation:orbit 42s linear infinite}
-.ring:before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;top:10%;left:16%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}
-.holo-card{position:relative;width:290px;height:350px;transform:rotateY(-13deg) rotateX(5deg);border:1px solid rgba(88,150,255,.4);border-radius:28px;background:linear-gradient(145deg,rgba(14,24,66,.84),rgba(4,8,24,.9));box-shadow:0 35px 90px rgba(0,0,0,.55),inset 0 0 55px rgba(47,123,255,.12),0 0 50px rgba(47,123,255,.16);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
-.holo-card:before{content:"";position:absolute;inset:10px;border:1px solid rgba(114,230,255,.14);border-radius:20px;pointer-events:none}
-.shield{width:145px;filter:drop-shadow(0 0 22px rgba(47,123,255,.5));animation:float 5s ease-in-out infinite}
-.holo-caption{text-align:center}.holo-caption b{display:block;letter-spacing:.2em;font-size:12px}.holo-caption span{font-size:9px;color:#a2b0d8;letter-spacing:.15em}
-.scanline{position:absolute;left:12%;right:12%;height:1px;top:27%;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 12px var(--cyan);animation:scan 4s ease-in-out infinite}
-.float-chip{position:absolute;padding:12px 15px;border:1px solid rgba(88,150,255,.3);border-radius:13px;background:rgba(5,10,30,.92);box-shadow:0 15px 40px rgba(0,0,0,.35);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:9px;color:#a2b0d8;letter-spacing:.08em;animation:bob 6s ease-in-out infinite}
-.float-chip b{display:block;color:#eef2ff;font-size:11px;letter-spacing:0}
-.chip-a{top:64px;right:0}.chip-b{bottom:62px;left:0;animation-delay:-2s}.chip-c{bottom:128px;right:-6px;animation-delay:-4s}
-@keyframes orbit{to{transform:rotateX(68deg) rotateZ(360deg)}}
-@keyframes orbitBack{to{transform:rotateX(72deg) rotateZ(-308deg)}}
-@keyframes float{50%{transform:translateY(-11px)}}
-@keyframes bob{50%{transform:translateY(-7px)}}
-@keyframes pulse{50%{transform:scale(1.12);opacity:.72}}
-@keyframes scan{0%,100%{top:25%;opacity:0}50%{top:74%;opacity:1}}
-
-/* ---------- Secciones ---------- */
-.section{padding:104px 0;position:relative}
-.section.alt{background:linear-gradient(180deg,rgba(8,16,46,.5),rgba(4,8,22,.4));border-block:1px solid rgba(112,150,255,.1)}
-.section-head{max-width:760px;margin-bottom:42px}
-.kicker{font-size:11px;letter-spacing:.2em;color:#9fb8ff;font-weight:900;text-transform:uppercase}
-h2{font-size:clamp(34px,4.5vw,58px);line-height:1.04;letter-spacing:-.06em;margin:13px 0 17px}
-.section-head p{color:var(--muted);font-size:15px;max-width:680px}
-.gradient-text{background:linear-gradient(100deg,#a48dff,#4f8dff 55%,#72e6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.grid{display:grid;gap:16px}.three{grid-template-columns:repeat(3,1fr)}.two{grid-template-columns:repeat(2,1fr)}
-.card{position:relative;padding:25px;border:1px solid rgba(112,150,255,.16);border-radius:20px;background:linear-gradient(145deg,rgba(10,18,50,.86),rgba(5,9,26,.9));box-shadow:0 20px 60px rgba(0,0,0,.28);overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
-.card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(47,123,255,.08),transparent 45%,rgba(146,117,255,.05));pointer-events:none}
-.card:hover{transform:translateY(-6px);border-color:rgba(114,230,255,.4);box-shadow:0 24px 65px rgba(20,60,170,.28)}
-.card>*{position:relative}.card h3{font-size:18px;margin:14px 0 8px}.card p{font-size:13px;color:var(--muted);margin:0}
-.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(145deg,rgba(47,123,255,.24),rgba(146,117,255,.1));border:1px solid rgba(88,150,255,.3);color:#b6ceff;font-size:19px}
-.price{display:inline-block;margin-top:16px;padding:6px 11px;border-radius:999px;background:rgba(47,123,255,.14);border:1px solid rgba(88,150,255,.3);color:#b9d0ff;font-size:11px;font-weight:850}
-.note{font-size:12px;color:#8d99c2;margin-top:16px}
-.identity-banner{padding:32px;border:1px solid rgba(88,150,255,.3);border-radius:22px;background:radial-gradient(circle at 90% 0,rgba(114,230,255,.13),transparent 38%),linear-gradient(120deg,rgba(47,123,255,.17),rgba(8,14,40,.82));margin-bottom:18px}
-.identity-banner strong{display:block;font-size:clamp(28px,4vw,45px);letter-spacing:-.05em;line-height:1.12;margin-top:8px}
-.statement{padding:28px;border-radius:20px;background:rgba(7,13,36,.8);border:1px solid var(--line)}
-.statement h3{font-size:12px;color:#9fb8ff;text-transform:uppercase;letter-spacing:.18em;margin:0 0 12px}.statement p{font-size:14px;color:#ccd3ea;margin:0}
-.values{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:17px}
-.value{padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(8,15,42,.72)}.value b{display:block;font-size:13px}.value span{font-size:12px;color:var(--muted)}
-.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;counter-reset:r}
-.rule{counter-increment:r;display:flex;gap:13px;padding:14px 16px;border-radius:13px;background:rgba(8,15,42,.74);border:1px solid var(--line);font-size:13px;color:#ccd3ea}
-.rule:before{content:counter(r,decimal-leading-zero);color:var(--blue2);font-weight:900}
-.org-root{max-width:430px;margin:0 auto 18px;text-align:center;border-color:rgba(114,230,255,.34)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:20px}
-.step{padding:18px;border-left:2px solid var(--blue);border-radius:0 13px 13px 0;background:linear-gradient(90deg,rgba(47,123,255,.12),transparent)}
-.step small{font-size:11px;color:var(--cyan);font-weight:900;letter-spacing:.15em}.step h3{font-size:15px;margin:6px 0}.step p{font-size:13px;color:var(--muted);margin:0}
-.four{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.p-card{padding:21px;border:1px solid var(--line);border-radius:17px;background:rgba(8,15,42,.78)}
-.p-card small{color:#9fb8ff;font-size:11px;font-weight:900;letter-spacing:.16em}.p-card h3{font-size:19px;margin:9px 0}.p-card p{font-size:13px;color:var(--muted);margin:0}
-.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}.pills span{padding:8px 13px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:#ccd3ea;background:rgba(47,123,255,.06)}
-.foda{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.foda .card{border-top:2px solid var(--blue)}.foda .card:nth-child(2){border-top-color:var(--cyan)}.foda .card:nth-child(3){border-top-color:var(--purple)}.foda .card:nth-child(4){border-top-color:#6a8fd9}
-.foda ul{padding-left:18px;color:var(--muted);font-size:13px;margin:10px 0 0}
-.final-panel{padding:44px;border:1px solid rgba(88,150,255,.32);border-radius:25px;background:radial-gradient(ellipse at 90% 0,rgba(114,230,255,.16),transparent 40%),linear-gradient(120deg,rgba(47,123,255,.22),rgba(6,11,32,.92));display:flex;justify-content:space-between;align-items:center;gap:22px;overflow:hidden}
-.final-panel h2{margin:9px 0;font-size:clamp(30px,4.2vw,48px)}.final-panel p{color:var(--muted);margin:0;font-size:14px}
-.team{display:flex;align-items:center;gap:15px}.team-no{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:rgba(47,123,255,.16);border:1px solid rgba(88,150,255,.28);color:#b9d0ff;font-size:12px;font-weight:900;flex:none}.team h3{margin:0 0 3px;font-size:15px}.team p{margin:0;color:var(--muted);font-size:12px}
-footer{padding:28px 0;border-top:1px solid var(--line);font-size:12px;color:#8d99c2}
-.footer-row{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}.footer-row b{color:#e7ecff;letter-spacing:.13em}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
-
-/* ---------- Modo presentación ---------- */
-body.presentation{overflow:hidden}
-body.presentation .header,body.presentation footer,body.presentation .progress-top{display:none}
-body.presentation main>.hero,body.presentation main>.section{display:none;height:100svh;min-height:0;overflow-y:auto;padding:34px 0 88px}
-body.presentation main>.active{display:flex;flex-direction:column;animation:slideIn .45s ease both}
-body.presentation .reveal{opacity:1;transform:none;transition:none}
-body.presentation .active .container{width:min(1240px,calc(100% - 64px));margin:auto}
-/* Cada sección es UNA diapositiva compacta que cabe completa en pantalla (sin rueda del ratón) */
-body.presentation .active .container{width:min(1320px,calc(100% - 56px));margin:auto}
-body.presentation .active .grid,body.presentation .active .four,body.presentation .active .foda,body.presentation .active .steps,body.presentation .active .rules,body.presentation .active .values{gap:12px}
-body.presentation .active .section-head{max-width:none;margin-bottom:22px}
-body.presentation .active .section-head h2{font-size:clamp(30px,3.6vw,58px);margin:8px 0 10px}
-body.presentation .active .section-head h2 br{display:none}
-body.presentation .active .section-head h2 .gradient-text{margin-left:.25em}
-body.presentation .active .section-head p{font-size:clamp(14px,1.3vw,21px);line-height:1.5;max-width:1050px}
-body.presentation .active .kicker{font-size:clamp(10px,.85vw,14px)}
-body.presentation .active .container>h3{font-size:clamp(17px,1.6vw,26px);margin:18px 0 10px!important}
-body.presentation .active .card{padding:clamp(14px,1.5vw,24px)}
-body.presentation .active .card p,body.presentation .active .p-card p{font-size:clamp(13px,1.25vw,20px);line-height:1.5}
-body.presentation .active .card h3{font-size:clamp(16px,1.55vw,25px);margin:8px 0 6px}
-body.presentation .active .icon{width:42px;height:42px;font-size:19px}
-body.presentation .active .price{margin-top:10px;font-size:clamp(11px,.95vw,15px)}
-body.presentation .active .note{margin-top:10px;font-size:clamp(11px,.95vw,15px)}
-body.presentation .active .statement{padding:clamp(16px,1.7vw,26px)}
-body.presentation .active .statement p{font-size:clamp(14px,1.35vw,22px);line-height:1.5}
-body.presentation .active .statement h3{font-size:clamp(12px,1vw,16px)}
-body.presentation .active .identity-banner{padding:clamp(18px,2vw,30px)}
-body.presentation .active .identity-banner strong{font-size:clamp(24px,3vw,46px)}
-body.presentation .active .rule{font-size:clamp(12px,1.15vw,18px);padding:9px 14px;line-height:1.4}
-body.presentation .active .step{padding:12px 16px}
-body.presentation .active .step p{font-size:clamp(12px,1.15vw,18px);line-height:1.45}
-body.presentation .active .step h3{font-size:clamp(15px,1.5vw,24px);margin:4px 0}
-body.presentation .active .step small,body.presentation .active .p-card small{font-size:clamp(10px,.85vw,13px)}
-body.presentation .active .p-card{padding:clamp(14px,1.5vw,24px)}
-body.presentation .active .p-card h3{font-size:clamp(18px,1.9vw,30px);margin:6px 0}
-body.presentation .active .foda ul{font-size:clamp(13px,1.25vw,20px);margin-top:6px}
-body.presentation .active .value{padding:12px 14px}
-body.presentation .active .value b{font-size:clamp(14px,1.3vw,21px)}
-body.presentation .active .value span{font-size:clamp(12px,1.1vw,17px)}
-body.presentation .active .pills{margin-top:10px}
-body.presentation .active .pills span{font-size:clamp(12px,1.15vw,18px);padding:8px 15px}
-body.presentation .active .team h3{font-size:clamp(16px,1.6vw,26px)}
-body.presentation .active .team p{font-size:clamp(12px,1.15vw,18px)}
-body.presentation .active .final-panel{padding:clamp(20px,2.6vw,40px)}
-body.presentation .active .final-panel h2{font-size:clamp(28px,3.4vw,52px)}
-body.presentation .active .final-panel p{font-size:clamp(14px,1.35vw,22px)}
-body.presentation .active .org-root{margin-bottom:12px;max-width:520px}
-/* Identidad: encabezado y promesa en la misma fila para ahorrar altura */
-body.presentation #identidad.active .container{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;align-content:center}
-body.presentation #identidad.active .section-head{grid-column:1;margin-bottom:0;align-self:center}
-body.presentation #identidad.active .identity-banner{grid-column:2;margin-bottom:0}
-body.presentation #identidad.active .grid.two{grid-column:1/-1;margin-top:16px}
-body.presentation #identidad.active .container>h3,body.presentation #identidad.active .values{grid-column:1/-1}
-/* Compactación extra para que las diapositivas densas se vean con letra grande */
-body.presentation .active .section-head{margin-bottom:16px}
-body.presentation .active .section-head h2{font-size:clamp(26px,3vw,48px);margin:6px 0 8px}
-body.presentation .active .section-head p{font-size:clamp(13px,1.15vw,19px)}
-body.presentation .active .container>h3{margin:12px 0 8px!important}
-body.presentation .active .card:has(>.icon){display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
-body.presentation .active .card:has(>.icon)>.icon{grid-row:1/span 3}
-body.presentation .active .card:has(>.icon)>h3,body.presentation .active .card:has(>.icon)>p,body.presentation .active .card:has(>.icon)>.price{grid-column:2}
-body.presentation .active .card:has(>.icon)>h3{margin-top:0}
-body.presentation .active .card:has(>.icon)>.price{justify-self:start;margin-top:8px}
-body.presentation .active .card{padding:clamp(12px,1.25vw,20px)}
-body.presentation .active .card h3{margin:2px 0 4px}
-body.presentation .active .card p,body.presentation .active .p-card p{font-size:clamp(13px,1.2vw,19px);line-height:1.45}
-body.presentation .active .rule{padding:7px 12px;font-size:clamp(12px,1.1vw,17px)}
-body.presentation .active .step{padding:8px 14px}
-body.presentation .active .org-root{padding:12px 16px;margin-bottom:10px}
-body.presentation .active .org-root .kicker{margin-bottom:0}
-body.presentation .active .org-root h3{margin:0 0 2px}
-body.presentation .active .statement{padding:clamp(14px,1.4vw,22px)}
-body.presentation .active .statement p{font-size:clamp(13px,1.2vw,19px)}
-body.presentation .active .identity-banner{padding:clamp(14px,1.6vw,24px)}
-body.presentation .active .identity-banner strong{font-size:clamp(22px,2.6vw,40px);margin-top:4px}
-body.presentation .active .value{padding:9px 12px}
-body.presentation .active .value span{font-size:clamp(11px,1vw,16px);line-height:1.4}
-body.presentation .active .foda ul{padding-left:18px;line-height:1.5}
-/* Letra grande para exponer (se mide en pantalla completa y se ajusta sola si no cabe) */
-body.presentation .active .container{width:min(1500px,calc(100% - 90px))}
-body.presentation .active .section-head{margin-bottom:12px}
-body.presentation .active .section-head h2{font-size:clamp(28px,3.4vw,62px);margin:4px 0 6px}
-body.presentation .active .section-head p{font-size:clamp(15px,1.5vw,27px);line-height:1.4}
-body.presentation .active .kicker{font-size:clamp(11px,.95vw,16px)}
-body.presentation .active .container>h3{font-size:clamp(19px,1.9vw,32px);margin:10px 0 6px!important}
-body.presentation .active .card{padding:clamp(11px,1.1vw,20px)}
-body.presentation .active .card h3{font-size:clamp(18px,1.9vw,34px)}
-body.presentation .active .card p,body.presentation .active .p-card p{font-size:clamp(15px,1.5vw,27px);line-height:1.38}
-body.presentation .active .icon{width:46px;height:46px;font-size:21px}
-body.presentation .active .price{font-size:clamp(12px,1.1vw,19px)}
-body.presentation .active .note{font-size:clamp(12px,1.1vw,19px)}
-body.presentation .active .statement p{font-size:clamp(15px,1.5vw,27px);line-height:1.4}
-body.presentation .active .statement h3{font-size:clamp(13px,1.15vw,20px)}
-body.presentation .active .identity-banner strong{font-size:clamp(26px,3vw,52px)}
-body.presentation .active .rule{font-size:clamp(14px,1.4vw,25px);padding:6px 12px;line-height:1.3}
-body.presentation .active .step p{font-size:clamp(14px,1.4vw,25px);line-height:1.35}
-body.presentation .active .step h3{font-size:clamp(17px,1.8vw,31px)}
-body.presentation .active .step small,body.presentation .active .p-card small{font-size:clamp(11px,.95vw,16px)}
-body.presentation .active .p-card h3{font-size:clamp(21px,2.2vw,38px)}
-body.presentation .active .foda ul{font-size:clamp(15px,1.5vw,27px);line-height:1.38}
-body.presentation .active .value b{font-size:clamp(16px,1.6vw,28px)}
-body.presentation .active .value span{font-size:clamp(13px,1.3vw,23px);line-height:1.3}
-body.presentation .active .pills span{font-size:clamp(14px,1.4vw,25px)}
-body.presentation .active .team h3{font-size:clamp(18px,1.9vw,34px)}
-body.presentation .active .team p{font-size:clamp(14px,1.4vw,25px)}
-body.presentation .active .final-panel h2{font-size:clamp(28px,3.4vw,58px)}
-body.presentation .active .final-panel p{font-size:clamp(15px,1.5vw,27px)}
-body.presentation .active .hero-copy{font-size:clamp(16px,1.5vw,26px);max-width:none}
-body.presentation .active .hero-actions{display:none}
-/* Diapositivas con dos pantallas (data-p): Servicios, Identidad, Cultura y ética, Operación */
-body.presentation main>section[data-page="1"] [data-p]:not([data-p="1"]),
-body.presentation main>section[data-page="2"] [data-p]:not([data-p="2"]){display:none!important}
-.pg-kicker{display:none}
-body.presentation .showkick .pg-kicker{display:block;margin-bottom:14px}
-body.presentation #identidad.active .pg-kicker{grid-column:1/-1}
-@keyframes slideIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-
-.presentation-controls{display:none;position:fixed;z-index:130;left:0;right:0;bottom:0;align-items:center;justify-content:space-between;gap:12px;padding:12px 22px;background:rgba(3,5,14,.96);border-top:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-body.presentation .presentation-controls{display:flex}
-.pres-progress{position:absolute;top:-1px;left:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--blue),var(--cyan));width:0;transition:width .25s;box-shadow:0 0 10px var(--blue)}
-.pres-info{display:flex;flex-direction:column;min-width:170px;line-height:1.3}
-.pres-label{font-size:10px;letter-spacing:.14em;color:#8f9bc4;font-weight:800}
-.pres-section{font-size:14px;font-weight:800;color:var(--text)}
-.pres-nav,.pres-tools{display:flex;align-items:center;gap:10px}
-.pres-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 17px;border-radius:12px;border:1px solid var(--line);background:#0b1430;color:#fff;font-size:12px;font-weight:800;cursor:pointer;transition:.2s;white-space:nowrap}
-.pres-btn:hover:not(:disabled){border-color:rgba(114,230,255,.6);transform:translateY(-1px)}
-.pres-btn.main{background:linear-gradient(100deg,#1f5fff,#3f86ff 55%,#7b66ff);border-color:transparent;box-shadow:0 6px 22px rgba(47,123,255,.3)}
-.pres-btn:disabled{opacity:.35;cursor:not-allowed}
-.pres-btn svg{width:17px;height:17px}
-.pres-count{min-width:62px;text-align:center;color:#c3cbe6;font-size:12px;font-weight:700}
-.pres-dots{display:flex;gap:2px}
-.dot{min-width:20px;height:24px;display:grid;place-items:center;background:none;border:0;cursor:pointer;padding:0}
-.dot:before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(150,175,240,.35);transition:.25s}
-.dot:hover:before{background:var(--cyan)}
-.dot.on:before{width:22px;border-radius:6px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
-
-/* ---------- Red de puntos y líneas (fondo animado) ---------- */
-#net{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
-
-/* ---------- Pantalla de entrada (desbloquea el audio con un clic) ---------- */
-body.gated{overflow:hidden}
-.gate{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:24px;text-align:center;background:radial-gradient(ellipse at 50% 38%,rgba(47,123,255,.24),transparent 55%),radial-gradient(ellipse at 20% 90%,rgba(110,86,245,.16),transparent 45%),#03040b;transition:opacity .6s ease,visibility .6s}
-.gate.out{opacity:0;visibility:hidden;pointer-events:none}
-.gate-box{max-width:480px}
-.gate-logo{width:92px;height:92px;margin:0 auto 24px;display:block;filter:drop-shadow(0 0 26px rgba(47,123,255,.6));animation:float 5s ease-in-out infinite}
-.gate-title{font-size:20px;font-weight:900;letter-spacing:.22em}
-.gate-title small{display:block;font-size:9px;letter-spacing:.4em;color:#8f9bc4;font-weight:650;margin-top:4px}
-.gate-phrase{margin:22px 0 28px;font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:-.04em;line-height:1.15;background:linear-gradient(100deg,#a48dff,#4f8dff 55%,#72e6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.gate .btn{padding:15px 30px;font-size:14px}
-.gate-note{margin-top:16px;font-size:12px;color:#8d99c2}
-
-/* ---------- Adaptable ---------- */
-@media(max-width:1100px){.pres-info{display:none}}
-@media(max-width:900px){.navlinks{gap:12px;font-size:11px}.hero-grid{gap:15px}.visual-stage{transform:scale(.9)}.three{grid-template-columns:repeat(2,1fr)}.values{grid-template-columns:repeat(2,1fr)}.pres-dots{display:none}}
-@media(max-width:720px){.nav{height:70px}.menu{display:block}.navlinks{display:none;position:absolute;top:70px;left:0;right:0;padding:18px 24px;background:#050a1e;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;font-size:14px}.navlinks.open{display:flex}.navlinks a{padding:6px 0}.hero{padding:65px 0 45px}.hero-grid{grid-template-columns:1fr}.visual-stage{height:430px;transform:none}.section{padding:76px 0}.final-panel{display:block;padding:30px}.final-panel .btn{margin-top:20px}.chip-c{display:none}}
-@media(max-width:640px){
-  .presentation-controls{flex-wrap:wrap;gap:8px;padding:10px}
-  .pres-nav{order:1;width:100%}.pres-tools{order:2;width:100%}
-  .pres-nav .pres-btn{flex:1}.pres-tools .pres-btn{flex:1;padding:0 8px;font-size:11px}
-  .pres-count{flex:none;min-width:52px}
-}
-@media(max-width:540px){.container{width:calc(100% - 34px)}.hero h1{font-size:clamp(40px,11.5vw,60px)}.hero-stats{gap:17px}.stat b{font-size:18px}.visual-stage{height:360px;transform:scale(.88);margin:-15px -25px}.three,.two,.rules,.steps,.foda{grid-template-columns:1fr}.four{grid-template-columns:repeat(2,1fr)}.values{grid-template-columns:repeat(2,1fr)}.pres-tools .btn-txt{display:none}.pres-tools .pres-btn{min-width:0}body.presentation main>.hero,body.presentation main>.section{padding-bottom:160px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-</style>
-<noscript><style>.reveal{opacity:1;transform:none}.gate{display:none}body.gated{overflow:auto}</style></noscript>
+<title>CYBERNEX Solutions — Tu información, nuestra prioridad</title>
+<meta name="description" content="CYBERNEX Solutions: ecosistema tecnológico con cinco divisiones — NEX Development, Security, Academy, Labs y Connect. Ciberseguridad, soporte y educación digital.">
+<meta name="theme-color" content="#03060d">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://fercnx.github.io/CyberNex-Solutions/ecosistema/index.html">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CYBERNEX Solutions">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="CYBERNEX Solutions — Tu información, nuestra prioridad">
+<meta property="og:description" content="CYBERNEX Solutions: ecosistema tecnológico con cinco divisiones — NEX Development, Security, Academy, Labs y Connect. Ciberseguridad, soporte y educación digital.">
+<meta property="og:url" content="https://fercnx.github.io/CyberNex-Solutions/ecosistema/index.html">
+<meta property="og:image" content="https://fercnx.github.io/CyberNex-Solutions/assets/img/og-cybernex.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CYBERNEX Solutions — Tu información, nuestra prioridad">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CYBERNEX Solutions — Tu información, nuestra prioridad">
+<meta name="twitter:description" content="CYBERNEX Solutions: ecosistema tecnológico con cinco divisiones — NEX Development, Security, Academy, Labs y Connect. Ciberseguridad, soporte y educación digital.">
+<meta name="twitter:image" content="https://fercnx.github.io/CyberNex-Solutions/assets/img/og-cybernex.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "CYBERNEX Solutions", "url": "https://fercnx.github.io/CyberNex-Solutions/", "logo": "https://fercnx.github.io/CyberNex-Solutions/assets/img/favicon.svg", "slogan": "Tu información, nuestra prioridad", "description": "Proyecto empresarial académico de servicios tecnológicos: ciberseguridad, soporte técnico y protección de información."}</script>
 </head>
-<body class="gated">
-<div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Pantalla de entrada de CYBERNEX Solutions">
-  <div class="gate-box">
-    <svg class="gate-logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gGate" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#8f6cff"/></linearGradient></defs><path d="M32 6 51 13.5V29c0 13-8 22.5-19 28C21 51.5 13 42 13 29V13.5L32 6Z" fill="url(#gGate)"/><path d="M32 12 45 17.5V29c0 9.5-5.5 16.5-13 21-7.5-4.5-13-11.5-13-21V17.5L32 12Z" fill="#03040b" fill-opacity=".35"/><path d="m23.5 31 6.5 6.5L41.5 24" fill="none" stroke="#72e6ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <div class="gate-title">CYBERNEX<small>S O L U T I O N S</small></div>
-    <div class="gate-phrase">Protegemos tu mundo digital.</div>
-    <button class="btn primary" id="enterBtn" type="button">Entrar a CYBERNEX <span>↗</span></button>
-    <div class="gate-note">Esta experiencia incluye efectos de sonido.</div>
-  </div>
-</div>
-
-<canvas id="net" aria-hidden="true"></canvas>
-<div class="progress-top" id="topProgress"></div>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="header">
   <div class="container nav">
-    <a class="brand" href="#inicio" aria-label="CYBERNEX Solutions, ir al inicio"><span class="brand-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gLogo" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#8f6cff"/></linearGradient></defs><path d="M32 6 51 13.5V29c0 13-8 22.5-19 28C21 51.5 13 42 13 29V13.5L32 6Z" fill="url(#gLogo)"/><path d="M32 12 45 17.5V29c0 9.5-5.5 16.5-13 21-7.500-4.500-13-11.500-13-21V17.5L32 12Z" fill="#03040b" fill-opacity=".35"/><path d="m23.5 31 6.5 6.5L41.5 24" fill="none" stroke="#72e6ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>CYBERNEX<small>S O L U T I O N S</small></span></a>
-    <nav class="navlinks" id="navLinks" aria-label="Navegación principal"><a href="#empresa">Empresa</a><a href="#servicios">Servicios</a><a href="#identidad">Identidad</a><a href="#operacion">Operación</a><a href="#estrategia">Estrategia</a><a href="ecosistema/index.html">Ecosistema</a><a class="nav-cta" href="#equipo">Nuestro equipo ↗</a></nav>
-    <div class="nav-tools">
-      <button class="menu" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    </div>
+    <a class="brand" href="index.html" aria-label="CYBERNEX Solutions, inicio del ecosistema"><span class="brand-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gH" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#8f6cff"/></linearGradient></defs><path d="M32 6 51 13.5V29c0 13-8 22.5-19 28C21 51.5 13 42 13 29V13.5L32 6Z" fill="url(#gH)"/><path d="M32 12 45 17.5V29c0 9.5-5.5 16.5-13 21-7.5-4.5-13-11.5-13-21V17.5L32 12Z" fill="#03060d" fill-opacity=".35"/><path d="m23.5 31 6.5 6.5L41.5 24" fill="none" stroke="#72e6ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>CYBERNEX<small>S O L U T I O N S</small></span></a>
+    <nav class="navlinks" id="navLinks" aria-label="Navegación principal">
+      <a href="divisiones.html">Divisiones</a><a href="soluciones.html">Soluciones</a><a href="proyectos.html">Proyectos</a><a href="conocimiento.html">Conocimiento</a><a href="etica.html">Ética</a><a href="sobre.html">Sobre CYBERNEX</a><a class="nav-cta" href="contacto.html">Contacto</a>
+    </nav>
+    <button class="menu" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
   </div>
 </header>
-<main>
-<section class="hero" id="inicio">
- <div class="container hero-grid">
-  <div>
-   <div class="eyebrow">CIBERSEGURIDAD · TECNOLOGÍA · CONFIANZA</div>
-   <h1>Protegemos tu <span class="gradient">mundo digital.</span></h1>
-   <p class="hero-copy">Protegemos lo que impulsa tu mundo. Soluciones de ciberseguridad, soporte tecnológico y protección de información diseñadas para un entorno digital en constante evolución.</p>
-   <div class="hero-actions"><button class="btn primary" id="launch" type="button">Iniciar presentación <span>↗</span></button><a class="btn secondary" href="#servicios">Descubrir servicios ↓</a><a class="btn secondary" href="ecosistema/index.html">Explorar el ecosistema ↗</a></div>
-   <div class="hero-stats"><div class="stat"><b>01</b><span>Prevenir</span></div><div class="stat"><b>02</b><span>Proteger</span></div><div class="stat"><b>03</b><span>Responder</span></div></div>
+<main id="contenido">
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="lema">Tu información, nuestra prioridad</span>
+      <h1>Protegemos tu <span class="gradient-text">mundo digital.</span></h1>
+      <p class="lead">CYBERNEX Solutions es un proyecto empresarial de servicios tecnológicos: ciberseguridad, soporte técnico y protección de información, organizado como un ecosistema de cinco divisiones.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="soluciones.html">Explorar soluciones</a>
+        <a class="btn" href="sobre.html">Conocer CYBERNEX</a>
+      </div>
+      <p class="hero-foot"><b>Etapa inicial.</b> Hoy puedes usar las herramientas de NEX Security y leer los artículos. Lo demás está claramente marcado como en desarrollo.</p>
+    </div>
+    <div class="eco" role="group" aria-label="Las cinco divisiones del ecosistema CYBERNEX"><div class="eco-glow"></div><div class="eco-ring r1"></div><div class="eco-ring r2"></div><div class="eco-ring r3"></div><svg class="eco-lines" viewBox="0 0 100 100" aria-hidden="true"><line x1="50" y1="50" x2="50.0" y2="12.5" pathLength="1" style="--i:0"/><line x1="50" y1="50" x2="85.7" y2="38.4" pathLength="1" style="--i:1"/><line x1="50" y1="50" x2="72.0" y2="80.3" pathLength="1" style="--i:2"/><line x1="50" y1="50" x2="28.0" y2="80.3" pathLength="1" style="--i:3"/><line x1="50" y1="50" x2="14.3" y2="38.4" pathLength="1" style="--i:4"/></svg><div class="eco-core"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gC" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#8f6cff"/></linearGradient></defs><path d="M32 6 51 13.5V29c0 13-8 22.5-19 28C21 51.5 13 42 13 29V13.5L32 6Z" fill="url(#gC)"/><path d="M32 12 45 17.5V29c0 9.5-5.5 16.5-13 21-7.5-4.5-13-11.5-13-21V17.5L32 12Z" fill="#03060d" fill-opacity=".35"/><path d="m23.5 31 6.5 6.5L41.5 24" fill="none" stroke="#72e6ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><a class="eco-node d-dev" style="--x:50.0%;--y:12.5%;--i:0" href="divisiones.html#development" aria-label="NEX Development: Línea de trabajo"><span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><path d="m14 4-4 16"/></svg></span><span class="eco-lab">NEX Development<small>Línea de trabajo</small></span></a><a class="eco-node d-sec" style="--x:85.7%;--y:38.4%;--i:1" href="security.html" aria-label="NEX Security: Herramientas disponibles"><span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="eco-lab">NEX Security<small>Herramientas disponibles</small></span></a><a class="eco-node d-aca" style="--x:72.0%;--y:80.3%;--i:2" href="divisiones.html#academy" aria-label="NEX Academy: En desarrollo"><span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5-10-5Z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg></span><span class="eco-lab">NEX Academy<small>En desarrollo</small></span></a><a class="eco-node d-lab" style="--x:28.0%;--y:80.3%;--i:3" href="divisiones.html#labs" aria-label="NEX Labs: En desarrollo"><span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/></svg></span><span class="eco-lab">NEX Labs<small>En desarrollo</small></span></a><a class="eco-node d-con" style="--x:14.3%;--y:38.4%;--i:4" href="divisiones.html#connect" aria-label="NEX Connect: Concepto"><span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/></svg></span><span class="eco-lab">NEX Connect<small>Concepto</small></span></a></div>
   </div>
-  <div class="visual-stage" role="img" aria-label="Escudo digital holográfico de CYBERNEX">
-   <div class="stage-glow"></div><div class="ring one"></div><div class="ring two"></div><div class="ring three"></div>
-   <div class="holo-card"><div class="scanline"></div><svg class="shield" viewBox="0 0 180 200" fill="none" aria-hidden="true"><path d="M90 7 160 34v53c0 48-29 82-70 105C49 169 20 135 20 87V34L90 7Z" fill="url(#gHero)" fill-opacity=".2" stroke="url(#gHero)" stroke-width="2.6"/><path d="M90 28 140 47v39c0 35-19 61-50 80-31-19-50-45-50-80V47l50-19Z" stroke="#72e6ff" stroke-opacity=".8"/><path d="m62 98 19 19 39-43" stroke="#8aeaff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="gHero" x1="20" y1="7" x2="160" y2="190" gradientUnits="userSpaceOnUse"><stop stop-color="#2f7bff"/><stop offset="1" stop-color="#9275ff"/></linearGradient></defs></svg><div class="holo-caption"><b>DEFENSA CYBERNEX</b><span>ESCUDO DE CIBERSEGURIDAD</span></div></div>
-   <div class="float-chip chip-a"><b>MONITOREO DE AMENAZAS</b>PREVENIR · DETECTAR · RESPONDER</div><div class="float-chip chip-b"><b>PROTECCIÓN DE DATOS</b>PRIVACIDAD DESDE EL DISEÑO</div><div class="float-chip chip-c"><b>SOPORTE TÉCNICO</b>ASISTENCIA CONFIABLE</div>
-  </div>
- </div>
+  <a class="cue" href="#ecosistema" aria-label="Ir al ecosistema">Ecosistema <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
 </section>
 
-<section class="section" id="empresa"><div class="container">
- <div class="section-head reveal"><div class="kicker">01 / SOBRE CYBERNEX</div><h2>La seguridad digital<br><span class="gradient-text">empieza con confianza.</span></h2><p>CYBERNEX Solutions es una empresa privada del sector terciario enfocada en servicios tecnológicos especializados. Ayudamos a personas y organizaciones a proteger su información, mantener sus equipos y utilizar la tecnología de forma segura y eficiente.</p></div>
- <div class="grid three">
-  <article class="card reveal"><div class="icon">⌘</div><h3>Giro empresarial</h3><p>Servicios tecnológicos, soporte técnico y soluciones de seguridad informática.</p></article>
-  <article class="card reveal"><div class="icon">◎</div><h3>Mercado objetivo</h3><p>Personas, estudiantes, emprendedores y pequeñas y medianas empresas.</p></article>
-  <article class="card reveal"><div class="icon">⌖</div><h3>Cobertura inicial</h3><p>Atención local y regional, complementada con asesoría y servicios digitales a distancia.</p></article>
- </div>
-</div></section>
-
-<section class="section alt" id="servicios"><div class="container">
- <div data-p="1" class="section-head reveal"><div class="kicker">02 / LO QUE HACEMOS</div><h2>Un ecosistema de<br><span class="gradient-text">soluciones inteligentes.</span></h2><p>Un portafolio pensado para prevenir riesgos, resolver incidencias y fortalecer la seguridad tecnológica de cada cliente.</p></div>
- <div class="grid three">
-  <article data-p="1" class="card reveal"><div class="icon">⌁</div><h3>Seguridad informática</h3><p>Revisión de configuraciones, identificación de riesgos y recomendaciones para reducir vulnerabilidades.</p><span class="price">Desde $800 MXN</span></article>
-  <article data-p="1" class="card reveal"><div class="icon">⚙</div><h3>Mantenimiento técnico</h3><p>Diagnóstico, limpieza y mantenimiento preventivo y correctivo de equipos de cómputo.</p><span class="price">Desde $450 MXN</span></article>
-  <article data-p="1" class="card reveal"><div class="icon">▣</div><h3>Protección de datos</h3><p>Configuración de respaldos, organización de archivos y orientación para recuperar información.</p><span class="price">Desde $500 MXN</span></article>
-  <article data-p="2" class="card reveal"><div class="icon">⌘</div><h3>Seguridad de redes</h3><p>Configuración segura de redes y dispositivos, contraseñas robustas y recomendaciones de acceso.</p><span class="price">Cotización según alcance</span></article>
-  <article data-p="2" class="card reveal"><div class="icon">▤</div><h3>Asesoría tecnológica</h3><p>Orientación para elegir, configurar y utilizar herramientas y soluciones digitales.</p><span class="price">Cotización según servicio</span></article>
-  <article data-p="2" class="card reveal"><div class="icon">◉</div><h3>Capacitación digital</h3><p>Talleres básicos sobre contraseñas, phishing, privacidad, respaldos y navegación segura.</p><span class="price">Cotización por grupo</span></article>
- </div>
- <p data-p="2" class="note">Precios ilustrativos para el proyecto académico. Las evaluaciones y pruebas de seguridad se realizan únicamente con autorización expresa y alcance acordado.</p>
-</div></section>
-
-<section class="section" id="identidad"><div class="container">
- <div data-p="1" class="section-head reveal"><div class="kicker">03 / IDENTIDAD DE MARCA</div><h2>Una identidad con<br><span class="gradient-text">visión de futuro.</span></h2><p>Nuestra marca representa conexión, tecnología, prevención e innovación, con un compromiso firme hacia la confianza de nuestros clientes.</p></div>
- <div data-p="1" class="identity-banner reveal"><div class="kicker">NUESTRA PROMESA</div><strong>“Tu información,<br>nuestra prioridad”.</strong></div>
- <div data-p="1" class="grid two">
-  <article class="statement reveal"><h3>Misión</h3><p>Proporcionar soluciones tecnológicas y servicios de ciberseguridad que permitan a nuestros clientes proteger su información, optimizar sus recursos tecnológicos y desarrollar sus actividades digitales de manera segura y eficiente, mediante la innovación, la responsabilidad y la atención de calidad.</p></article>
-  <article class="statement reveal"><h3>Visión</h3><p>Ser una empresa tecnológica reconocida a nivel regional por la calidad de sus servicios, su compromiso con la seguridad informática y su capacidad de innovación, convirtiéndonos en un aliado estratégico para personas y organizaciones.</p></article>
- </div>
- <h3 data-p="2" style="margin:34px 0 12px">Valores corporativos</h3>
- <div data-p="2" class="values">
-  <div class="value"><b>Responsabilidad</b><span>Cumplir compromisos y cuidar los recursos.</span></div><div class="value"><b>Honestidad</b><span>Actuar con transparencia y verdad.</span></div><div class="value"><b>Confidencialidad</b><span>Resguardar la información privada.</span></div><div class="value"><b>Innovación</b><span>Buscar mejores soluciones tecnológicas.</span></div>
-  <div class="value"><b>Respeto</b><span>Trato digno a clientes y colaboradores.</span></div><div class="value"><b>Compromiso</b><span>Trabajar para alcanzar objetivos.</span></div><div class="value"><b>Profesionalismo</b><span>Actuar con preparación y calidad.</span></div><div class="value"><b>Colaboración</b><span>Compartir conocimientos y trabajar en equipo.</span></div>
- </div>
-</div></section>
-
-<section class="section alt" id="cultura"><div class="container">
- <div data-p="1" class="section-head reveal"><div class="kicker">04 / CÓDIGO DE CONDUCTA</div><h2>La confianza no se improvisa.<br><span class="gradient-text">Se demuestra.</span></h2><p>Nuestra cultura organizacional establece reglas y principios para actuar de manera ética, profesional y responsable.</p></div>
- <h3 data-p="1">Reglas internas</h3>
- <div data-p="1" class="rules">
-  <div class="rule">Respetar los horarios y jornadas laborales establecidos.</div><div class="rule">Mantener la confidencialidad de los datos de los clientes.</div>
-  <div class="rule">Usar los recursos de la empresa de manera responsable.</div><div class="rule">Tratar con respeto a compañeros, proveedores y clientes.</div>
-  <div class="rule">Cumplir las responsabilidades asignadas.</div><div class="rule">Actualizar los conocimientos técnicos continuamente.</div>
-  <div class="rule">No acceder a dispositivos, redes o información sin autorización.</div><div class="rule">Reportar incidentes o posibles vulneraciones de seguridad.</div>
-  <div class="rule">Mantener ordenadas las instalaciones y herramientas.</div><div class="rule">Evitar conflictos de interés que puedan afectar al cliente.</div>
- </div>
- <h3 data-p="2" style="margin:34px 0 14px">Principios éticos</h3>
- <div data-p="2" class="grid three">
-  <article class="card reveal"><h3>Privacidad</h3><p>Proteger los datos personales y empresariales tratados durante cada servicio.</p></article>
-  <article class="card reveal"><h3>Integridad</h3><p>Actuar con honestidad y no alterar resultados, registros ni diagnósticos.</p></article>
-  <article class="card reveal"><h3>Legalidad</h3><p>Respetar las leyes, licencias y normas aplicables a la actividad.</p></article>
-  <article class="card reveal"><h3>Consentimiento</h3><p>Obtener autorización antes de intervenir o probar cualquier sistema.</p></article>
-  <article class="card reveal"><h3>Transparencia</h3><p>Explicar costos, alcance, riesgos y limitaciones del servicio.</p></article>
-  <article class="card reveal"><h3>Uso responsable</h3><p>No utilizar herramientas tecnológicas para dañar, espiar o perjudicar a terceros.</p></article>
- </div>
-</div></section>
-
-<section class="section" id="operacion"><div class="container">
- <div data-p="1" class="section-head reveal"><div class="kicker">05 / OPERACIÓN</div><h2>Una estructura que<br><span class="gradient-text">convierte ideas en resultados.</span></h2><p>La organización funcional distribuye responsabilidades y facilita la coordinación entre las áreas de trabajo.</p></div>
- <article data-p="1" class="card org-root reveal"><div class="kicker">LIDERAZGO</div><h3>Dirección general</h3><p>Planeación, coordinación y toma de decisiones.</p></article>
- <div data-p="1" class="grid three">
-  <article class="card reveal"><div class="icon">⌘</div><h3>Área tecnológica</h3><p>Soporte técnico, mantenimiento y prestación de servicios de ciberseguridad.</p></article>
-  <article class="card reveal"><div class="icon">↗</div><h3>Marketing y ventas</h3><p>Publicidad, promoción, captación de clientes y comercialización de servicios.</p></article>
-  <article class="card reveal"><div class="icon">◎</div><h3>Atención al cliente</h3><p>Recepción de solicitudes, asesoría, comunicación y seguimiento.</p></article>
- </div>
- <p data-p="1" class="note">En la etapa inicial, una persona puede desempeñar más de una función para reducir costos operativos.</p>
- <h3 data-p="2" style="margin:38px 0 12px">Recorrido del cliente · Proceso de atención</h3>
- <div data-p="2" class="steps">
-  <div class="step"><small>PASO 01</small><h3>Solicitud</h3><p>El cliente comunica su necesidad o problema.</p></div><div class="step"><small>PASO 02</small><h3>Diagnóstico</h3><p>Se analiza la situación y se identifica el alcance.</p></div><div class="step"><small>PASO 03</small><h3>Cotización</h3><p>Se informa costo, tiempo y condiciones.</p></div>
-  <div class="step"><small>PASO 04</small><h3>Autorización</h3><p>El cliente aprueba el trabajo antes de comenzar.</p></div><div class="step"><small>PASO 05</small><h3>Ejecución</h3><p>Se realiza el trabajo de forma segura y documentada.</p></div><div class="step"><small>PASO 06</small><h3>Entrega</h3><p>Se explican resultados y se ofrece seguimiento.</p></div>
- </div>
-</div></section>
-
-<section class="section alt" id="estrategia"><div class="container">
- <div class="section-head reveal"><div class="kicker">06 / ESTRATEGIA DE MERCADO</div><h2>Una estrategia para<br><span class="gradient-text">llegar más lejos.</span></h2><p>Las cuatro P de la mercadotecnia ayudan a definir qué ofrecemos, cuánto cuesta, dónde se ofrece y cómo lo comunicamos.</p></div>
- <div class="four">
-  <article class="p-card reveal"><small>01 / PRODUCTO</small><h3>Servicios</h3><p>Ciberseguridad, mantenimiento, respaldo de información, asesoría y capacitación.</p></article>
-  <article class="p-card reveal"><small>02 / PRECIO</small><h3>Transparencia</h3><p>Tarifas competitivas y cotizaciones según la complejidad del servicio.</p></article>
-  <article class="p-card reveal"><small>03 / PLAZA</small><h3>Cobertura</h3><p>Atención presencial local y regional, además de asesorías a distancia.</p></article>
-  <article class="p-card reveal"><small>04 / PROMOCIÓN</small><h3>Difusión</h3><p>Redes sociales, publicidad digital, recomendaciones, alianzas y promociones.</p></article>
- </div>
- <h3 style="margin:32px 0 10px">Público objetivo</h3><div class="pills"><span>Negocios y PYMES</span><span>Emprendedores</span><span>Estudiantes</span><span>Usuarios particulares</span></div>
-</div></section>
-
-<section class="section" id="foda"><div class="container">
- <div class="section-head reveal"><div class="kicker">07 / ANÁLISIS ESTRATÉGICO</div><h2>Entender el entorno.<br><span class="gradient-text">Anticipar el futuro.</span></h2><p>El análisis FODA identifica factores internos y externos que pueden influir en el desempeño de CYBERNEX Solutions.</p></div>
- <div class="foda">
-  <article class="card reveal"><h3>Fortalezas</h3><ul><li>Variedad de servicios tecnológicos.</li><li>Atención personalizada.</li><li>Enfoque en seguridad y confianza.</li><li>Capacidad de adaptación.</li></ul></article>
-  <article class="card reveal"><h3>Oportunidades</h3><ul><li>Mayor digitalización de negocios.</li><li>Demanda de protección de datos.</li><li>Capacitación en seguridad digital.</li><li>Alianzas con comercios locales.</li></ul></article>
-  <article class="card reveal"><h3>Debilidades</h3><ul><li>Capital inicial limitado.</li><li>Marca nueva en el mercado.</li><li>Equipo de trabajo reducido al inicio.</li><li>Necesidad de capacitación continua.</li></ul></article>
-  <article class="card reveal"><h3>Amenazas</h3><ul><li>Competidores establecidos.</li><li>Cambios tecnológicos constantes.</li><li>Variación en costos de equipos y licencias.</li><li>Riesgos de incidentes de seguridad.</li></ul></article>
- </div>
-</div></section>
-
-<section class="section alt" id="responsabilidad"><div class="container">
- <div class="section-head reveal"><div class="kicker">08 / IMPACTO Y RESPONSABILIDAD</div><h2>Innovar también significa<br><span class="gradient-text">hacerlo responsablemente.</span></h2><p>La tecnología debe generar bienestar para las personas, la comunidad y el entorno.</p></div>
- <div class="grid three">
-  <article class="card reveal"><div class="icon">♻</div><h3>Responsabilidad ambiental</h3><p>Promover la reparación de equipos, el reciclaje electrónico y el consumo eficiente de energía.</p></article>
-  <article class="card reveal"><div class="icon">▣</div><h3>Educación digital</h3><p>Compartir recomendaciones para reconocer fraudes, proteger cuentas y navegar con seguridad.</p></article>
-  <article class="card reveal"><div class="icon">✦</div><h3>Acceso responsable</h3><p>Impulsar el uso ético e inclusivo de la tecnología y el respeto a la privacidad.</p></article>
- </div>
-</div></section>
-
-<section class="section" id="equipo"><div class="container">
- <div class="final-panel reveal"><div><div class="kicker">CYBERNEX SOLUTIONS · DEFENSA DIGITAL</div><h2>Más allá de la amenaza.<br><span class="gradient-text">Construidos sobre confianza.</span></h2><p>Protegemos, conectamos e impulsamos tu mundo digital.</p></div><a class="btn primary" href="#integrantes">Conoce al equipo ↗</a></div>
- <div class="section-head reveal" id="integrantes" style="margin:55px 0 22px"><div class="kicker">09 / EL EQUIPO</div><h2>Detrás de la tecnología,<br><span class="gradient-text">está el talento.</span></h2><p>Integrantes responsables de la elaboración del proyecto académico.</p></div>
- <div class="grid two"><article class="card team reveal"><div class="team-no">01</div><div><h3>María Fernanda Merino Canela</h3><p>Matrícula: 26050004</p></div></article><article class="card team reveal"><div class="team-no">02</div><div><h3>Gael Vidal Rojas</h3><p>Matrícula: 26050009</p></div></article></div>
-</div></section>
-</main>
-<footer><div class="container footer-row"><div><b>CYBERNEX SOLUTIONS</b><br>Tu información, nuestra prioridad.</div><div>Experiencia corporativa · CYBERNEX 6.1</div><div>© <span id="year"></span> CYBERNEX Solutions</div></div></footer>
-
-<div class="presentation-controls" id="controls" role="toolbar" aria-label="Controles de la presentación">
-  <div class="pres-progress" id="slideProgress"></div>
-  <div class="pres-info"><span class="pres-label">MODO PRESENTACIÓN</span><span class="pres-section" id="slideName">Inicio</span></div>
-  <div class="pres-nav">
-    <button class="pres-btn" id="prev" type="button" aria-label="Sección anterior">← Atrás</button>
-    <div class="pres-dots" id="dots" role="group" aria-label="Ir a una sección"></div>
-    <span class="pres-count" id="counter" aria-live="polite">01 / 14</span>
-    <button class="pres-btn main" id="next" type="button" aria-label="Sección siguiente">Siguiente →</button>
+<section class="section" id="ecosistema">
+  <div class="container">
+    <div class="section-head"><h2>Cinco divisiones, una misma prioridad</h2>
+    <p>Cada división tiene su propio color y su propia forma, y todas comparten un mismo compromiso con la información de las personas. El estado de cada una se indica con claridad.</p></div>
+    <div class="div-grid"><a class="div-card d-dev big" href="divisiones.html#development">
+  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><path d="m14 4-4 16"/></svg></span>
+  <span class="state linea">Línea de trabajo</span>
+  <h3>NEX Development</h3>
+  <p>Páginas web, sistemas administrativos, aplicaciones y diseño de interfaces.</p>
+  <span class="more">Conocer la división</span>
+</a><a class="div-card d-sec big" href="security.html">
+  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+  <span class="state disponible">Herramientas disponibles</span>
+  <h3>NEX Security</h3>
+  <p>Protección de información, evaluación de riesgos y buenas prácticas, con herramientas educativas que ya funcionan.</p>
+  <span class="more">Abrir herramientas</span>
+</a><a class="div-card d-aca" href="divisiones.html#academy">
+  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5-10-5Z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg></span>
+  <span class="state desarrollo">En desarrollo</span>
+  <h3>NEX Academy</h3>
+  <p>Una iniciativa en desarrollo orientada a la capacitación tecnológica.</p>
+  <span class="more">Conocer la división</span>
+</a><a class="div-card d-lab" href="divisiones.html#labs">
+  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7.5 15h9"/></svg></span>
+  <span class="state desarrollo">En desarrollo</span>
+  <h3>NEX Labs</h3>
+  <p>Un área en desarrollo para experimentar con nuevas tecnologías.</p>
+  <span class="more">Conocer la división</span>
+</a><a class="div-card d-con" href="divisiones.html#connect">
+  <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/></svg></span>
+  <span class="state concepto">Concepto</span>
+  <h3>NEX Connect</h3>
+  <p>Una visión para dar seguimiento a solicitudes y mantener la comunicación con cada cliente.</p>
+  <span class="more">Conocer la división</span>
+</a></div>
   </div>
-  <div class="pres-tools">
-    <button class="pres-btn" id="fsBtn" type="button" aria-label="Pantalla completa" title="Entrar o salir de pantalla completa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span class="btn-txt" id="fsLbl">Pantalla completa</span></button>
-    <button class="pres-btn" id="exit" type="button" aria-label="Salir de la presentación">Salir ✕</button>
-  </div>
+</section>
+
+<section class="section band">
+  <div class="container">
+    <div class="section-head"><h2>Disponible hoy</h2><p>Lo que ya funciona en este sitio, sin registro y sin enviar tus datos.</p></div>
+    <div class="help-grid">
+  <a class="help" href="security.html"><b>Herramientas de NEX Security</b><span>Password Lab, URL Check, lista de verificación y cuestionario. Funcionan en tu navegador, sin enviar datos.</span></a>
+  <a class="help" href="conocimiento.html"><b>Artículos educativos</b><span>Guías breves sobre phishing, contraseñas, respaldos, privacidad y uso responsable de la IA.</span></a>
+  <a class="help" href="../index.html"><b>Presentación corporativa</b><span>La presentación de 14 diapositivas con la que se expone el proyecto.</span></a>
 </div>
+  </div>
+</section>
 
-<script>
-(function(){
-'use strict';
-var $=function(id){return document.getElementById(id)};
-var body=document.body;
-$('year').textContent=new Date().getFullYear();
+<section class="section">
+  <div class="container ethics-band">
+    <div>
+      <h2>Tecnología con responsabilidad.</h2>
+      <p class="statement-xl" style="margin-top:20px">Los servicios de seguridad se realizan con autorización, alcance definido y respeto por la información de cada cliente.</p>
+      <p class="lead">No es un adorno: es la regla con la que decidimos qué hacemos y qué no.</p>
+      <div class="hero-actions"><a class="btn primary" href="etica.html">Leer nuestros principios</a></div>
+    </div>
+    <ul class="principles"><li><b>Privacidad</b><span>Proteger los datos personales y empresariales tratados durante cada servicio.</span></li><li><b>Confidencialidad</b><span>Resguardar la información privada de clientes y colaboradores.</span></li><li><b>Honestidad</b><span>Actuar con transparencia y verdad.</span></li><li><b>Integridad</b><span>Actuar con honestidad y no alterar resultados, registros ni diagnósticos.</span></li><li><b>Legalidad</b><span>Respetar las leyes, licencias y normas aplicables a la actividad.</span></li><li><b>Consentimiento</b><span>Obtener autorización antes de intervenir o probar cualquier sistema.</span></li><li><b>Transparencia</b><span>Explicar costos, alcance, riesgos y limitaciones del servicio.</span></li><li><b>Uso responsable</b><span>No utilizar herramientas tecnológicas para dañar, espiar o perjudicar a terceros.</span></li><li><b>Protección de datos</b><span>Resguardar la información de los clientes con medidas adecuadas y recomendar respaldos y buenas prácticas.</span></li><li><b>Respeto a los usuarios</b><span>Trato digno a clientes y colaboradores.</span></li></ul>
+  </div>
+</section>
 
-/* ---------- Menú móvil ---------- */
-var nav=$('navLinks'),menuBtn=$('menuBtn');
-function closeMenu(){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';menuBtn.setAttribute('aria-label','Abrir menú')}
-menuBtn.addEventListener('click',function(){var open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';menuBtn.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú')});
-[].forEach.call(nav.querySelectorAll('a'),function(a){a.addEventListener('click',closeMenu)});
-
-/* ---------- Progreso de scroll ---------- */
-var ticking=false,topBar=$('topProgress');
-function updateScroll(){var max=document.documentElement.scrollHeight-innerHeight;topBar.style.width=(max>0?scrollY/max*100:0)+'%';ticking=false}
-addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(updateScroll)}},{passive:true});
-
-/* ---------- Aparición al desplazarse ---------- */
-var reveals=document.querySelectorAll('.reveal');
-if('IntersectionObserver' in window){
-  var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.12});
-  [].forEach.call(reveals,function(el){observer.observe(el)});
-}else{[].forEach.call(reveals,function(el){el.classList.add('visible')})}
-
-/* =====================================================
-   SONIDO — solo efectos generados con Web Audio API.
-   Siempre activo; el audio se desbloquea con la primera interacción del usuario.
-   ===================================================== */
-var Sound={
-  ctx:null,master:null,enabled:true,
-  supported:function(){return !!(window.AudioContext||window.webkitAudioContext)},
-  init:function(){
-    if(this.ctx)return true;
-    var AC=window.AudioContext||window.webkitAudioContext;
-    if(!AC)return false;
-    try{
-      this.ctx=new AC();
-      var comp=this.ctx.createDynamicsCompressor();
-      this.master=this.ctx.createGain();
-      this.master.gain.value=2.4;               /* volumen general (el compresor evita distorsión) */
-      this.master.connect(comp);comp.connect(this.ctx.destination);
-    }catch(e){this.ctx=null;return false}
-    return true;
-  },
-  tone:function(o){
-    var c=this.ctx,t0=c.currentTime+(o.at||0),dur=o.dur||.2,vol=o.vol||.05;
-    var osc=c.createOscillator(),g=c.createGain();
-    osc.type=o.type||'sine';
-    osc.frequency.setValueAtTime(o.f0,t0);
-    if(o.f1)osc.frequency.exponentialRampToValueAtTime(o.f1,t0+dur);
-    g.gain.setValueAtTime(.0001,t0);
-    g.gain.exponentialRampToValueAtTime(vol,t0+(o.attack||.015));
-    g.gain.exponentialRampToValueAtTime(.0001,t0+dur);
-    osc.connect(g);
-    if(o.lp){
-      var f=c.createBiquadFilter();f.type='lowpass';
-      f.frequency.setValueAtTime(o.lp[0],t0);
-      f.frequency.exponentialRampToValueAtTime(o.lp[1],t0+dur);
-      g.connect(f);f.connect(this.master);
-    }else g.connect(this.master);
-    osc.start(t0);osc.stop(t0+dur+.05);
-  },
-  fx:{
-    /* Bienvenida minimalista: pulso grave que "enciende", deslizamiento limpio
-       hacia arriba y dos destellos cristalinos con brillo suave (~1.6 s) */
-    welcome:function(S){
-      S.tone({type:'sine',f0:55,f1:110,dur:.8,vol:.2,attack:.25});                 /* encendido grave */
-      S.tone({type:'sine',f0:260,f1:1900,dur:.6,vol:.07,attack:.35});              /* deslizamiento ascendente */
-      S.tone({type:'sine',f0:1396.9,dur:.7,vol:.09,at:.55,attack:.01});            /* destello 1 */
-      S.tone({type:'sine',f0:1402,dur:.7,vol:.05,at:.55,attack:.01});              /* brillo (desafinado leve) */
-      S.tone({type:'sine',f0:2093,dur:.9,vol:.07,at:.7,attack:.01});               /* destello 2 */
-      S.tone({type:'sine',f0:2099,dur:.9,vol:.04,at:.7,attack:.01});
-      S.tone({type:'sine',f0:1046.5,dur:1.1,vol:.04,at:.85,attack:.08});           /* cola suave */
-    },
-    start:function(S){
-      S.tone({type:'sawtooth',f0:160,f1:1000,dur:.6,vol:.04,attack:.2,lp:[300,3000]});
-      S.tone({type:'triangle',f0:783.99,dur:.4,vol:.06,at:.35});
-      S.tone({type:'triangle',f0:1174.66,dur:.5,vol:.06,at:.46});
-    },
-    next:function(S){S.tone({type:'sine',f0:660,f1:990,dur:.1,vol:.05});S.tone({type:'triangle',f0:1320,dur:.07,vol:.025,at:.04})},
-    prev:function(S){S.tone({type:'sine',f0:990,f1:660,dur:.1,vol:.05});S.tone({type:'triangle',f0:880,dur:.07,vol:.025,at:.04})},
-    exit:function(S){S.tone({type:'sine',f0:760,f1:190,dur:.5,vol:.06});S.tone({type:'triangle',f0:523.25,dur:.35,vol:.04,at:.05})}
-  },
-  play:function(name){
-    if(!this.enabled||!this.init())return;
-    var self=this,run=function(){try{self.fx[name](self)}catch(e){}};
-    if(this.ctx.state==='suspended'){this.ctx.resume().then(run).catch(function(){})}else run();
-  }
-};
-
-/* El sonido está siempre activo. Chrome exige una interacción del usuario antes
-   de reproducir audio, por eso la página abre con una pantalla de entrada:
-   al pulsar "Entrar a CYBERNEX" (o Enter / Espacio) se desbloquea el audio y
-   suena el efecto de bienvenida. */
-(function(){
-  var gate=$('gate'),btn=$('enterBtn');
-  if(!gate||!btn){body.classList.remove('gated');return}
-  function enter(){
-    if(gate.classList.contains('out'))return;
-    gate.classList.add('out');body.classList.remove('gated');
-    Sound.play('welcome');
-    setTimeout(function(){if(gate.parentNode)gate.parentNode.removeChild(gate)},700);
-  }
-  btn.addEventListener('click',enter);
-  document.addEventListener('keydown',function(e){
-    if(gate.classList.contains('out'))return;
-    if(e.key==='Enter'||e.key===' '){e.preventDefault();enter()}
-  });
-  try{btn.focus({preventScroll:true})}catch(e){}
-})();
-
-/* =====================================================
-   MODO PRESENTACIÓN
-   Cada sección se reparte en "páginas" (atributos data-p del HTML) para que
-   todo quepa en una sola pantalla, con letra grande y sin usar la rueda del
-   ratón. Si aun así una página fuera más alta que la pantalla, se ajusta
-   automáticamente su tamaño (fit).
-   ===================================================== */
-var sections=[].slice.call(document.querySelectorAll('main>section'));
-var names=['Inicio','Empresa','Servicios','Identidad','Cultura y ética','Operación','Estrategia','FODA','Responsabilidad','Equipo'];
-var pages=[];                       /* {s: sección, p: página, n: total de páginas de esa sección} */
-sections.forEach(function(sec,si){
-  var max=1;
-  [].forEach.call(sec.querySelectorAll('[data-p]'),function(el){max=Math.max(max,parseInt(el.getAttribute('data-p'),10)||1)});
-  if(max>1){                         /* título pequeño para las páginas que no llevan encabezado */
-    var k=sec.querySelector('.kicker'),c=sec.querySelector('.container');
-    if(k&&c){var pk=document.createElement('div');pk.className='kicker pg-kicker';pk.textContent=k.textContent;c.insertBefore(pk,c.firstChild)}
-  }
-  for(var p=1;p<=max;p++)pages.push({s:si,p:p,n:max});
-});
-var slides=pages;
-var index=0;
-var fsManual=false;
-var dotsBox=$('dots'),dots=[];
-function firstPage(si){for(var i=0;i<pages.length;i++)if(pages[i].s===si)return i;return 0}
-sections.forEach(function(s,n){
-  var d=document.createElement('button');
-  d.type='button';d.className='dot';
-  d.setAttribute('aria-label','Ir a: '+(names[n]||('Sección '+(n+1))));
-  d.title=names[n]||('Sección '+(n+1));
-  d.addEventListener('click',function(){var cur=pages[index].s;if(n!==cur){var dir=n>cur?'next':'prev';show(firstPage(n));Sound.play(dir)}});
-  dotsBox.appendChild(d);dots.push(d);
-});
-function pad(n){return String(n).padStart(2,'0')}
-function isPres(){return body.classList.contains('presentation')}
-function fit(){
-  if(!isPres())return;
-  var sec=sections[pages[index].s],c=sec.querySelector('.container');
-  if(!c)return;
-  c.style.zoom='';
-  if(window.innerWidth<900)return;   /* en pantallas pequeñas se permite desplazar */
-  var cs=getComputedStyle(sec);
-  var avail=sec.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-6;
-  var need=c.offsetHeight;
-  if(avail>0&&need>avail)c.style.zoom=Math.max(.5,avail/need).toFixed(3);
-}
-function show(i){
-  index=Math.max(0,Math.min(pages.length-1,i));
-  var pg=pages[index];
-  sections.forEach(function(sec,n){
-    if(n===pg.s){
-      sec.classList.add('active');
-      sec.setAttribute('data-page',String(pg.p));
-      var hasHead=!!sec.querySelector('.section-head[data-p="'+pg.p+'"]');
-      sec.classList.toggle('showkick',pg.p>1&&!hasHead);
-    }else{
-      sec.classList.remove('active','showkick');
-      sec.removeAttribute('data-page');
-      var c=sec.querySelector('.container');if(c)c.style.zoom='';
-    }
-  });
-  dots.forEach(function(d,n){d.classList.toggle('on',n===pg.s)});
-  $('counter').textContent=pad(index+1)+' / '+pad(pages.length);
-  $('slideName').textContent=(names[pg.s]||'')+(pg.n>1?' · '+pg.p+'/'+pg.n:'');
-  $('slideProgress').style.width=((index+1)/pages.length*100)+'%';
-  $('prev').disabled=index===0;
-  $('next').textContent=index===pages.length-1?'Finalizar ✓':'Siguiente →';
-  sections[pg.s].scrollTop=0;
-  fit();
-}
-function updateFsBtn(){
-  var on=!!document.fullscreenElement;
-  $('fsLbl').textContent=on?'Salir de pantalla completa':'Pantalla completa';
-  $('fsBtn').setAttribute('aria-label',on?'Salir de pantalla completa':'Pantalla completa');
-}
-function start(){
-  body.classList.add('presentation');
-  closeMenu();
-  show(0);
-  Sound.play('start');
-  if(document.documentElement.requestFullscreen){document.documentElement.requestFullscreen().catch(function(){})}
-  updateFsBtn();
-}
-function stop(){
-  if(!isPres())return;
-  body.classList.remove('presentation');
-  sections.forEach(function(s){
-    s.classList.remove('active','showkick');s.removeAttribute('data-page');
-    var c=s.querySelector('.container');if(c)c.style.zoom='';
-  });
-  fsManual=false;
-  Sound.play('exit');
-  if(document.fullscreenElement&&document.exitFullscreen){document.exitFullscreen().catch(function(){})}
-  window.scrollTo(0,0);
-}
-function next(){if(index===pages.length-1){stop()}else{show(index+1);Sound.play('next')}}
-function prev(){if(index>0){show(index-1);Sound.play('prev')}}
-function toggleFs(){
-  if(document.fullscreenElement){fsManual=true;document.exitFullscreen().catch(function(){fsManual=false})}
-  else if(document.documentElement.requestFullscreen){document.documentElement.requestFullscreen().catch(function(){})}
-}
-window.addEventListener('resize',function(){if(isPres())fit()});
-
-$('launch').addEventListener('click',start);
-$('prev').addEventListener('click',prev);
-$('next').addEventListener('click',next);
-$('exit').addEventListener('click',stop);
-if(document.fullscreenEnabled===false||!document.documentElement.requestFullscreen){$('fsBtn').style.display='none'}
-else{$('fsBtn').addEventListener('click',toggleFs)}
-
-/* Atajos de teclado (solo durante la presentación) */
-document.addEventListener('keydown',function(e){
-  if(!isPres())return;
-  var k=e.key;
-  if(k==='ArrowRight'||k==='PageDown'||k===' '){e.preventDefault();next()}
-  else if(k==='ArrowLeft'||k==='PageUp'){e.preventDefault();prev()}
-  else if(k==='Home'){e.preventDefault();if(index!==0){show(0);Sound.play('prev')}}
-  else if(k==='End'){e.preventDefault();if(index!==slides.length-1){show(slides.length-1);Sound.play('next')}}
-  else if(k==='Escape'){stop()}
-});
-/* Evita que la barra espaciadora active dos veces un botón enfocado */
-document.addEventListener('keyup',function(e){if(isPres()&&e.key===' ')e.preventDefault()});
-
-/* Salir de pantalla completa con Esc también cierra la presentación (como en 6.0),
-   salvo cuando se usó el botón de pantalla completa */
-document.addEventListener('fullscreenchange',function(){
-  updateFsBtn();
-  if(!document.fullscreenElement&&isPres()){
-    if(fsManual){fsManual=false}else{stop()}
-  }
-});
-
-/* Deslizar en móviles (izquierda = siguiente, derecha = anterior) */
-var tx=0,ty=0,tracking=false;
-document.addEventListener('touchstart',function(e){
-  if(!isPres()||e.target.closest('.presentation-controls')){tracking=false;return}
-  var t=e.changedTouches[0];tx=t.clientX;ty=t.clientY;tracking=true;
-},{passive:true});
-document.addEventListener('touchend',function(e){
-  if(!tracking||!isPres())return;tracking=false;
-  var t=e.changedTouches[0],dx=t.clientX-tx,dy=t.clientY-ty;
-  if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.8){dx<0?next():prev()}
-},{passive:true});
-})();
-</script>
-<script>
-/* Fondo de puntos y líneas: nodos que flotan, se conectan entre sí y con el cursor */
-(function(){
-'use strict';
-var cv=document.getElementById('net');
-if(!cv||!cv.getContext)return;
-var ctx=cv.getContext('2d');
-if(!ctx)return;
-var W=0,H=0,dpr=1,pts=[],raf=0,mouse={x:-9999,y:-9999};
-var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var COLORS=['114,230,255','88,150,255','146,117,255'];
-var LINK=140,LINK2=LINK*LINK,MR=190,MR2=MR*MR;
-function make(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.4+.8,c:COLORS[(Math.random()*3)|0]}}
-function resize(){
-  dpr=Math.min(window.devicePixelRatio||1,1.5);
-  W=window.innerWidth;H=window.innerHeight;
-  cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
-  ctx.setTransform(dpr,0,0,dpr,0,0);
-  var n=Math.round(Math.min(95,Math.max(28,W*H/17000)));
-  if(W<720)n=Math.min(n,38);
-  while(pts.length<n)pts.push(make());
-  pts.length=n;
-  if(reduce)draw(false);
-}
-function line(x1,y1,x2,y2,rgb,a){
-  ctx.strokeStyle='rgba('+rgb+','+a.toFixed(3)+')';
-  ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
-}
-function draw(move){
-  ctx.clearRect(0,0,W,H);
-  ctx.lineWidth=1;
-  var i,j,p,q,dx,dy,d2;
-  for(i=0;i<pts.length;i++){
-    p=pts[i];
-    if(move){
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<-10)p.x=W+10;else if(p.x>W+10)p.x=-10;
-      if(p.y<-10)p.y=H+10;else if(p.y>H+10)p.y=-10;
-    }
-    for(j=i+1;j<pts.length;j++){
-      q=pts[j];dx=p.x-q.x;dy=p.y-q.y;d2=dx*dx+dy*dy;
-      if(d2<LINK2)line(p.x,p.y,q.x,q.y,'88,150,255',(1-d2/LINK2)*.34);
-    }
-    dx=p.x-mouse.x;dy=p.y-mouse.y;d2=dx*dx+dy*dy;
-    if(d2<MR2)line(p.x,p.y,mouse.x,mouse.y,'114,230,255',(1-d2/MR2)*.55);
-    ctx.fillStyle='rgba('+p.c+',.9)';
-    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.2832);ctx.fill();
-  }
-}
-function loop(){draw(true);raf=requestAnimationFrame(loop)}
-function start(){if(!raf&&!reduce)raf=requestAnimationFrame(loop)}
-function stop(){if(raf){cancelAnimationFrame(raf);raf=0}}
-window.addEventListener('resize',resize);
-window.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY},{passive:true});
-window.addEventListener('touchmove',function(e){var t=e.touches[0];if(t){mouse.x=t.clientX;mouse.y=t.clientY}},{passive:true});
-document.addEventListener('mouseleave',function(){mouse.x=mouse.y=-9999});
-document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});
-resize();
-if(reduce)draw(false);else start();
-})();
-</script>
+<section class="section tight">
+  <div class="container">
+    <div class="section-head"><h2>Centro de conocimiento</h2><p>Contenido editorial de CYBERNEX para entender y practicar la seguridad digital.</p></div>
+    <div class="posts"><article class="post">
+  <div class="post-meta"><span class="cat">Ciberseguridad</span><time datetime="2026-11-18">18 de noviembre de 2026</time><span>Editorial CYBERNEX</span></div>
+  <h3><a href="articulos/reconocer-correo-phishing.html">Cómo reconocer un correo de phishing</a></h3>
+  <p>Las señales que se repiten en la mayoría de los mensajes fraudulentos y qué hacer cuando dudas.</p>
+</article><article class="post">
+  <div class="post-meta"><span class="cat">Ciberseguridad</span><time datetime="2026-11-18">18 de noviembre de 2026</time><span>Editorial CYBERNEX</span></div>
+  <h3><a href="articulos/verificacion-en-dos-pasos.html">Verificación en dos pasos: qué es y por qué activarla</a></h3>
+  <p>Una segunda comprobación al iniciar sesión evita que una contraseña robada sea suficiente para entrar a tu cuenta.</p>
+</article><article class="post">
+  <div class="post-meta"><span class="cat">Privacidad digital</span><time datetime="2026-11-18">18 de noviembre de 2026</time><span>Editorial CYBERNEX</span></div>
+  <h3><a href="articulos/proteger-datos-personales.html">Guía básica para proteger tus datos personales en línea</a></h3>
+  <p>Hábitos sencillos para compartir menos, controlar quién ve tu información y limpiar lo que ya no usas.</p>
+</article></div>
+    <p style="margin-top:26px"><a class="textlink" href="conocimiento.html">Ver todos los artículos</a></p>
+  </div>
+</section>
+<section class="section tight"><div class="container"><div class="cta-band">
+  <div><h2>¿Quieres conocer CYBERNEX con más detalle?</h2><p>Revisa cómo trabajamos o escríbenos. Los canales de contacto se publican en cuanto estén disponibles.</p></div>
+  <div class="cta-actions"><a class="btn primary" href="sobre.html">Conocer CYBERNEX</a><a class="btn" href="contacto.html">Contacto y soporte</a></div>
+</div></div></section>
+</main>
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="index.html" aria-label="CYBERNEX Solutions"><span class="brand-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gF" x1="10" y1="4" x2="54" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f7bff"/><stop offset="1" stop-color="#8f6cff"/></linearGradient></defs><path d="M32 6 51 13.5V29c0 13-8 22.5-19 28C21 51.5 13 42 13 29V13.5L32 6Z" fill="url(#gF)"/><path d="M32 12 45 17.5V29c0 9.5-5.5 16.5-13 21-7.5-4.5-13-11.5-13-21V17.5L32 12Z" fill="#03060d" fill-opacity=".35"/><path d="m23.5 31 6.5 6.5L41.5 24" fill="none" stroke="#72e6ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>CYBERNEX<small>S O L U T I O N S</small></span></a>
+        <p>Proyecto empresarial académico de servicios tecnológicos: ciberseguridad, soporte técnico y protección de información.</p>
+        <span class="lemaf">Tu información, nuestra prioridad</span>
+      </div>
+      <div><h4>Navegar</h4><ul><li><a href="divisiones.html">Divisiones</a></li><li><a href="soluciones.html">Soluciones</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="conocimiento.html">Conocimiento</a></li><li><a href="etica.html">Ética</a></li><li><a href="sobre.html">Sobre CYBERNEX</a></li><li><a href="responsabilidad.html">Responsabilidad social y ambiental</a></li><li><a href="index.html">Inicio del ecosistema</a></li><li><a href="../index.html">Presentación corporativa</a></li></ul></div>
+      <div><h4>Ecosistema</h4><ul><li><a href="divisiones.html#development">NEX Development</a></li><li><a href="security.html">NEX Security</a></li><li><a href="divisiones.html#academy">NEX Academy</a></li><li><a href="divisiones.html#labs">NEX Labs</a></li><li><a href="divisiones.html#connect">NEX Connect</a></li><li><a href="connect.html">Experiencia NEX Connect</a></li></ul></div>
+      <div><h4>Contacto</h4><ul>
+        <li><a href="contacto.html">Contacto y soporte</a></li>
+        <li><a href="contacto.html#ayuda">Centro de ayuda</a></li>
+        <li><a href="contacto.html#faq">Preguntas frecuentes</a></li>
+        <li><span data-contact-pending class="muted small">Correo oficial: en preparación</span><a data-contact-mail data-show-address hidden href="#"></a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CYBERNEX Solutions. Derechos reservados.</span>
+      <nav aria-label="Legal"><a href="privacidad.html">Aviso de privacidad</a><a href="terminos.html">Términos y condiciones</a></nav>
+    </div>
+  </div>
+</footer>
+<button class="totop" id="toTop" type="button" aria-label="Volver arriba"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+<script src="../assets/js/site-config.js"></script>
+<script src="../assets/js/site.js"></script>
 </body>
 </html>
