@@ -1,102 +1,20 @@
-# CYBERNEX Solutions
+# Backend de CYBERNEX 10.0V (preparado, no conectado)
 
-### Tu información, nuestra prioridad.
+Esta carpeta contiene la **base** para el portal NEX Connect y el panel administrativo.
+**Nada del sitio actual depende de ella**: el sitio funciona completo en GitHub Pages sin backend.
 
-**CYBERNEX Solutions** es un proyecto empresarial enfocado en el desarrollo de soluciones tecnológicas, servicios digitales y ciberseguridad. Su propósito es integrar innovación, seguridad y responsabilidad para ofrecer alternativas tecnológicas a personas, emprendedores y pequeñas y medianas empresas.
+| Archivo | Para qué sirve |
+|---|---|
+| `schema.sql` | Tablas, validaciones y políticas de seguridad (RLS) para Supabase/PostgreSQL |
+| `.env.example` | Variables de entorno necesarias (sin valores reales) |
 
----
+## Qué falta para activarlo (no existe todavía)
+1. Crear un proyecto en [Supabase](https://supabase.com) y ejecutar `schema.sql` en su editor SQL.
+2. Copiar `.env.example` a `.env` y completar las claves. **La clave `SERVICE_ROLE` nunca debe estar en el frontend ni en GitHub.**
+3. Implementar las pantallas de registro, inicio de sesión y panel (siguiente etapa). Supabase Auth guarda las contraseñas con hash; este proyecto nunca las guarda en texto plano.
+4. Para el formulario de contacto con protección anti-spam, añadir un CAPTCHA y una función de servidor que valide el token con `CAPTCHA_SECRET`.
+5. Alojar la API (si se usa Node.js) en un servicio compatible y definir `ALLOWED_ORIGIN` con el dominio de GitHub Pages.
 
-## 🌐 Sitio web
-
-**Página oficial del proyecto:**
-
-https://fercnx.github.io/CyberNex-Solutions/
-
-Para visualizar el proyecto, simplemente abre el enlace anterior desde cualquier navegador web. No es necesario descargar archivos ni instalar programas.
-
----
-
-## 🚀 Sobre el proyecto
-
-CYBERNEX Solutions busca evolucionar hacia un ecosistema tecnológico integral, combinando diferentes áreas de especialización:
-
-- **NEX Development:** desarrollo web, software y soluciones digitales.
-- **NEX Security:** ciberseguridad, protección de información y prevención de riesgos.
-- **NEX Academy:** iniciativa orientada a la formación y educación tecnológica.
-- **NEX Labs:** área de investigación e innovación tecnológica.
-- **NEX Connect:** concepto de conexión, atención y seguimiento para clientes.
-
-Las divisiones de Academy, Labs y Connect forman parte de la visión de crecimiento del proyecto y no necesariamente representan servicios actualmente implementados.
-
-## 🎯 Objetivo
-
-Desarrollar una propuesta empresarial tecnológica que integre conocimientos de Administración y Finanzas, mercadotecnia, innovación y ciberseguridad, promoviendo el uso responsable de la tecnología.
-
-## 🛡️ Principios y valores
-
-CYBERNEX se fundamenta en los siguientes principios:
-
-- Responsabilidad.
-- Honestidad.
-- Confidencialidad.
-- Integridad.
-- Innovación.
-- Respeto.
-- Profesionalismo.
-- Transparencia.
-
-La privacidad, la protección de datos y el consentimiento son elementos fundamentales de su filosofía empresarial.
-
-## 💻 Tecnologías
-
-El proyecto utiliza tecnologías de desarrollo web para construir una experiencia digital accesible desde distintos dispositivos.
-
-Entre las tecnologías contempladas se encuentran:
-
-- HTML5.
-- CSS3.
-- JavaScript.
-- GitHub Pages.
-
-## 📂 Estructura del proyecto
-
-La estructura del repositorio puede incluir:
-
-- `index.html` — página principal del proyecto.
-- `README.md` — documentación general.
-- Archivos CSS — estilos y diseño visual.
-- Archivos JavaScript — funcionalidades e interacciones.
-- Carpetas de recursos — imágenes, iconos y otros elementos gráficos.
-
-## ⚙️ Publicación
-
-El sitio está publicado mediante **GitHub Pages**, por lo que puede consultarse directamente desde su enlace público.
-
-Para actualizarlo:
-
-1. Accede al repositorio.
-2. Modifica o reemplaza los archivos correspondientes.
-3. Asegúrate de que el archivo principal se llame `index.html`.
-4. Guarda los cambios mediante un commit.
-5. GitHub Pages actualizará el sitio después de procesar los cambios.
-
-## 👥 Integrantes
-
-**María Fernanda M.C.**  
-Matrícula: 26050004
-
-**Gael Vidal R.**  
-Matrícula: 26050009
-
-## 📌 Naturaleza del proyecto
-
-CYBERNEX Solutions forma parte de un proyecto académico empresarial desarrollado para integrar conocimientos de Administración y Finanzas con tecnología, innovación y responsabilidad ética.
-
-Su evolución contempla la construcción progresiva de un ecosistema tecnológico.
-
----
-
-**CYBERNEX Solutions**  
-*Tu información, nuestra prioridad.*
-
-© 2026 CYBERNEX Solutions. Todos los derechos reservados.
+## Estado honesto
+- El esquema **no ha sido ejecutado** contra una base de datos real en esta entrega; revisarlo y probarlo es parte de la siguiente etapa.
+- No hay inicio de sesión, portal ni panel funcionando todavía. El sitio no los simula.

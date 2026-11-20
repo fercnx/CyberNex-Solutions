@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fercnx.github.io/CyberNex-Solutions/sitemap.xml
